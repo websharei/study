@@ -7,5 +7,5 @@
   http://javascriptbook.com/code/
 
 * GitHub에 있는 실습 예제를 브라우저에서 보는 방법<br>
-  -GitHub & BitBucket HTML Preview: http://htmlpreview.github.io<br>
-  -예) http://htmlpreview.github.io/?https://github.com/websharei/study/blob/javascriptbook/ch02/string-variable.html
+  - GitHub & BitBucket HTML Preview: http://htmlpreview.github.io<br>
+  - 예) http://htmlpreview.github.io/?https://github.com/websharei/study/blob/javascriptbook/ch02/string-variable.html
