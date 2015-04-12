@@ -11,5 +11,5 @@
   - GitHub & BitBucket HTML Preview: http://htmlpreview.github.io<br>
   - 예) http://htmlpreview.github.io/?https://github.com/websharei/study/blob/javascriptbook/ch02/string-variable.html
 
-* 출판사 게시내용
+* 출판사 게시내용<br>
   http://jpub.tistory.com/482
