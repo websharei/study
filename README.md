@@ -1,4 +1,4 @@
-##HTML&CSS 웹사이트 개발과 디자인 기초 책 리뷰
+##"HTML&CSS 웹사이트 개발과 디자인 기초" 책 리뷰
 
 * 책정보(존 두켓 저, 에이콘출판, 2014.11.30, 502p)<br>
   http://book.naver.com/bookdb/book_detail.nhn?bid=7058777
