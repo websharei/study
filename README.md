@@ -1,9 +1,9 @@
-##자바스크립트와 JQuery 라이브러리 공부하기!
+##자바스크립트와 제이커리 책 리뷰
 
-* 자바스크립트&제이쿼리 책정보(존 두켓 저, 644p)<br>
+* 책정보(존 두켓 저, 제이법, 2015.03.31, 644p)<br>
   http://book.naver.com/bookdb/book_detail.nhn?bid=8890588
 
-* 자바스크립트&제이쿼리 예제소스<br>
+* 예제소스<br>
   - 원서: http://javascriptbook.com/code/
   - 번역서: https://github.com/webgenie/javascriptbook
 
