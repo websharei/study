@@ -1,9 +1,9 @@
-##CSS3 공부하기!
+##"The Book of CSS3: 인터랙티브 웹을 구현하기 위한 CSS3의 원리와 핵심" 책 리뷰
 
-* The Book of CSS3: 인터랙티브 웹을 구현하기 위한 CSS3의 원리와 핵심 책정보(피터 개스통 저, 에이콘출판, 2014.07.31, 428p)<br>
+* 책정보(피터 개스통 저, 에이콘출판, 2014.07.31, 428p)<br>
   http://book.naver.com/bookdb/book_detail.nhn?bid=7884654
 
-* The Book of CSS3 예제소스<br>
+* 예제소스<br>
   http://www.thebookofcss3.com/
 
 * GitHub에 있는 실습 예제를 브라우저에서 보는 방법<br>
