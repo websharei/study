@@ -4,8 +4,8 @@
   http://book.naver.com/bookdb/book_detail.nhn?bid=7524284
 
 * 예제소스<br>
-  원서: http://acornpub.co.kr/download/git<br>
-  번역서: http://www.packtpub.com/code_download/10559
+  원서: http://www.packtpub.com/code_download/10559<br>
+  번역서: http://acornpub.co.kr/download/git
 
 * GitHub에 있는 실습 예제를 브라우저에서 보는 방법<br>
   - GitHub & BitBucket HTML Preview: http://htmlpreview.github.io<br>
