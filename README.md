@@ -6,5 +6,8 @@
 * 예제소스<br>
  - 원서: http://www.jeumedia.com/user/download/view.html?seq=372
 
+* 동영상 강좌
+ http://cafe.naver.com/jqueryfordesigner
+
 * 출판사 게시내용<br>
  http://www.jeumedia.com/books/view.html?seq=545
