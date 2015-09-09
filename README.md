@@ -5,6 +5,10 @@
 
 * 예제소스<br>
  - 원서: http://www.jeumedia.com/user/download/view.html?seq=372
+ 
+* GitHub에 있는 실습 예제를 브라우저에서 보는 방법<br>
+  - GitHub & BitBucket HTML Preview: http://htmlpreview.github.io<br>
+  - 예) http://htmlpreview.github.io/?https://github.com/websharei/study/blob/jqueryfordesigner/part01/ch02/jQuery_for_continue.html
 
 * 동영상 강좌
  http://cafe.naver.com/jqueryfordesigner
