@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>		
+<meta charset="utf-8">
+<title>prepend() 메서드 활용, CHAPTER 03 DOM 변경(Dom Manipulation) - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+img{padding:0;margin:5px}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#prepend").on("click",function(){		
+		$("#container").prepend($("#container img:last"));
+	});
+});
+</script>
+</head>
+<body>
+<div id="container">
+	<img src="img/pic1.jpg" width="100" height="100" alt="">
+	<img src="img/pic2.jpg" width="100" height="100" alt="">
+	<img src="img/pic3.jpg" width="100" height="100" alt="">
+</div>
+<p>prepend를 사용하여 사진을 순환합니다.</p>
+<button type="button" id="prepend" title="prepend">prepend</button>
+</body>
+</html>
