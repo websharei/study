@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>addClass() 메서드, removeClass() 메서드, CHAPTER 04 CSS Styling and jQuery - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+img{padding:5px;background:#666}
+.type1{padding:5px;background:#ef4018}
+.type2{padding:5px;background:#9ab92e}
+.type3{padding:5px;background:#05184d}
+.type4{padding:5px;background:#ff184d}
+.type5{padding:5px;background:#0518ff}
+</style>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("img").on("click",function(){
+		var n = Math.ceil(Math.random()*5);
+		var existClass = $(this).attr("class");
+		$(this).removeClass(existClass)
+			.addClass("type"+n);
+	});
+});
+</script>
+</head>
+<body>
+<img src="img/th1.jpg" width="90" height="80" alt="">
+<img src="img/th2.jpg" width="90" height="80" alt="">
+<img src="img/th3.jpg" width="90" height="80" alt="">
+</body>
+</html>
