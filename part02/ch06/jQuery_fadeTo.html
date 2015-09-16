@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>fadeTo() 함수, CHAPTER 05 Effects and Custom Animations - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+div{width:100px;height:100px;background:red}
+</style>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("body").append("<p></p>");
+	$("button").on("click",function(){
+		var opacity = $(this).attr("title");
+		$("img").fadeTo("slow",opacity,function(){
+			$("p").append("display : " + $(this).css("display") + "<br>");
+			$("p").append("opacity : " + $(this).css("opacity") + "<br>");
+		});
+	});
+});
+</script>
+</head>
+<body>
+<img src="img/sample3.jpg" width="300" height="300" alt="">
+<br>
+<button type="button" title="0">opacity = 0</button>
+<button type="button" title="0.3">opacity = 0.3</button>
+<button type="button" title="0.6">opacity = 0.6</button>
+<button type="button" title="1">opacity = 1</button>
+</body>
+</html>
