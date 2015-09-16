@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>slideDown() 함수, slideUp() 함수, CHAPTER 05 Effects and Custom Animations - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#up").on("click",function(){
+		$("div").slideUp(1000,function(){
+			alert("지금 상태는 " + $(this).css("display") + " 입니다.") ;
+		});
+	});
+	$("#down").on("click",function(){
+		$("div").slideDown(1000,function(){
+			alert("지금 상태는 " + $(this).css("display") + " 입니다.") ;
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div><img src="img/sample1.jpg" width="300" height="300" alt=""></div>
+<br>
+<button type="button" id="up">slide 감추기</button>
+<button type="button" id="down">slide 보이기</button>
+</body>
+</html>
