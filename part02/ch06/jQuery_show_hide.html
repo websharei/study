@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>show() 함수, hide() 함수, CHAPTER 05 Effects and Custom Animations - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+div{width:100px;height:100px;background:red}
+</style>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#hide").on("click",function(){
+		$("img").hide(1000,function(){
+			alert("지금 상태는 "+ $(this).css("display") + " 입니다.");
+		});
+	});
+	
+	$("#show").on("click",function(){
+		$("img").show(1000,function(){
+			alert("지금 상태는 "+ $(this).css("display") + " 입니다.");
+		});
+	});
+});
+</script>
+</head>
+<body>
+<img src="img/sample1.jpg" width="300" height="300" alt="">
+<button id="hide">hide()</button>
+<button id="show">show()</button>
+</body>
+</html>
