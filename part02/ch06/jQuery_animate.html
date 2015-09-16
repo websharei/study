@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>animate() 함수, CHAPTER 06 Effects and Custom Animations - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+div{display:inline;overflow:hidden;width:300px}
+</style>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#up").on("click",function(){
+		$("div").animate({width:"0"},1000);
+	});
+	$("#down").on("click",function(){
+		$("div").animate({width:"300px"},1000);
+	});
+});
+</script>
+</head>
+<body>
+<div><img src="img/sample1.jpg" width="300" height="300" alt=""></div>
+<br>
+<button type="button" id="up">slide 감추기</button>
+<button type="button" id="down">slide 보이기</button>
+</body>
+</html>
