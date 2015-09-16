@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>fadeOut() 함수, fadeIn() 함수, CHAPTER 05 Effects and Custom Animations - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+div{width:100px;height:100px;background:red}
+</style>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("body").append("<p></p>");
+	$("#fadeOut").on("click",function(){
+		$("img").fadeOut(1000,function(){
+			$("p").text("지금 display 값은 " + $(this).css("display") + " 입니다.");
+		});
+	});
+	$("#fadeIn").on("click",function(){
+		$("img").fadeIn(1000,function(){
+			$("p").text("지금 display 값은 " + $(this).css("display") + " 입니다.");
+		});
+	});
+});
+</script>
+</head>
+<body>
+<img src="img/sample2.jpg" width="300" height="300" alt="">
+<br>
+<button id="fadeOut">fadeOut()</button>
+<button id="fadeIn">fadeIn()</button>
+</body>
+</html>
