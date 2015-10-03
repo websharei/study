@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animate Easing, CHAPTER 07 jQuery UI - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+li{float:left;width:200px;height:60px;list-style:none}
+li a{display:block;width:200px;height:60px;padding:40px 0 10px;background:#9ab92e;font-weight:bold;font-size:25px;font-family:Verdana,Geneva,sans-serif;color:black;text-align:center;text-decoration:none}
+</style>
+<!-- jQuery library -->
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script>
+$(function(){
+	$("button").on("click",function(){
+		var easing = $(this).attr("data-ease");
+		$("div").slideUp(1000, easing, function(){
+			$(this).slideToggle();
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div><img src="img/ease.jpg" width="450" height="263" alt=""></div>
+<button type="button" data-ease="easeOutQuart">easeOutQuart</button>
+<button type="button" data-ease="easeInOutElastic">easeInOutElastic</button>
+<button type="button" data-ease="easeOutBack">easeOutBack</button>
+<button type="button" data-ease="easeOutBounce">easeOutBounce</button>
+</body>
+</html>
