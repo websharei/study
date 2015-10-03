@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animate Color, CHAPTER 07 jQuery UI - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+li{float:left;width:200px;height:60px;list-style:none}
+li a{display:block;width:200px;height:60px;padding:40px 0 10px;background:#9ab92e;font-weight:bold;font-size:25px;font-family:Verdana,Geneva,sans-serif;color:black;text-align:center;text-decoration:none}
+</style>
+<!-- jQuery library -->
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script>
+$(function(){
+	$("li a").hover(
+		function(){
+			var overColor = $(this).attr("data-bg");
+			$(this).stop().animate({"background-color":overColor,"color":"white"},300);
+		},
+		function(){
+			$(this).stop().animate({"background-color":"#9ab92e","color":"back"},300);
+		}
+	);
+});
+</script>
+</head>
+<body>
+<ul>
+<li><a href="#" data-bg="#ef4018">Home</a></li>
+<li><a href="#" data-bg="#00c8c3">About</a></li>
+<li><a href="#" data-bg="#aa184d">Portfolio</a></li>
+<li><a href="#" data-bg="#05184d">Contact</a></li>
+</ul>
+</body>
+</html>
