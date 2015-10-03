@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animate Queues, CHAPTER 06 Effects and Custom Animations - jQuery 기초 : 바로바로 사용할 수 있는 jQuery 입문</title>
+<style>
+div{position:relative;width:100px;height:100px;background:#6699ff}
+</style>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function(){
+	$("a").click(function(evt){
+		$("div").animate({opacity:"0.5",left:"+400"},2000);
+		$("div").animate({top:"+=100"},1000);
+		$("div").slideUp();
+	});
+});
+</script>
+</head>
+<body>
+<p><a href="#" class="run">animate</a></p>
+<div></div>
+</body>
+</html>
