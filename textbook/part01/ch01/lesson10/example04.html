@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>예제04 맴버변수 | Lesson 10 변수 종류 | CHAPTER 01 변수 | PART 01 자바스크립트 코어 기초 문법 | 자바스크립트+jQuery 완전정복 스터디 1: 기초편</title>
+<script>
+function MyClass() {
+	this.name = "맴버변수";
+}
+
+MyClass.prototype.showName = function() {
+	console.log("name =", this.name);
+}
+
+var objClass = new MyClass();
+
+objClass.showName();
+</script>
+</head>
+<body></body>
+</html>

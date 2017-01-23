@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>예제03 매개변수 | Lesson 10 변수 종류 | CHAPTER 01 변수 | PART 01 자바스크립트 코어 기초 문법 | 자바스크립트+jQuery 완전정복 스터디 1: 기초편</title>
+<script>
+var globalV = "전역변수";
+
+window.onload = function() {
+	var local1 = "지역변수";
+	func1(100, 200);
+}
+
+function func1(num1, num2) {
+	var local1 = "지역변수";
+	console.log("매개변수 num1 = " + num1 + ", num2 = " + num2);
+}
+</script>
+</head>
+<body></body>
+</html>
