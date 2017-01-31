@@ -21,22 +21,38 @@
             3. 변수를 선언만하고 데이터타입을 조사한다.
          ******************************************/
 
+		var a = 1, b = true, c = "nts";
+		console.log(typeof(a));
+		console.log(typeof(b));
+		console.log(typeof(c));
+
         /*****************************************
             1. undefined아 null의 공통점과 차이점을 적으시오
+			값이 없음.
             2. null의 데이터타입을 조사한다.
             3. undefined의 데이타타입을 조사한다.
          *****************************************/
+		 console.log(typeof(null));
+		 var a = 0; // var a:number 초기화 값;
+		 var b = false; // var b:boolean 초기화ㅍ
+		 var c = ""; // var c:string 초기화 값;
+		 var d = null; // var d:object 초기화 값;
 
         /*****************************************
             변수 a와 b의 값이 swap되도록 코딩하시오
+			원시데이터는 복사, 객체값은 참조
          *****************************************/
         var a = 10;
         var b = 20;
         var c;
+
+		c = a;
+		a = b;
+		b = c;
+
         console.log(a, b); // 10, 20
         //코딩하시오.
         console.log(a, b); // 20, 10
-
         /*****************************************
          변수 a와 b의 값이 swap되도록 코딩하시오
          *****************************************/
@@ -48,11 +64,51 @@
          {변수명}은 동적으로 데이터가 바뀌는 부분입니다.
          문자열의 결합은 ' + ' 연산자를 이용합니다.
          *****************************************/
-        var name = "";
-        var msg = "";
+        var name = "혁민";
+        var msg = "환영";
         var MY_COMPANY = "NTS";
+        var result_str = name+ "님~ " + MY_COMPANY + "에 오신걸을"+ msg +"합니다."// 코딩하시오
 
-        console.log(); //  ( ) 안을 코딩하시오
+        console.log(result_str);
+
+
+        /*****************************************
+         print 되는 결과값을 적으시오.
+
+         var foo1 = "foo1 전역변수입니다";
+         var foo2 = "foo2 전역변수입니다";
+
+         function func()
+         {
+         var foo1 = "foo1 지역변수입니다";
+         var foo3 = "foo3 지역변수입니다";
+         console.log(foo1);
+         console.log(foo2);
+         console.log(foo3);
+         }
+
+         func();
+         console.log(foo1);
+         console.log(foo2);
+         console.log(foo3);
+         *****************************************/
+
+		 var foo1 = "foo1 전역변수입니다";
+         var foo2 = "foo2 전역변수입니다";
+
+         function func()
+         {
+         var foo1 = "foo1 지역변수입니다";
+         var foo3 = "foo3 지역변수입니다";
+         console.log(foo1);
+         console.log(foo2);
+         console.log(foo3);
+         }
+
+         func();
+         console.log(foo1);
+         console.log(foo2);
+         console.log(foo3);
 
 
     </script>

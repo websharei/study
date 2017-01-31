@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>배열맛보기</title>
+
+    <script>
+        // 배열의 생성
+		var arr1 = [1,2,3];
+		var arr2 = new Array("A", "B", "C");
+
+        // 배열원소 접근
+		console.log(arr1);
+		console.log(arr2);
+
+		console.log(arr1[0]);
+		console.log(arr2[0]);
+
+		arr1[0] = "111";
+		arr2[0] = "AAA";
+
+		console.log(arr1[0]);
+		console.log(arr2[0]);
+
+        /* TEST
+        * 철수님 안녕하세요?
+        * 영희님 안녕하세요?
+        * 아영님 안녕하세요?
+        * 정희님 안녕하세요?
+        * 영자님 안녕하세요?
+        */
+
+        var HELLO_STR = "님 안녕하세요?";
+
+        //  TEST결과가 나오도록 코딩한다
+         var userName = ["철수", "영희", "아영", "정희", "영자"];
+
+        /*
+        document.write(userName[0], HELLO_STR, "<br>");
+        document.write(userName[1], HELLO_STR, "<br>");
+        document.write(userName[2], HELLO_STR, "<br>");
+        document.write(userName[3], HELLO_STR, "<br>");
+        document.write(userName[4], HELLO_STR, "<br>");
+        document.write("----------------", "<br>");
+        */
+
+		document.write(userName[0], HELLO_STR, "<br>");
+        document.write(userName[1], HELLO_STR, "<br>");
+        document.write(userName[2], HELLO_STR, "<br>");
+        document.write(userName[3], HELLO_STR, "<br>");
+        document.write(userName[4], HELLO_STR, "<br>");
+        document.write("----------------", "<br>");
+
+        // 배열이 아니라 변수로 관리해야 한다면 개발자는 기억할 것이 많다.
+        var a = "철수", b ="영희", c = "아영", d ="정희",  e="영자";
+
+        /*
+        document.write(a, HELLO_STR, "<br>");
+        document.write(b, HELLO_STR, "<br>");
+        document.write(c, HELLO_STR, "<br>");
+        document.write(d, HELLO_STR, "<br>");
+        document.write(e, HELLO_STR, "<br>");
+        document.write("----------------", "<br>");
+         */
+
+		document.write(a, HELLO_STR, "<br>");
+        document.write(b, HELLO_STR, "<br>");
+        document.write(c, HELLO_STR, "<br>");
+        document.write(d, HELLO_STR, "<br>");
+        document.write(e, HELLO_STR, "<br>");
+        document.write("----------------", "<br>");
+
+        // 인덱스가 있는 변수라 하더라도 관리가 쉽지 않다
+        var a1 = "철수", a2 ="영희", a3 = "아영", a4 ="정희",  a5="영자";
+
+         /*
+        document.write(a1, HELLO_STR, "<br>");
+        document.write(a2, HELLO_STR, "<br>");
+        document.write(a3, HELLO_STR, "<br>");
+        document.write(a4, HELLO_STR, "<br>");
+        document.write(a5, HELLO_STR, "<br>");
+        document.write("----------------", "<br>");
+          */
+
+		document.write(a1, HELLO_STR, "<br>");
+        document.write(a2, HELLO_STR, "<br>");
+        document.write(a3, HELLO_STR, "<br>");
+        document.write(a4, HELLO_STR, "<br>");
+        document.write(a5, HELLO_STR, "<br>");
+        document.write("----------------", "<br>");
+
+
+        // 상황1) 새로운 이름을 뒤에 추가한다.
+        // 상황2) 새로운 이름을 앞에 추가한다
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
