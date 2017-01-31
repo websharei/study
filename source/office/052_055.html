@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>지역변수_전역변수</title>
+
+    <script>
+
+        // 함수(function)가 아닌 곳에서 선언된 변수는 전역변수이다.
+        // var 여부 상관없이 전역변수이다.
+        // var global_num =10;         // 전역변수
+        // global_boo = true;          // 전역변수.  단 var 없이 변수 선언은 가능하나 권장하지 않는다.
+
+
+        // 함수 안에서 var를 이용하여 변수를 선언하면 지역변수이다.
+        // 함수 안에서 var없이 변수를 선언하면 전역변수 이다
+        /* 주석 풀고 테스트 (변수 생명주기)
+         function test()
+         {
+             var local_var = 10;
+             global_var = 20;
+
+             console.log("함수 안", "전역: "+ global_var);
+             console.log("함수 안", "지역: "+ local_var);
+         }
+
+        test();
+        console.log("함수 밖", "전역: "+ global_var);
+        console.log("함수 밖", "지역: "+ local_var); // 함수 밖에서는 지역변수 접근이 안된다
+        */
+
+        // 함수 안, 함수 밖의 변수 이름이 같더라도 그 둘은 서로 다른 곳에 존재하며 함수 안에서는 지역변수가 우선한다.
+        /* 주석 풀고 테스트 (함수내 변수 우선순위)
+            var same_data = "same_data : 함수 밖입니다.";
+            var global_data = "global_data : 함수 밖입니다"
+
+            function test2()
+            {
+                var same_data = "same_data ; 함수 안입니다.";
+                console.log(same_data);
+                console.log(global_data);
+            }
+        test2();
+         */
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
