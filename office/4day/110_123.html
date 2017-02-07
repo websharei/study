@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>형변환</title>
+
+    <script>
+
+        /*
+            실습) 형변환 하기
+		
+            var age, foo;
+            age = window.prompt("나이를 입력하세요");
+            console.log(typeof age);
+
+            foo = age + 10;                 // String + Number -> 자동형변환(암시적형변환) -> String + String
+            console.log(foo, typeof foo);
+
+            var foo = parseInt(age) + 10;   // String + Number -> 강제형변환(명시적형변환) -> Number + Number
+            console.log(foo, typeof foo);
+		*/
+        
+
+        /*
+            자동형변환 ( + )
+            var test;
+
+            // Number + Number
+		
+            test = 3 + 5;
+            console.log(test, typeof test);
+*/
+             // String + String
+			 
+
+			 test = "3" + "5";
+             console.log(test, typeof test);
+
+			
+
+             // Boolean + Boolean
+			 test = true + true;
+             console.log(test, typeof test);
+
+             // Number + String
+			 test = 3 + "5";
+             console.log(test, typeof test);
+
+             // Number + Boolean
+			 test = 3 + true;
+             console.log(test, typeof test);
+
+             // String + Boolean
+			 test = "3" + true;
+             console.log(test, typeof test);
+
+			 /*
+
+             자동형변환 ( -, *, / )
+             var test;
+			 */
+
+             test = 5 * 3 - 5 / 2 ;
+             console.log(test, typeof test);
+
+             test = "5" * "3" - "5" / "2" ;                                  // String - String -> 자동형변환(암시적형변환) -> 
+			 /* Number -  Number */
+			 
+
+             console.log(test, typeof test);
+
+             test = true + false - true + true + true * false;             // Boolean - Boolean -> 자동형변환(암시적형변환) ->
+			 /* Number -  Number */
+             console.log(test, typeof test);
+
+             test = "5" * 3 - "5" / 2 ;                                   // Number - String -> 자동형변환(암시적형변환) -> 
+			 /* Number - Number */
+             console.log(test, typeof test);
+
+             test = 5 + true * 10 / true + "5" * false                   // Number - Boolean -> 자동형변환(암시적형변환) -> 
+			 /* Number -   Number */
+             console.log(test, typeof test);
+
+        /*
+            // 특정 데이터 형변환 하기
+
+             function test(param)
+             {
+                 console.log(Number(param));
+                 console.log(Boolean(param));
+                 console.log(String(param));
+                 console.log("--------------");
+             }
+
+             test(0);
+             test(1);
+             test("0");
+             test("");
+             test(" ");
+             test(true);
+             test(false);
+             test("true");
+             test("false");
+             test(null);
+         */
+
+        /*
+            강제형변환 (문자 -> 숫자)
+            var foo;
+
+            foo = "10.123"
+            console.log(Number(foo));
+            console.log(parseFloat(foo));
+            console.log(parseInt(foo));
+
+             foo = "100"
+             console.log(Number(foo));
+             console.log(parseFloat(foo));
+             console.log(parseInt(foo));
+
+             foo = "10가나다"
+             console.log(Number(foo));
+             console.log(parseFloat(foo));
+             console.log(parseInt(foo));
+
+             강제형변환 (숫자 -> 문자)
+             foo = 255;
+             console.log(String(foo));
+             console.log(foo.toString(10));
+             console.log(foo.toString(16));
+             console.log(foo.toString(8));
+             console.log(foo.toString(2));
+
+             foo = 255.53123456;
+             console.log(String(foo));
+             console.log(foo.toFixed(2));
+         */
+
+        /* 문제
+              console.log( 30 + "30");  // 결과가 60 되게 하시오
+              console.log( 1 + true );  // 결과가 "1true"가 되게 하시오.
+              console.log("100.50" + "20")  // 결과가 120.50이 되게 하시오
+
+              var a = 10;               // 결과과 "10"이 되게 하시오.
+        */
+
+         /*
+            배경색 바꾸기
+
+            function changeBgColor()
+            {
+                var num = Math.ceil( Math.random() * 0xffffff);
+                var numStr =  num.toString(16);
+                this.document.body.style.backgroundColor = "#" + numStr;
+            }
+            setInterval("changeBgColor()", 40);
+         */
+
+    </script>
+
+</head>
+
+
+<body>
+
+</body>
+</html>
