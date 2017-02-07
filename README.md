@@ -13,5 +13,6 @@
 * 출판사 게시내용<br>
   http://wikibook.co.kr/js-study-basic/
  
-* 자동형변환 정리표
-![image](https://raw.githubusercontent.com/websharei/study/js_study_basic/source/office/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EA%B8%B0%EC%B4%88_%EC%9E%90%EB%8F%99%ED%98%95%EB%B3%80%ED%99%98.jpg)
+* 참고
+  - 자동형변환 정리표
+  ![image](https://raw.githubusercontent.com/websharei/study/js_study_basic/source/office/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EA%B8%B0%EC%B4%88_%EC%9E%90%EB%8F%99%ED%98%95%EB%B3%80%ED%99%98.jpg)
