@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>부록-함수</title>
+    <script>
+
+
+        /***************************************
+        // A와 B가 같이 프로그래밍을 합니다.
+        // A는 구구단을 print하는 프로그래밍을 합니다.
+        // B는 짝수, 홀수를 구분하는 프로그래밍을 합니다
+
+        // A가 프로그래밍 한 구구단
+        var num1, num2, result;
+
+        num1 = 2;
+        num2 = 1;
+        result = "";
+
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        document.write(result);
+
+        // 2단이 잘 작동됩니다.
+        // 시간이 흘러 이번엔 2단 다음인 3단을 추가 해달라는 요청을 받게 됩니다.
+         ***************************************/
+
+        /***************************************
+        num1++ ;
+        num2 = 1;
+        result = "";
+
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        document.write(result);
+
+        // 3단도 잘 작동됩니다.
+        // 기분은 좋지만 구구단이 추가되면 중복되는 코드가 매우 많아 약간 불편한 맘이 듭니다.
+         ***************************************/
+
+        /***************************************
+        // 시간이 흘러 이번에는 B가 작성한 코드(짝, 홀수 프로그램)을 추가하기로 했습니다.
+        // 그대로 복사해서 아래와 같이 넣었습니다.
+        var num1 = 1000;
+        var num2 = 2;
+        var result = "";
+
+        result += num1 + "을 " + num2 + "로 나누면 나머지는 " + num1 % num2 + "입니다" + "<br>"
+        document.write(result);
+
+        // 짝, 홀 수도 문제없이 잘 나옵니다.
+        ***************************************/
+
+         /***************************************
+        // 시간이 흘러 B는 퇴사를 하였습니다.
+        // 시간이 흘러 A는 3단을 다시 print하라는 요청을 받습니다. 기존 A가 짠 코드가 3단까지이므로 어렵지 않은 요청입니다.
+        // 중복코드가 신경쓰이므로 변화가 없는 num1은 이전 값을 사용합니다.
+
+        num2 = 1;
+        result = "";
+
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+        document.write(result);
+
+        // 생각지도 못한 결과가 나옵니다. 3단이 아닌 1000단이 나옵니다.
+        // 급한 맘에 B가 짠 코드를 제거한 후 테스해보니 3단은 잘 나옵니다.
+        // B가 있으면 같이 문제를 빨리 해결하고 싶지만 퇴사한 친구에게 연락하기도 어렵구..
+
+        ***************************************/
+
+
+        /***************************************
+         * 위의 코드에는 두 가지 문제가 있습니다.
+         * 1. 중복된 코드가 많고 작은 요청에도 코드가 많이 늘어납니다.
+         * 2. 데이터가 오염되기 쉽습니다. (데이터를 보호 할 수 없습니다)
+         * 함수는 위 문제를 우아하게 해결합니다.
+         ****************************************/
+
+        // 구구단 프로그래밍을 함수로 만듭니다.
+        // 사용되는 데이터는 지역변수(num2, result), 매개변수(num1)에 담으므로 밖에서는 접근할 수 없습니다.
+        // 재활용도가 높아 구구단이 늘어도 코드가 추가되지 않습니다.
+
+        /*
+        function googooDan(num1)
+        {
+            var num2, result;
+
+            num2 = 1;
+            result = "";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            result += num1 + " * " +  num2 + " = " + num1 * (num2++) + "<br>";
+            document.write(result);
+        }
+
+        googooDan(2);
+        googooDan(3);
+
+        function evenOdd(num1)
+        {
+            var num2 = 2;
+            var result = "";
+
+            result += num1 + "을 " + num2 + "로 나누면 나머지는 " + num1 % num2 + "입니다" + "<br>"
+            document.write(result);
+        }
+
+        evenOdd(1000);
+        googooDan(3);
+        */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

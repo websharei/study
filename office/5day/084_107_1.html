@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>부록:함수1</title>
+    <script>
+
+        /**************************************
+         //함수 생성과 호출
+         // 함수 만들기
+        function foo1()
+        {
+            cosole.log("foo1 함수실행");
+        }
+
+        var foo2 = function()
+        {
+           cosole.log("foo2 함수실행");
+        }
+
+        // 함수호출하기
+        // foo1();
+        // foo2();
+        // foo1();
+        // foo2();
+         ***************************************/
+
+        /**************************************
+         // 매개변수
+         function foo3(num)
+         {
+            var result = num * 10;
+            console.log("foo2 함수실행", result);
+         }
+
+         foo3(10);
+         ***************************************/
+
+        /**************************************
+         // return
+         function foo4(num)
+         {
+            var result = num * 10;
+            return result;
+         }
+
+         console.log( foo4(10) );           //실행되는 코드 :  console.log( 100 );
+         var result = foo4(100) + 100;     //실행되는 코드 :  var result = 1000 + 100;
+         console.log(result);
+         ***************************************/
+
+        /**************************************
+         // 매개변수X, 리턴X
+
+         // 매개변수0, 리턴X
+
+         // 매개변수X, 리턴0
+
+         //매개변수0, 리턴0
+         ***************************************/
+    </script>
+</head>
+<body>
+
+</body>
+</html>
