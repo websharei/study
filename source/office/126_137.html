@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+//********************    DOM 준비되면 감지하기   **********************
+//    ready() 이벤트 함수
+//    () 안의 function은 콜백함수
+//        $(document).ready(function()
+//        {
+//           console.log("ready함수 내부 : DOM 접근이 됩니다", $("body"));
+//        });
+
+//    DOM 준비되기 전에 접근하기
+//        console.log("ready함수 외부 : DOM접근이 안됩니다", $("body"));
+
+//      ex) DOM이 준비되면 alert을 띄운다
+
+//********************    Selector   **********************
+//        $(document).ready(function()
+//        {
+//            $("h2").css("color", "red");
+//            $("#p1").css("color", "blue");
+//            $(".p2").css("color", "orange");
+//            $("ol li:even").css("color", "pink");
+//        });
+
+//      ex) body 태그의 바탕색을 #cccccc로 바꾼다
+
+//********************    Event   **********************
+//        $(document).ready(function()
+//        {
+//            $("button").click(function(){
+//                $("p:eq(0)").css("background-color", "blue")
+//            });
+//        });
+
+//      ex) 버튼에 롤오버 할 때 마다 li(홀수번째)의 폰트색을 바꾸시오
+
+//********************    ADD / Remove   **********************
+//        $(document).ready(function()
+//        {
+//            $("button").click(function(){
+//                $("body").prepend("<div class='createdDiv'>body에 div를 생성했습니다</div>");
+//
+//                $(".createdDiv").click(function(){
+//                    $(".createdDiv").remove();
+//                });
+//            });
+//        });
+
+//      ex) 버튼을 누를 때 마다 뒤에 div를 생성하고 div를 클릭하면 remove하시오 (뒤에 생성:append 함수)
+
+
+
+    </script>
+
+</head>
+<body>
+    <h2>heading 태그입니다.</h2>
+    <p id="p1">paragraph 태그입니다.</p>
+    <p  class="p2">또 다른 paragraph 태그입니다.</p>
+    <ol>
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+        <li>네번째</li>
+    </ol>
+    <button>버튼1</button>
+</body>
+</html>

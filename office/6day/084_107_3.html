@@ -10,32 +10,32 @@
         // 그냥 호출하면 함수이지만, new 연산자를 붙이면 클래스로 인식하고 객체를 생성합니다.
         // this는 자신을 캡슐화하는 객체를 의미합니다.
 
-//        function Human(_name, _company)
-//        {
-//            var name = _name;
-//            var company = _company;
-//
-//            this.getName = function()
-//            {
-//                console.log(name);
-//            }
-//
-//            this.getCompany = function()
-//            {
-//                console.log(company);
-//            }
-//
-//            console.log(this);
-//        }
+        function Human(_name, _company)
+        {
+            var name = _name;
+            var company = _company;
 
-//        // 객체를 생성합니다.
-//        var yongjin = new Human("성용진", "nts");
-//        yongjin.getName();
-//
-//        // 함수로 호출합니다
-//        // 이 곳을 감싸고 있는 객체는 Window 객체입니다
-//        console.log(this);
-//        Human("성용진", "nts");
+            this.getName = function()
+            {
+                console.log(name);
+            }
+
+            this.getCompany = function()
+            {
+                console.log(company);
+            }
+
+            console.log(this);
+        }
+
+        // 객체를 생성합니다.
+        //var yongjin = new Human("성용진", "nts");
+        //yongjin.getName();
+
+        // 함수로 호출합니다
+        // 이 곳을 감싸고 있는 객체는 Window 객체입니다
+        console.log(this);
+        Human("성용진", "nts");
 
     </script>
 
