@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+		function getRandomNum()
+		{
+			return Math.ceil(Math.random() * 10000);
+		}
+    </script>
+
+    <script>
+
+
+    var a = 10;
+    // 변수 a가 10과 같은지 확인하라
+
+    // 변수 a가 100과 다른지 확인하라
+
+    // 변수 a가 0보다 큰지 확인하라
+
+	// 변수 a가 0보다 크고 100보다 작은지 확인하라
+
+	// 변수 a가 0보다 크거나 7보다 작은지 확인하라
+
+	// 변수 a가 양수인지 확인하라
+
+
+
+
+   //  짝수이면 : background color (orage)
+   //  5000보다 크면 : border (dotted black 1px)
+   //  $(document).ready(function(){
+   //  	$body = $("body");
+   //  	$("button").click(function(){
+   //  		var $randomNum = getRandomNum();
+   //  		$body.append("<p>" + $randomNum + "</p>");
+			// if($randomNum % 2 == 0)
+			// {
+			// 	$("p:last").css("background-color", "orange");
+			// }
+
+			// if($randomNum > 5000)
+			// {
+			// 	$("p:last").css("border", "dotted black 1px");
+			// }
+   //  	});
+   //  });
+
+
+   /*********************************************
+		        짝수      홀수
+	5000미만	 red      yellow
+	5000이상    orange    green
+
+	ex) 위의 조건으로 background-color를 칠하시오
+	*********************************************/
+
+
+
+
+
+
+
+	// 조건문 주의1
+	// if(!true);
+	// {
+	// 	console.log("false인데 실행됨")
+	// }
+
+	// 조건문 주의2
+	// var a = "nts"
+	// if(a = "엔티에스")
+	// {
+	// 	console.log("비교가 아닌 대입이 됨");
+	// }
+	// console.log(Boolean(a = "엔티에스"));
+
+	//조건문 주의3 (중괄호 감싸지 않을 때)
+	// var b = 10;
+	// if(b == 1) console.log("실행1");
+	// if(b == 1) console.log("실행2"); console.log("실행3");
+	// if(b == 1) 
+	// 	console.log("실행4"); console.log("실행5");
+	// if(b == 10) 
+	// 	console.log("실행6"); 
+	// 	console.log("실행7");
+	
+    </script>
+
+</head>
+<body>
+<button>짝홀수</button>
+</body>
+</html>

@@ -78,13 +78,15 @@
 
 
 // $(document).ready(function(){
-    // var btn0 = $("button");
-    // btn0.click(function(){
-    //     var btn1 = $("<button>뒤에 붙은 버튼</button>");
-    //     var btn2 = $("<button>앞에 붙은 버튼</button>");  
-    //     btn0.after(btn1);
-    //     btn0.before(btn2);        
-    // });
+//    var btn0 = $("button");
+//	var lielem = $("li");
+//	var li1 = $("<li>1-After</li>");
+//	var li2 = $("<li>2-Before</li>"); 
+
+//    lielem.click(function(){ 
+//        $(this).after(li1);
+//        $(this).before(li2);        
+//    });
 // });
 
 //  ex) 다음과 같이 li를 바꾸어라
@@ -98,11 +100,25 @@
 
 //********************    Show / Hide / Toggle  **********************
 
-// $(document).ready(function(){
-//     $("button").click(function(){
-//         $("li:odd").toggle("slow");
-//     });
-// });
+$(document).ready(function(){
+	var btn0 = $("button");
+	var btn1 = $("<button type=\"button\">감추기</button>");
+	var btn2 = $("<button type=\"button\">보이기</button>");
+	btn0.before(btn1);
+	btn0.after(btn2);
+
+	btn1.click(function(){
+		$("ol").hide();
+	});
+	btn2.click(function(){
+		$("ol").show();
+	});
+
+    btn0.click(function(){
+        $("ol").toggle("slow");
+    });
+	btn0.text("토글");
+});
 
 
 //ex) 버튼 앞뒤에 감추기(hide), 보이기(show) 버튼을 만든다. 기존버튼은 토글기능하기
