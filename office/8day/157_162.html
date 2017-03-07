@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>제이쿼리</title>
+
+	<style>
+		div { position:absolute; background:#98bf21; 
+			  height:100px; width:100px; font-size:2em; 
+			  text-align: center;}
+	</style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+
+   //  	var dap = "10";
+
+   //  	// 둘 중에 하나는 반드시 실행
+   //  	if(dap == 10)
+   //  	{
+   //  		console.log("if 실행");
+   //  	}
+   //  	else // dap !=0 라면
+   //  	{
+			// console.log("else 실행");
+   //  	}
+
+
+   // 인풋박스에 입력을 받은 후 문자이면 alert하고 숫자이면 해당 좌표로 이동한다.
+   // 단 숫자의 범위가 화면 밖이면 alert한다.
+
+//  $(document).ready(function(){
+//   		$inputBtn = $("input[type = text]");
+//   		$aniBtn = $("button");
+//   		$div = $("#clip");
+//
+//   		$aniBtn.click(function(){
+//   			$xpos = $inputBtn.val();
+//
+//   			if(! isNaN($xpos))
+//   			{
+//   				$winWidth = $(window).width() - 100;
+//   				if($xpos <= $winWidth && $xpos >= 0 )
+//   				{
+//   					$div.animate({"left": $xpos+"px"});
+//   				}
+//   				else // else문의 의미를 말하시오
+//   				{
+//			 	 	alert("0이상, " + $winWidth + "이하의 숫자를 입력하시오");
+//			 		$div.animate({"left": "0px"});
+//   				}				
+//   			}
+//   			else
+//   			{
+//   				alert("숫자를 입력하시오");
+//   			}			
+//   		});
+//   });
+//   
+//
+//   // 문제) 위와 같은 기능을 하는 코드이다.
+   // if문의 코드가 아래와 같이 변경됐다고 할 때 코드를 재배치하시오
+
+
+    $(document).ready(function(){
+    		$inputBtn = $("input[type = text]");
+    		$aniBtn = $("button");
+    		$div = $("#clip");
+
+    		$aniBtn.click(function(){
+    			$xpos = $inputBtn.val();
+
+    			if(isNaN($xpos))
+    			{
+    				alert("숫자를 입력하시오");
+    			}
+    			else
+    			{
+  				 $winWidth = $(window).width() - 100;
+   				if($xpos <= $winWidth && $xpos >= 0 )
+   				{
+   					$div.animate({"left": $xpos+"px"});
+   				}
+   				else // else문의 의미를 말하시오
+   				{
+			 	 	alert("0이상, " + $winWidth + "이하의 숫자를 입력하시오");
+			 		$div.animate({"left": "0px"});
+   				}
+    			}			
+    		});
+    });
+
+
+    $(document).ready(function(){
+    		$inputBtn = $("input[type = text]");
+    		$aniBtn = $("button");
+    		$div = $("#clip");
+
+    		$aniBtn.click(function(){
+			 $jumsu = $inputBtn.val();
+
+			 if(isNaN($jumsu))
+			 {
+			 	alert("숫자를 입력하시오");
+			 }
+			 else 								
+			 {
+			 	if($jumsu < 0 || $jumsu > 100)  // 의미를 적으시오
+			 	{
+			 		alert("0 이상 100 이하의 숫자를 적으시오");
+			 	}
+			 	else 							
+			 	{
+			 		if($jumsu >= 90)			// 의미를 적으시오
+			 		{
+			 			$div.text("수");
+			 		}
+			 		else 						
+			 		{
+			 			if($jumsu >= 80) 		// 의미를 적으시오
+			 			{
+			 				$div.text("우");
+			 			}
+			 			else
+			 			{
+			 				if($jumsu >= 70){
+								$div.text("미");
+							} else {
+								if($jumsu >= 60){
+								$div.text("양");
+								} else {
+									if($jumsu >= 50){
+										$div.text("가");
+									}
+								}
+							}
+			 			}
+			 		}
+			 	}
+			 }
+    		});
+    });
+
+
+   </script>
+
+</head>
+<body>
+	<input type="text"></button>
+	<button>Button</button><p>
+	<div id="clip"></div>
+</body>
+</html>
