@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <style>
+        div
+        {
+            width: 100px; 
+            height: 100px; 
+            margin: 3px;
+            float: left; 
+            background-color: black; 
+            font-size:4em; 
+            color: white;   
+            text-align: center; 
+        }
+
+        .circle
+        {
+            border-radius: 50%;             
+        }
+
+        .red
+        {
+            background-color: red;  
+        }
+
+        .shadow
+        {
+            box-shadow: 4px 4px 2px #888888;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+
+        //*************** attr, off  **********************
+        /* $(document).ready(function(){
+			 var num = 0;
+             $("div").on("click",function(){
+				 $(this).off("click");
+
+				 if (num % 2 == 0)
+				 {
+					$(this).attr("class", "circle shadow");
+				 } else {
+					$(this).attr("class", "circle shadow red");
+				 }
+				 
+				 num++;
+
+				 console.log("num = " + num);
+             });
+         });
+*/
+        // 클릭할 때 마다 검정 > 빨강 순으로 바뀌게 하시오.
+        // 다시 클릭하지 않게 하시오
+
+        //*************** each **********************
+        /* $(document).ready(function(){ 
+             $("div").each(function(index, tag){
+                 console.log($(this), index, tag);
+             });
+         });
+*/
+        // Quiz
+
+		$(document).ready(function(){ 
+			var num =0;
+			var $div = $("div").length;
+
+			$("div").click(function(){
+
+				$(this).off("click");
+
+				if(num%2 ==0)
+				{
+					$(this).attr("class", "circle");
+				}
+				else
+				{
+					$(this).attr("class", "circle red");
+				}
+
+				num++;
+
+				if (num == $div)
+				{
+					$("div[class='circle']").each(function(a, tag){
+						console.log($(this), a, tag);
+						$(this).text(a + 1);
+					});
+					$("div[class='circle red']").each(function(a, tag){
+						console.log($(this), a, tag);
+						$(this).text(a + 1);
+					}); 
+
+				}
+				console.log("num = " + num);
+
+			// div 전체가 원형으로 되면 검은색과 붉은색돌에 숫자를 넣으시오  (검은돌 : 0,1,2,3... 붉은돌 :0,1,2,3...)
+			// 코딩하시오.
+				
+			});
+		});
+    </script>
+
+</head>
+<body>
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>
+</body>
+</html>
