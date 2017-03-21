@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>9주차 과제(20170315_3): 프로그래밍 기초</title>
+<style>
+div.child
+{
+	width: 200px; 
+	height: 100px; 
+	background-color: black;     
+	border:5px red solid;
+	font-size:4em; 
+	color: white;
+	float: left;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.menu
+{
+	width: 840px; 
+	height: 110px; 
+	position:absolute;
+}
+
+div.view
+{
+	width: 210px; 
+	height: 110px; 
+	position:absolute;
+	overflow:hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="view">
+	<div class="menu">
+		<div class="child">1</div>
+		<div class="child">2</div>
+		<div class="child">3</div>
+		<div class="child">4</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+var count = 0;
+var posleft= 0;
+var $menu = $(".menu");
+var $child = $(".child");
+var childTotal = $child.length;
+var isBlack = true;
+var color;
+
+
+$(".view").on("click",function(){
+	// 요구사항
+	// 아래 코드를 참고하여 1->2->3->4->1->2->3... 연속되게 하시오
+	// 1-2-3-4 한 cycle을 다 돈 후에는 .child의 바탕색을 바꾼다(파랑>블랙>파랑>블랙 순으로)
+
+	count++;
+
+	console.log("count = " + count);
+	console.log("posleft = " + posleft);
+	console.log("childTotal = " + childTotal);
+
+	if (count >= childTotal)
+	{
+		$menu.animate({left:"0"});
+		posleft = 0;
+		count = 0;
+		hasBgcolor();
+		$child.attr("style","background:"+ color);
+	} else {
+		posleft = posleft -210;
+		$menu.animate({left: posleft + "px"});
+	}
+	
+	function hasBgcolor(){
+		if (isBlack){
+			isBlack = false;
+			color = "blue";
+		} else {
+			isBlack = true;
+			color = "black";
+		}
+		console.log(color);
+	}
+});
+</script>
+</body>
+</html>

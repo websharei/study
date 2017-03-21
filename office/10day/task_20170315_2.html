@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>9주차 과제(20170315_2): 프로그래밍 기초</title>
+<style>
+div div {
+	width: 100px;
+	height:100px;
+	background-color:black;
+	float:left;
+	margin:10px;
+	color:white;
+	font-size:2em;
+	text-align: center;
+	line-height: 90px;
+}
+.redcircle {
+	background-color:red;
+	border-radius:50%;
+}
+.bluecircle {
+	background-color:blue;
+	border-radius:50%;
+}
+</style>
+</head>
+<body>
+
+<p> 문제) 버튼을 누르면 짝수는 붉은색 동그라미, 홀수는 푸른색 동그라미가 되도록 하시오(redcircle, bluecircle css를 사용할 것)</p>
+
+<button>버튼</button>
+
+<div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+var num =0;
+var $button = $("button");
+var $div = $("div>div");
+
+$div.each(function(){
+	var randomNum =  Math.floor( Math.random() * 100)+1; // random(0.000000... ~ 0.999999....)에 100을 곱하고 floor 소스점 이하 내림후 1을 더해서 1~100 까지 수로 만듬.
+	$(this).text(randomNum);
+});
+
+$button.on("click",function(){
+	// 여기에 코딩합니다.
+	// each()를 사용하여 div 전체를 훓으면서 짝수/홀수인지를 판단합니다.
+	// attr()과 if를 사용하여  짝수이면 redcircle, 홀수이면 bluecircle class 을 적용하시오
+
+	$div.each(function(a, tag){
+
+		//console.log($(this).text());
+
+		if($(this).text()%2 == 0)
+		{
+			$(this).attr("class", "redcircle");
+		}
+		else
+		{
+			$(this).attr("class", "bluecircle class");
+		}
+		
+	});
+});
+</script>
+</body>
+</html>

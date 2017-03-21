@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>9주차 과제(20170315_1): 프로그래밍 기초</title>
+<style>
+div {
+	margin: 20px;
+	width: 100px;
+	height: 100px;
+	background: black;
+}
+</style>
+</head>
+<body>
+
+<p>문제) 버튼을 클릭할 때 마다 검정과 빨강이 계속 바뀌도록 JS코딩을 바꾸시오</p>
+
+<button>버튼</button>
+<div></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+var $div = $("div");
+var $button = $("button");
+
+var num = 0;
+
+$button.on("click",function(){
+	
+	if (num % 2 ==  0) {
+		$div.attr("style","background: red");
+	} else {
+		$div.attr("style","background: black");
+	}
+
+	num++;
+
+	console.log("num = " + num);
+});
+</script>
+</body>
+</html>
