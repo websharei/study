@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>시험</title>
+<style>
+	div
+	{
+		width: 100px;
+		height: 100px;
+		background-color: black;
+		margin: 3px;
+		padding : 20px;
+		float: left;
+		font-size:4em;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		border-radius: 0%;
+	}
+
+	#movieclip
+	{
+		width: 80px;
+		height: 80px;
+		position: absolute;
+		background-color: black;
+		border: 10px solid white;
+		opacity: 0.8;
+		border-radius: 50%;
+	}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+// 첫번째 div의 id에 movieclip 이라는 이름을 준다.
+$(document).ready(function(){
+	var movieclip = $("div:eq(0)");
+
+	movieclip.attr("id", "movieclip");
+
+	var $div = $("div[id!=movieclip]");
+	var prevMovieclip;
+
+	//console.log($("div[id!=movieclip]"));
+
+	$div.each(function(){
+		var target = $(this);
+		var randomNum =  Math.floor( Math.random() * 100)+1; // random(0.000000... ~ 0.999999....)에 100을 곱하고 floor 소스점 이하 내림후 1을 더해서 1~100 까지 수로 만듬.
+		target.text(randomNum);
+
+		var $position = target.position();
+		var numStr = Number(target.text());
+		var color;
+
+		target.on("click",function(){
+
+			movieclip.animate({"left": $position.left});
+			movieclip.animate({"top": $position.top});
+
+			console.log(numStr);
+
+			if(numStr >= 80) {
+				color = "red";
+			} else if(numStr >=60){
+				color = "blue";
+			} else if(numStr >=40){
+				color = "gray";
+			} else if(numStr >=20){
+				color = "yellow";
+			} else {
+				color = "green";
+			}
+
+			target.animate({"backgroundColor": color});
+
+			if (prevMovieclip){
+				prevMovieclip.animate({"border-radius":"50%"});
+			}
+
+			if(numStr%2 == 0) {
+				prevMovieclip = target; // 짝수 일때 저장
+			} else {
+				prevMovieclip = null; // 홀수 일때 저장하지 않음
+			}
+		});
+	});
+});
+</script>
+
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
