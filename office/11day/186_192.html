@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>switch</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+var str = "nts"
+
+/*
+if(str == "naver")
+{
+	console.log("네이버");
+}
+else if(str == "line")
+{
+	console.log("라인");
+}
+else if(str == "nts")
+{
+	console.log("엔티에스");
+}
+else
+{
+	console.log("나머지 모두");
+}
+*/
+
+//  위의 코드를 switch로 바꾼다.
+
+switch(str){
+	case "naver":
+	console.log("네이버");
+
+	case "line":
+	console.log("라인");
+
+	case "nts":
+	console.log("엔티에스");
+
+	default:
+	console.log("나머지 모두");
+}
+
+// break 문의 없다면? 어떻게 되는지 본다.
+// "line"을 "naver"로 바꾸면 어떻게 되는지 본다.
+/*
+switch(str)
+{
+	case "naver":
+		console.log("네이버");
+		break;
+	case "line":
+		console.log("라인");
+		break;
+	case "nts":
+		console.log("엔티에스");
+		break;
+	default:
+		console.log("나머지 모두");
+}
+*/
+
+// 다음 코드의 결과를 확인하고 이유를 생각해보자
+var num = 55;
+switch(num)
+{
+	case num>50:
+		console.log("num은 50 이상이다.");
+		break;
+	default:
+		console.log("num은 50 미만이다.");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>시험</title>
+    <style>
+        div
+        {
+            width: 100px; 
+            height: 100px; 
+            background-color: black;     
+            margin: 3px;
+            padding : 20px;
+            float: left;  
+            font-size:4em; 
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 0%;
+        }
+
+        #movieclip
+        {
+            width: 80px; 
+            height: 80px;   
+            position: absolute; 
+            background-color: black;
+            border: 10px solid white;   
+            opacity: 0.8;
+            border-radius: 50%;  
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        // div를 클릭하면 이전 div의 모양을 바꾼다. 짝수 일 경우 동그라미로 바꾼다.
+
+        $(document).ready(function(){ 
+            var prevMovieClip;              // 추가        
+            var movieclip = $("div:eq(0)");  
+            movieclip.attr("id", "movieclip");
+
+            $("div[id!=movieclip]").each(function(){
+                var ranNum = getRandomNum();
+                $(this).text(ranNum);
+            });
+
+            $("div[id!=movieclip]").click(function(){                
+                var t = $(this);
+                var pos = t.position();
+                var movieclip = $("div:eq(0)");
+                var text = t.text(); 
+                var color = changeTextToColor(text); 
+                
+                if(prevMovieClip)           // 추가
+                {
+                    prevMovieClip.animate({borderRadius: "50%"})
+                }
+
+                movieclip
+                .animate({left: pos.left+"px"})
+                .animate({top: pos.top+"px"});   
+                t.animate({backgroundColor: color});
+
+                if(Number(text)%2 == 0)     // 추가
+                {
+                    prevMovieClip = t;
+                }
+                else
+                {
+                    prevMovieClip = null;
+                }          
+            });
+
+            function getRandomNum()
+            {
+                return Math.ceil(Math.random()*100);
+            } 
+
+           
+            function changeTextToColor(_text)
+            {
+                var num = Number(_text);
+                var colorcode;
+
+                if(num > 80)
+                {
+                    colorcode ="#191970";
+                }
+                else
+                {
+                    if(num > 60)
+                    {
+                       colorcode ="#1E90FF";   
+                    }   
+                    else
+                    {
+                        if(num > 40)
+                        {
+                           colorcode ="#FF00FF";   
+                        }    
+                        else
+                        {
+                            if(num > 20)
+                            {
+                               colorcode ="#7B68EE";   
+                            }
+                            else
+                            {
+                                colorcode ="#8B0000";
+                            }
+                        }
+                        
+                    }                        
+                }
+                return colorcode;
+            }
+
+        });
+    </script>
+
+</head>
+<body>
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>    
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>  
+    <div></div>
+    <div></div>                 
+</body>
+</html>

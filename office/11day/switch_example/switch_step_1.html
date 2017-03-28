@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>시험</title>
+    <style>
+        div
+        {
+            float: left; 
+            width: 100px;  
+            height: 100px;  
+            margin : 1px;
+            background: url(number2.gif);
+            background-position: 0px 0px;               
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            //현재시간을 조사한다.
+            function whatTime()
+            {
+                var time = getTime();
+                console.log(time);
+            }      
+
+            function getTime()
+            {
+                var myDate = new Date();     
+                var hour = String(myDate.getHours());
+                var minute = String(myDate.getMinutes());
+                var sec = String(myDate.getSeconds());
+                var time = ";"
+
+                if(hour < 10) hour = "0" + hour;
+                else hour = "" + hour;
+
+                if(minute < 10) minute = "0" + minute;
+                else minute = "" + minute;
+
+                if(sec < 10) sec = "0" + sec;
+                else sec = "" + sec;
+
+                time = hour + ":" + minute + ":" + sec;      
+                return time;        
+            }      
+         
+            setInterval(whatTime, 1000);  
+        });        
+    </script>
+
+
+
+
+</head>
+<body>
+    <div></div> 
+    <div></div>
+    <div></div>
+    <div></div> 
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

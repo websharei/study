@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>시험</title>
+    <style>
+        div
+        {
+            float: left; 
+            width: 100px;  
+            height: 100px;  
+            margin : 1px;
+            background: url(number2.gif);
+            background-position: 0px 0px;               
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            var div = $("div");
+            function whatTime()
+            {
+                var time = getTime();
+                var h1 = timeToPos(time[0]);
+                var h2 = timeToPos(time[1]);
+                var c1 = timeToPos(time[2]);
+                var m1 = timeToPos(time[3]);
+                var m2 = timeToPos(time[4]);
+                var c2 = timeToPos(time[5]);
+                var s1 = timeToPos(time[6]);
+                var s2 = timeToPos(time[7]);
+
+                div.eq(0).animate({"background-position-x": h1+"px"});
+                div.eq(1).animate({"background-position-x": h2+"px"});
+                div.eq(2).animate({"background-position-x": c1+"px"});
+                div.eq(3).animate({"background-position-x": m1+"px"});
+                div.eq(4).animate({"background-position-x": m2+"px"});
+                div.eq(5).animate({"background-position-x": c2+"px"});
+                div.eq(6).animate({"background-position-x": s1+"px"});
+                div.eq(7).animate({"background-position-x": s2+"px"});
+            }
+
+            function getTime()
+            {
+                var myDate = new Date();     
+                var hour = String(myDate.getHours());
+                var minute = String(myDate.getMinutes());
+                var sec = String(myDate.getSeconds());
+                var time = ";"
+
+                if(hour < 10) hour = "0" + hour;
+                else hour = "" + hour;
+
+                if(minute < 10) minute = "0" + minute;
+                else minute = "" + minute;
+
+                if(sec < 10) sec = "0" + sec;
+                else sec = "" + sec;
+
+                time = hour + ":" + minute + ":" + sec;      
+                return time;        
+            }
+
+            function timeToPos(time)
+            {
+                var pos;
+                switch(time)
+                {
+                    case "0":
+                        pos = 0;
+                        break;
+                    case "1":
+                        pos = -100;
+                        break;    
+                    case "2":
+                        pos = -200;
+                        break;
+                    case "3":
+                        pos = -300;
+                        break;  
+                    case "4":
+                        pos = -400;
+                        break;
+                    case "5":
+                        pos = -500;
+                        break;    
+                    case "6":
+                        pos = -600;
+                        break;
+                    case "7":
+                        pos = -700;
+                        break;   
+                    case "8":
+                        pos = -800;
+                        break; 
+                    case "9":
+                        pos = -900;
+                        break;      
+                    case ":":
+                        pos = -1000;
+                        break;            
+                    default:
+                }
+                return pos;
+            }
+            
+         setInterval(whatTime, 1000);  
+        });    
+
+                    
+    </script>
+
+</head>
+<body>
+    <div></div> 
+    <div></div>
+    <div></div>
+    <div></div> 
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

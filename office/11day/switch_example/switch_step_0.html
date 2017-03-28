@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+<meta charset="utf-8">
+<title>시험</title>
+<style>
+div {
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin : 1px;
+	background: url(number2.gif);
+	background-position: 0px 0px;
+}
+</style>
+</head>
+<body>
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+var $div = $("div");
+
+function whatTime(){
+
+	var time = getTime();
+	/*
+	var h1 = timeToPos(time[0]);
+	var h2 = timeToPos(time[1]);
+	var c1 = timeToPos(time[2]);
+	var m1 = timeToPos(time[3]);
+	var m2 = timeToPos(time[4]);
+	var c2 = timeToPos(time[5]);
+	var s1 = timeToPos(time[6]);
+	var s2 = timeToPos(time[7]);
+
+	div.eq(0).animation({"background-position-x": h1 + "px"});
+	div.eq(1).animation({"background-position-x": h2 + "px"});
+	div.eq(2).animation({"background-position-x": c1 + "px"});
+	div.eq(3).animation({"background-position-x": m1 + "px"});
+	div.eq(4).animation({"background-position-x": m2 + "px"});
+	div.eq(5).animation({"background-position-x": c2 + "px"});
+	div.eq(6).animation({"background-position-x": s1 + "px"});
+	div.eq(7).animation({"background-position-x": s2 + "px"});
+*/
+	console.log(time);
+}
+
+function getTime(){
+	var myDate = new Date();
+	var hour = myDate.getHours();
+	var min = myDate.getMinutes();
+	var sec = myDate.getSeconds();
+	var col = ":";
+	var time;
+
+	if(hour < 10) hour = "0" + hour;
+	else hour = "" + hour;
+
+	if(min < 10) min = "0" + min;
+	else min = "" + min;
+
+	if(sec < 10) sec = "0" + sec;
+	else sec = "" + sec;
+
+	time = hour + col + min + col + sec;
+	return time;
+	//console.log(myDate, hour, min, sec);
+}
+
+function timeToPos(time){
+	var pos;
+
+	switch(time){
+		case "0":
+			pos = 0;
+			break;
+		case "1":
+			pos = -100;
+			break;
+		case "2":
+			pos = -200;
+			break;
+		case "3":
+			pos = -300;
+			break;
+		case "4":
+			pos = -400;
+			break;
+		case "5":
+			pos = -500;
+			break;
+		case "6":
+			pos = -600;
+			break;
+		case "7":
+			pos = -700;
+			break;
+		case "8":
+			pos = -800;
+			break;
+		case "9":
+			pos = -900;
+			break;
+		case ":":
+			pos = -1000;
+			break;
+		default:
+	}
+	return pos;
+}
+
+setInterval(whatTime, 1000);
+</script>
+</body>
+</html>
