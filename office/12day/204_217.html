@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>반복문(for)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+//--------------------------------------------------
+            /*function test1()
+            {
+                var body = $("body");
+                var result = "";
+                var msg = "nts입니다";
+
+                for(var i = 0 ; i < 10 ;i++)
+                {
+                    result += msg;
+                    result += "<br>";
+                }
+                body.html(result);
+            }*/
+            //test1();
+
+            // 문제1)
+            // 함수 exam1을 만든다.
+            // 다음과 같이 출력되도록 반복문을 작성하시오.
+
+            //  1. 홍길동입니다.
+            //  2. 홍길동입니다.
+            //  3. 홍길동입니다.
+            //  4. 홍길동입니다.
+            //  5. 홍길동입니다.
+            //  ...
+            //  10. 홍길동입니다.
+
+//--------------------------------------------------
+
+            function test2(num)
+            {
+                var body = $("body");
+                var result = "";
+                var msg = "홍길동입니다";
+
+                for(var i = num ; i > 0 ; i--)
+                {
+                   result += i +". ";
+                   result += msg;
+                   result += "<br>";
+                }
+                body.html(result);
+            }
+            //test2(100);
+
+
+            // 문제2)
+            // 함수 exam2을 만든다.
+            // 함수 인자로 num을 받는다.
+            // exam(100)을 호출하다.
+
+            //  100. 홍길동입니다.
+            //  98. 홍길동입니다.
+            //  96. 홍길동입니다.
+            //  94. 홍길동입니다.
+            //  92. 홍길동입니다.
+            //  ...
+            //  0. 홍길동입니다.
+
+//--------------------------------------------------
+
+            function test3(num)
+            {
+                var body = $("body");
+                var result = "";
+                var msg = "nts입니다";
+
+                for(var i = num ; i > 0 ; i--)
+                {
+                   if(!(i%3))
+                   {
+                       result += i +". ";
+                       result += msg;
+                       result += "<br>";
+                   }
+
+                }
+                body.html(result);
+            }
+            //test3(100);
+
+
+
+            // 문제3)
+            // 함수 exam3을 만든다.
+            // 함수 인자로 num을 받는다.
+            // exam(100)을 호출하다.
+            // 다음과 같은 출력이 되도록한다.
+
+            //  100. 홍길동입니다.  <- red color
+            //  97. 홍길동입니다.   <- blue color
+            //  94. 홍길동입니다.   <- red color
+            //  91. 홍길동입니다.   <- blue color
+            //  88. 홍길동입니다.   <- red color
+            //  ...
+            //  1. 홍길동입니다.   <- blue color
+
+//--------------------------------------------------
+
+            function test4()
+            {
+                var body = $("body");
+
+                var nameArr =   ["홍길동", "김철수", "박영희", "임꺽정", "김순이"];
+                var genderArr = ["남자", "남자", "여자", "남자", "여자"];
+                var engArr =    [90, 80, 70, 50, 60];
+                var mathArr =   [30, 90, 90, 90, 80];
+
+                var name, gender, average;
+                var result = "";
+
+
+                for(var i = 0 ; i < nameArr.length ;i++)
+                {
+                    name = nameArr[i];
+                    gender = genderArr[i];
+                    average = Math.round((engArr[i] + mathArr[i])/2);
+
+                    result += name + "(" + gender +") : "+ average + "<br>";
+                }
+                body.html(result);
+            }
+           // test4();
+
+            // 문제4)
+            // 아래와 같은 코드에서
+            // 함수 exam4("영어")를 호출하면 영어 평균을 프린트하시오.
+            // 결과) 영어 평균 : 64
+
+            function exam4(subject)
+            {
+                var body = $("body");
+                var result = "";
+                var average;
+
+                var subjectArr = ["국어", "영어", "수학", "국사"];
+                var student1 =    [90, 80, 70, 50];
+                var student2 =    [100, 60, 30, 20];
+                var student3 =    [90, 80, 40, 60];
+                var student4 =    [20, 80, 70, 60];
+                var student5 =    [90, 20, 20, 50];
+
+                //이곳에 코드 작성
+
+
+
+
+                body.html(result);
+            }
+           // exam4("영어");
+        });
+    </script>
+
+</head>
+<body>
+<script>
+function example() {
+	var $body = $("body");
+	var result = "";
+	var msg = "nts 입니다.";
+
+	for(var i = 0; i < 10; i++) {
+		result += msg;
+		result += "<br>";
+	}
+	$body.html(result);
+}
+example();
+
+function example1() {
+	var $body = $("body");
+	var result = "";
+	var msg = "홍길동입니다.";
+
+	for(var i = 1; i < 11; i++) {
+		result += i + ". "+ msg;
+		result += "<br>";
+	}
+	$body.html(result);
+}
+example1();
+
+function example2(num) {
+	var $body = $("body");
+	var result = "";
+	var msg = "홍길동입니다.";
+	var num;
+
+	for(var i = num; i >= 0; i--) {
+		result += i-- + ". "+ msg;
+		result += "<br>";
+	}
+	$body.html(result);
+}
+example2(100);
+
+function example2_1(num) {
+	var $body = $("body");
+	var result = "";
+	var msg = "홍길동입니다.";
+	var num;
+
+	for(var i = num; i >= 0; i-=2) {
+		result += i + ". "+ msg;
+		result += "<br>";
+	}
+	$body.html(result);
+}
+example2_1(100);
+
+function example2_2(num) {
+	var $body = $("body");
+	var result = "";
+	var msg = "홍길동입니다.";
+	var num;
+
+	for(var i = num; i >= 0; i--) {
+		if(i % 2 == 0) {
+			result += i + ". "+ msg;
+			result += "<br>";
+		}
+	}
+	$body.html(result);
+}
+example2_2(100);
+
+function example3(num) {
+	var $body = $("body");
+	var result = "";
+	var msg = "nts 입니다.";
+
+	for (var i = num; i > 0; i-=3) {
+		if(i%2){
+			result += "<span style='color:blue'>";
+			result += i + ". ";
+			result += msg;
+			result += "</span>";
+		} else {
+			result += "<span style='color:red'>";
+			result += i + ". ";
+			result += msg;
+			result += "</span>";
+		}
+		result += "<br>";
+	}
+	$body.html(result);
+}
+example3(100);
+
+function example4(subject) {
+	var $body = $("body");
+	var result = "";
+	var average = 0;
+	var idx;
+
+	var subjectArr = ["국어", "영어", "수학", "국사"];
+	var student1 = [90, 80, 70, 50];
+	var student2 = [100, 60, 30, 20];
+	var student3 = [90, 80, 40, 60];
+	var student4 = [20, 80, 70, 60];
+	var student5 = [90, 20, 20, 50];
+
+	for(var i = 0 ; i < subjectArr.length ; i++){
+		if (subject == subjectArr[i]) {
+			idx = i;
+		}
+	}
+	console.log(idx);
+
+	result += subjectArr[idx] + " 평균: ";
+	average += student1[idx];
+	average += student2[idx];
+	average += student3[idx];
+	average += student4[idx];
+	average += student5[idx];
+	result += Math.round(average / 5);
+
+	$body.html(result);
+
+}
+example4("영어");
+</script>
+</body>
+</html>
