@@ -6,12 +6,12 @@
     <style>
         div
         {
-            float: left; 
-            width: 100px;  
-            height: 100px;  
+            float: left;
+            width: 100px;
+            height: 100px;
             margin : 1px;
             background: url(number2.gif);
-            background-position: 0px 0px;               
+            background-position: 0px 0px;
         }
 
     </style>
@@ -35,19 +35,19 @@
                 var s1 = timeToPos(time[6]);
                 var s2 = timeToPos(time[7]);
 
-                div.eq(0).animate({"background-position-x": h1+"px"});
-                div.eq(1).animate({"background-position-x": h2+"px"});
-                div.eq(2).animate({"background-position-x": c1+"px"});
-                div.eq(3).animate({"background-position-x": m1+"px"});
-                div.eq(4).animate({"background-position-x": m2+"px"});
-                div.eq(5).animate({"background-position-x": c2+"px"});
-                div.eq(6).animate({"background-position-x": s1+"px"});
-                div.eq(7).animate({"background-position-x": s2+"px"});
+                div.eq(0).animate({"background-position-y": h1+"px"});
+                div.eq(1).animate({"background-position-y": h2+"px"});
+                div.eq(2).animate({"background-position-y": c1+"px"});
+                div.eq(3).animate({"background-position-y": m1+"px"});
+                div.eq(4).animate({"background-position-y": m2+"px"});
+                div.eq(5).animate({"background-position-y": c2+"px"});
+                div.eq(6).animate({"background-position-y": s1+"px"});
+                div.eq(7).animate({"background-position-y": s2+"px"});
             }
 
             function getTime()
             {
-                var myDate = new Date();     
+                var myDate = new Date();
                 var hour = String(myDate.getHours());
                 var minute = String(myDate.getMinutes());
                 var sec = String(myDate.getSeconds());
@@ -62,8 +62,8 @@
                 if(sec < 10) sec = "0" + sec;
                 else sec = "" + sec;
 
-                time = hour + ":" + minute + ":" + sec;      
-                return time;        
+                time = hour + ":" + minute + ":" + sec;
+                return time;
             }
 
             function timeToPos(time)
@@ -76,51 +76,51 @@
                         break;
                     case "1":
                         pos = -100;
-                        break;    
+                        break;
                     case "2":
                         pos = -200;
                         break;
                     case "3":
                         pos = -300;
-                        break;  
+                        break;
                     case "4":
                         pos = -400;
                         break;
                     case "5":
                         pos = -500;
-                        break;    
+                        break;
                     case "6":
                         pos = -600;
                         break;
                     case "7":
                         pos = -700;
-                        break;   
+                        break;
                     case "8":
                         pos = -800;
-                        break; 
+                        break;
                     case "9":
                         pos = -900;
-                        break;      
+                        break;
                     case ":":
                         pos = -1000;
-                        break;            
+                        break;
                     default:
                 }
                 return pos;
             }
-            
-         setInterval(whatTime, 1000);  
-        });    
 
-                    
+         setInterval(whatTime, 1000);
+        });
+
+
     </script>
 
 </head>
 <body>
-    <div></div> 
     <div></div>
     <div></div>
-    <div></div> 
+    <div></div>
+    <div></div>
     <div></div>
     <div></div>
     <div></div>
