@@ -24,6 +24,7 @@ div {
 <div></div>
 <div></div>
 <div></div>
+<div></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -33,7 +34,7 @@ var $div = $("div");
 function whatTime(){
 
 	var time = getTime();
-	/*
+
 	var h1 = timeToPos(time[0]);
 	var h2 = timeToPos(time[1]);
 	var c1 = timeToPos(time[2]);
@@ -42,17 +43,19 @@ function whatTime(){
 	var c2 = timeToPos(time[5]);
 	var s1 = timeToPos(time[6]);
 	var s2 = timeToPos(time[7]);
+	var apm = timeToPos(time[8]+time[9]);
 
-	div.eq(0).animation({"background-position-x": h1 + "px"});
-	div.eq(1).animation({"background-position-x": h2 + "px"});
-	div.eq(2).animation({"background-position-x": c1 + "px"});
-	div.eq(3).animation({"background-position-x": m1 + "px"});
-	div.eq(4).animation({"background-position-x": m2 + "px"});
-	div.eq(5).animation({"background-position-x": c2 + "px"});
-	div.eq(6).animation({"background-position-x": s1 + "px"});
-	div.eq(7).animation({"background-position-x": s2 + "px"});
-*/
-	console.log(time);
+	$div.eq(0).animate({"background-position-y": h1 + "px"});
+	$div.eq(1).animate({"background-position-y": h2 + "px"});
+	$div.eq(2).animate({"background-position-y": c1 + "px"});
+	$div.eq(3).animate({"background-position-y": m1 + "px"});
+	$div.eq(4).animate({"background-position-y": m2 + "px"});
+	$div.eq(5).animate({"background-position-y": c2 + "px"});
+	$div.eq(6).animate({"background-position-y": s1 + "px"});
+	$div.eq(7).animate({"background-position-y": s2 + "px"});
+	$div.eq(8).animate({"background-position-y": apm + "px"});
+
+	console.log(time, apm);
 }
 
 function getTime(){
@@ -61,7 +64,9 @@ function getTime(){
 	var min = myDate.getMinutes();
 	var sec = myDate.getSeconds();
 	var col = ":";
+	var apm = "";
 	var time;
+
 
 	if(hour < 10) hour = "0" + hour;
 	else hour = "" + hour;
@@ -72,8 +77,15 @@ function getTime(){
 	if(sec < 10) sec = "0" + sec;
 	else sec = "" + sec;
 
-	time = hour + col + min + col + sec;
+	if (hour > 11 ) {
+		apm = "PM";
+	} else {
+		apm = "AM";
+	}
+
+	time = hour + col + min + col + sec + apm;
 	return time;
+
 	//console.log(myDate, hour, min, sec);
 }
 
@@ -114,6 +126,13 @@ function timeToPos(time){
 		case ":":
 			pos = -1000;
 			break;
+		case "AM":
+			pos = -1100;
+			break;
+		case "PM":
+			pos = -1200;
+			break;
+
 		default:
 	}
 	return pos;
