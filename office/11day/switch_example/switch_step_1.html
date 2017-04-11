@@ -6,12 +6,12 @@
     <style>
         div
         {
-            float: left; 
-            width: 100px;  
-            height: 100px;  
+            float: left;
+            width: 100px;
+            height: 100px;
             margin : 1px;
-            background: url(number2.gif);
-            background-position: 0px 0px;               
+            background: url(img/number2.gif);
+            background-position: 0px 0px;
         }
 
     </style>
@@ -26,11 +26,11 @@
             {
                 var time = getTime();
                 console.log(time);
-            }      
+            }
 
             function getTime()
             {
-                var myDate = new Date();     
+                var myDate = new Date();
                 var hour = String(myDate.getHours());
                 var minute = String(myDate.getMinutes());
                 var sec = String(myDate.getSeconds());
@@ -45,12 +45,12 @@
                 if(sec < 10) sec = "0" + sec;
                 else sec = "" + sec;
 
-                time = hour + ":" + minute + ":" + sec;      
-                return time;        
-            }      
-         
-            setInterval(whatTime, 1000);  
-        });        
+                time = hour + ":" + minute + ":" + sec;
+                return time;
+            }
+
+            setInterval(whatTime, 1000);
+        });
     </script>
 
 
@@ -58,10 +58,10 @@
 
 </head>
 <body>
-    <div></div> 
     <div></div>
     <div></div>
-    <div></div> 
+    <div></div>
+    <div></div>
     <div></div>
     <div></div>
     <div></div>

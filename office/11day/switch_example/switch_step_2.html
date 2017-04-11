@@ -6,12 +6,12 @@
     <style>
         div
         {
-            float: left; 
-            width: 100px;  
-            height: 100px;  
+            float: left;
+            width: 100px;
+            height: 100px;
             margin : 1px;
-            background: url(number2.gif);
-            background-position: 0px 0px;               
+            background: url(img/number2.gif);
+            background-position: 0px 0px;
         }
 
     </style>
@@ -38,7 +38,7 @@
 
             function getTime()
             {
-                var myDate = new Date();     
+                var myDate = new Date();
                 var hour = String(myDate.getHours());
                 var minute = String(myDate.getMinutes());
                 var sec = String(myDate.getSeconds());
@@ -53,8 +53,8 @@
                 if(sec < 10) sec = "0" + sec;
                 else sec = "" + sec;
 
-                time = hour + ":" + minute + ":" + sec;      
-                return time;        
+                time = hour + ":" + minute + ":" + sec;
+                return time;
             }
 
             function timeToPos(time)
@@ -67,51 +67,51 @@
                         break;
                     case "1":
                         pos = -100;
-                        break;    
+                        break;
                     case "2":
                         pos = -200;
                         break;
                     case "3":
                         pos = -300;
-                        break;  
+                        break;
                     case "4":
                         pos = -400;
                         break;
                     case "5":
                         pos = -500;
-                        break;    
+                        break;
                     case "6":
                         pos = -600;
                         break;
                     case "7":
                         pos = -700;
-                        break;   
+                        break;
                     case "8":
                         pos = -800;
-                        break; 
+                        break;
                     case "9":
                         pos = -900;
-                        break;      
+                        break;
                     case ":":
                         pos = -1000;
-                        break;            
+                        break;
                     default:
                 }
                 return pos;
             }
-            
-         setInterval(whatTime, 1000);  
-        });    
 
-                    
+         setInterval(whatTime, 1000);
+        });
+
+
     </script>
 
 </head>
 <body>
-    <div></div> 
     <div></div>
     <div></div>
-    <div></div> 
+    <div></div>
+    <div></div>
     <div></div>
     <div></div>
     <div></div>
