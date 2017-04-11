@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>12주차 과제(20170407_2): 프로그래밍 기초</title>
+</head>
+<body>
+<pre>
+function test(num1, num2) {
+
+}
+
+/***********************************
+다음을 만족하는 test 함수를 만드시오
+
+실행)
+test(10, 15);
+
+결과)
+10
+11
+12
+13
+14
+15
+
+실행)
+test(15, 10);
+
+결과)
+15
+14
+13
+12
+11
+10
+
+실행)
+test(15, 15);
+
+console 결과)
+15
+***********************************
+</pre>
+
+<script>
+function test (num1, num2) {
+	if (num1 <= num2) {
+		for (var i = num1; i <= num2; i++) {
+			console.log(i);
+		}
+	} else {
+		for (var i = num1; i >= num2; i--) {
+			console.log(i);
+		}
+	}
+}
+test(10, 15);
+test(15, 10);
+test(15, 15);
+</script>
+</body>
+</html>

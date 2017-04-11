@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>12주차 과제(20170407_1): 프로그래밍 기초</title>
+</head>
+<body>
+<pre>
+function test(num) {
+
+}
+test(10);
+
+
+/***********************************
+다음을 만족하는 test 함수를 만드시오
+
+실행)
+test(10);
+
+console 결과)
+0부터 0까지의 합 : 0
+0부터 1까지의 합 : 1
+0부터 2까지의 합 : 3
+0부터 3까지의 합 : 6
+0부터 4까지의 합 : 10
+0부터 5까지의 합 : 15
+0부터 6까지의 합 : 21
+0부터 7까지의 합 : 28
+0부터 8까지의 합 : 36
+0부터 9까지의 합 : 45
+0부터 10까지의 합 : 55
+***********************************
+</pre>
+
+<script>
+var result = 0;
+function test(num) {
+	for (var i = 0; i <= num; i++) {
+		result = result + i;
+		console.log("0부터 " + i +"까지의 합:" + result);
+	}
+}
+test(10);
+</script>
+</body>
+</html>

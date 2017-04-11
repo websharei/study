@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>12주차 과제(20170407_4): 프로그래밍 기초</title>
+</head>
+<body>
+<pre>
+function test(name) {
+    var idx;
+    var korNameArr = ["철수", "영수", "영희", "동철"];
+    var engNameArr = ["chul-su", "young-su", "young-hee", "dong-chul"];
+
+  // 여기서부터 작성하시오
+
+    console.log(engNameArr[idx]);
+}
+test("철수")
+
+/***********************************
+다음을 만족하는 함수를 만드시오
+
+실행)
+test("철수")
+
+console 결과)
+chul-su
+***********************************/
+</pre>
+<script>
+function test(name) {
+	var idx;
+	var korNameArr = ["철수", "영수", "영희", "동철"];
+	var engNameArr = ["chul-su", "young-su", "young-hee", "dong-chul"];
+
+	for (var i = 0; i < korNameArr.length; i++ ) {
+		if (name == korNameArr[i]) {
+			idx = i;
+		}
+	}
+
+	console.log(engNameArr[idx]);
+}
+test("철수");
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>12주차 과제(20170407_3): 프로그래밍 기초</title>
+</head>
+<body>
+<pre>
+function test(arr) {
+
+}
+test([1,2,3,4,5,6,7,8,9,10]);
+
+/***********************************
+다음을 만족하는 함수를 만드시오
+
+실행)
+test([1,2,3,4,5,6,7,8,9,10]);
+
+console 결과)
+5개의 짝수가 있습니다.
+**********************************/
+</pre>
+
+<script>
+var result = 0;
+
+function test (num) {
+	for (var i = 0; i <= num.length ; i ++) {
+		if (num[i] % 2 == 0) {
+			result += 1;
+		}
+	}
+	console.log(result + "개의 짝수가 있습니다.");
+}
+test([1,2,3,4,5,6,7,8,9,10]);
+</script>
+</body>
+</html>
