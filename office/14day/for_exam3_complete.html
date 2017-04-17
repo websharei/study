@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>시험</title>
+</head>
+<body>
+<script>
+//---------------------------
+
+	function test1(arr) {
+		// arr 원소의 총합을 구하시오
+
+		var result = 0;
+
+		for(var i = 0; i < arr.length; i++) {
+			result += arr[i];
+			//console.log(arr[i]);
+		}
+		console.log("arr 원소의 총합: "+ result);
+	}
+
+	var arr = [11, 22, 32, 41, 52, 61, 73, 82];
+	test1(arr);
+
+//---------------------------
+
+	function test2(arr, num) {
+		// arr 배열에 1이라는 숫자가 몇 개 있는지 구하시오.
+		var idx = 0;
+		for(var i = 0; i < arr.length; i++) {
+			if(num == arr[i]) {
+				idx += 1;
+			}
+		}
+		console.log("arr 배열에 1이라는 숫자 개수: " + idx);
+	}
+
+	var arr = [1, 0, 2, 3, 4, 5, 6, 1, 3, 4];
+	test2(arr, 1);
+
+//---------------------------
+
+	function test3(name) {
+		var nameArr = ["tom", "john", "david", "james", "nick"];
+		var engArr = [100, 90, 80, 70, 60];
+		var mathArr = [90, 90, 80, 70, 70];
+		// name의  영어, 수학 평균을 구하시오.
+
+		var idx = 0;
+		var result = 0;
+
+		for (var i = 0; i < nameArr.length; i++) {
+			if(name == nameArr[i]) {
+				idx = i;
+			}
+		}
+		result = (engArr[idx] + mathArr[idx]) / 2;
+		// console.log(engArr[idx], mathArr[idx]);
+
+		console.log(name + "의 영어, 수학 평균: " + result);
+	}
+
+	test3("david");
+
+//---------------------------
+
+	function test4(arr) {
+		// arr 중 가장 높은 점수를 구하시오.
+		var result = 0;
+
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] > result) {
+				result = arr[i];
+			}
+		}
+		console.log(result);
+	}
+
+	var jumsuArr = [90, 80, 93, 20, 50, 98, 97];
+
+	test4(jumsuArr);
+
+//---------------------------
+
+</script>
+</body>
+</html>
