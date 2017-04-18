@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="ko">
+<head>
     <meta charset="UTF-8">
     <title>시험</title>
     <style>
@@ -11,24 +11,45 @@
 
 		//************ continue *********************
 
-		//exam1    5미만 숫자 출력하기   
+		/*
+		for(var i = 0; i < 10; i++) {
+			if (i > 5) {
+				console.log("continue 안쪽: " + i);
+				continue;
+				console.log("실행확인");
+			}
+			console.log(i);
+		}
+		*/
+
+
+		//exam1    5미만 숫자 출력하기
 		// for(var i = 0 ; i < 10 ; i++)
 		// {
 		// 	if(i >= 5)
 		// 	{
 		// 		continue;
 		// 		console.log("실행이 안됩니다.")
-		// 	}			
+		// 	}
 		// 	console.log(i);
 		// }
 
-		//exam2    짝수 출력하기          
+		//exam2    짝수 출력하기
+		/*
+		for (var i= 0; i < 10; i++) {
+			if (i%2 == 1) {
+				continue;
+			}
+			console.log(i);
+		}
+		*/
+
 		// for(var i = 0 ; i < 10 ; i++)
 		// {
 		// 	if(i % 2 == 1)
 		// 	{
 		// 		continue;
-		// 	}			
+		// 	}
 		// 	console.log(i);
 		// }
 
@@ -36,7 +57,20 @@
 		var arr2 = ["m", "f", "m", "f", "f", "f", "m"];
 		var arr3 = [170, 160, 155, 143, 159, 162, 150];
 
-		// exam3     female(여성) 평균키 구하기   
+		// exam3     female(여성) 평균키 구하기
+		/*
+		var avg = 0;
+		var idx = 0;
+
+		for (var i = 0; i < arr2.length ; i++) {
+			if(arr2[i] == "m") {
+				continue;
+			}
+			avg += arr3[i];
+			idx++;
+		}
+		console.log(avg / idx);
+		*/
 		// for(var i = 0, avg = 0, num = 0  ; i < arr1.length ; i++)
 		// {
 		// 	if(arr2[i] == "m")
@@ -44,12 +78,24 @@
 		// 		continue;
 		// 	}
 		// 	avg += arr3[i];
-		// 	num += 1;			
+		// 	num += 1;
 		// }
 		// console.log("여성 평균키 : "+ avg/num);
 
+		// exam4     160 미만 이름 출력하기
+		var result = "";
 
-		// exam4     160 미만 이름 출력하기  
+		for (var i = 0; i < arr1.length; i++) {
+			if(arr3[i] > 160) {
+				continue;
+			}
+			result += arr1[i] + " ";
+		}
+
+		console.log(result);
+
+
+
 		// for(var i = 0, avg = 0, num = 0  ; i < arr1.length ; i++)
 		// {
 		// 	if(arr3[i] >= 160)
@@ -64,6 +110,6 @@
 
 </head>
 <body>
-               
+
 </body>
 </html>

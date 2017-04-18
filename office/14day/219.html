@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="ko">
+<head>
     <meta charset="UTF-8">
     <title>시험</title>
     <style>
@@ -16,6 +16,18 @@
 		var arr3 = [170, 160, 155, 143, 159, 162, 150];
 
 		//exam1    grace의 신장은?
+		/*
+		for (var i = 0; i < arr1.length; i++ ) {
+
+			if(arr1[i] == "grace") {
+				console.log(arr1[i]);
+				break
+			}
+
+		}
+		*/
+
+
 		// for(var i = 0 ; i < arr1.length ; i++)
 		// {
 		// 	if(arr1[i] == "grace")
@@ -26,6 +38,24 @@
 		// }
 
 		//exam2    반에 170 이상이 있는가?
+		var isTall = false;
+		var height = 170;
+
+		for (var i = 0; i < arr1.length; i++) {
+
+			if (arr3[i] >= height) {
+				isTall = true;
+				break;
+			}
+
+		}
+		if(isTall) {
+			console.log(height + "이상이 있습니다.");
+		} else {
+			console.log(height + "이상이 없습니다.");
+		}
+
+
 		// for(var i = 0, isTall = false, height = 170 ; i < arr1.length ; i++)
 		// {
 		// 	if(arr3[i] >= height)
@@ -42,6 +72,6 @@
 
 </head>
 <body>
-               
+
 </body>
 </html>
