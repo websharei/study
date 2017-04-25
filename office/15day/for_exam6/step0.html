@@ -1,58 +1,127 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>시험</title>
-    <style>
-		table
-		{
-			width : 100%;
-			border: 1px solid black;
-		}
-
-		td
-		{
-		    border: 1px solid black;
-		    text-align: center;
-		}
-
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <script>
-		/*
-		중간고사 성적표
-
-		번호	이름	국어	영어	수학	평균
-		1		Tom		80		50		10		-
-		2		David	90		51		20		-
-		3		Grace	100		52		30		-
-		4		Michael	50		53		40		-
-		5		Jeorge	60		54		50		-
-		6		James	40		55		60		-
-		7		Steve	90		56		70		-
-		8		Sam		80		57		80		-
-		9		John	80		58		90		-
-		10		Sally	30		59		100		-
-		-		평균	-		-		-		-
-		*/
-
-		var tHeadArr = ["번호", "이름", "국어", "영어", "수학", "평균"];
-		var nameArr = ["Tom", "David", "Grace", "Michael", "Jeorge", "James", "Steve", "Sam", "John", "Sally"];
-		var korArr = [80, 90, 100, 50, 60 ,40 ,90 ,80 ,80 ,30];
-		var engArr = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59];
-		var mathArr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-
-		$(document).ready(function(){
-
-		});
-
-
-
-    </script>
-
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>시험</title>
+<style>
+table {
+	width : 100%;
+	border: 1px solid black;
+}
+th, td {
+	border: 1px solid black;
+	text-align: center;
+}
+</style>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+/*
+중간고사 성적표
 
+번호	이름	국어	영어	수학	평균
+1		Tom		80		50		10		-
+2		David	90		51		20		-
+3		Grace	100		52		30		-
+4		Michael	50		53		40		-
+5		Jeorge	60		54		50		-
+6		James	40		55		60		-
+7		Steve	90		56		70		-
+8		Sam		80		57		80		-
+9		John	80		58		90		-
+10		Sally	30		59		100		-
+-		평균	-		-		-		-
+*/
+
+var tHeadArr = ["번호", "이름", "국어", "영어", "수학", "평균"];
+var nameArr = ["Tom", "David", "Grace", "Michael", "Jeorge", "James", "Steve", "Sam", "John", "Sally"];
+var korArr = [80, 90, 100, 50, 60 ,40 ,90 ,80 ,80 ,30];
+var engArr = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59];
+var mathArr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+function step1() {
+	var $body, $table, $thead, $tbody, $tfoot;
+	$body = $("body");
+	$table = $("<table />");
+	$thead = $("<thead />");
+	$tbody = $("<tbody />");
+	$tfoot = $("<tfoot />");
+
+	$body.append($table);
+	$table.append($thead);
+	$table.append($tbody);
+	$table.append($tfoot);
+}
+
+function step2() {
+	var $thead, $tr, $th
+	var len;
+
+	$thead = $("thead");
+	$tr = $("<tr />");
+
+	$thead.append($tr);
+
+	len = tHeadArr.length;
+
+	for(var i = 0; i < len; i++) {
+		$th = $("<th />");
+		$th.text(tHeadArr[i]);
+		$tr.append($th);
+	}
+}
+
+function step3() {
+	var $tbody, $tr, $td
+	var len, len2, tmparr;
+
+	$tbody = $("tbody");
+
+	len = nameArr.length;
+
+	for(var i = 0;i < len; i++) {
+		$tr = $("<tr />");
+		$tbody.append($tr);
+
+		tmpArr = [i+1, nameArr[i],korArr[i], engArr[i], mathArr[i], ""];
+		len2 = tmpArr.length;
+
+		for(var j = 0; j < len2; j++){
+			$td = $("<td />");
+			$td.text(tmpArr[j]);
+			$tr.append($td);
+		}
+		console.log(tmpArr);
+	}
+}
+
+function step4() {
+	var $tfoot, $tr, $td;
+	var len;
+
+	$tfoot = $("tfoot");
+	$tr = $("<tr />");
+
+	$tfoot.append($tr);
+
+	len = tHeadArr.length;
+
+	for (var i = 0; i < len - 1; i++) {
+		$td = $("<td />");
+		if (i == 0) {
+			$td.attr("colspan", 2);
+			$td.text("평균");
+		} else {
+			$td.text("");
+		}
+		$tr.append($td);
+	}
+}
+step1();
+step2();
+step3();
+step4();
+</script>
 </body>
 </html>
