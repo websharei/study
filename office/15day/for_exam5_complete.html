@@ -49,6 +49,7 @@
 
 			for(var j = 1; j <= 5; j++ ) {
 				result = "";
+
 				for(var i = 1; i <= 5; i++ ) {
 					result += i;
 				}
@@ -88,9 +89,27 @@
 		// 12
 		// 1
 
-	function printPattern3()
-	{
+	function printPattern3(){
 		// 코드를 작성하시오
+
+		var result = "";
+
+		for(var i = 0; i < 10; i++) {
+			var num;
+
+			if(i < 5) {
+				num = i;
+			} else {
+				num = 5 - (i%5);
+			}
+
+			for(var j = 0; j < num; j++) {
+				result += (j + 1);
+			}
+
+			console.log(result);
+			result = "";
+		}
 	}
 	printPattern3();
 
