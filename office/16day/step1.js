@@ -62,60 +62,67 @@ $(document).ready(function(){
 // 3) tbody의 tr td를 만든다.
   function step3()
   {
-    var $tbody, $tr, $td;
+    var tbody, tr, td;
     var children;
     var tmpArr;
     var len1, len2, len3;
 
-    $tbody = $("tbody");
+    tbody = $("tbody");
     len1 = nameArr.length;
 
     for(var i = 0 ; i < len1 ; i++)
     {
       tmpArr = [ i+1, nameArr[i], korArr[i], engArr[i], mathArr[i], ""];
-      len2 = tmpArr.length; //6
-      len3 = len2 - 1; //5
+      len2 = tmpArr.length;
+      len3 = len2 - 1;
 
-      $tr = $("<tr/>");
-      for(var j = 0 ; j < len2 ; j++) {
-        $td = $("<td/>");
-        $td.text(tmpArr[j]);
+      tr = $("<tr/>");
+      for(var j = 0 ; j < len2 ; j++)
+      {
+        td = $("<td/>");
+        td.text(tmpArr[j]);
 
-        if(j == len3) {
-          $td.attr("id", "std" + ( i + 1 ));
+        // id를 부여한다.
+        if(j == len3)
+        {
+          td.attr("id", "std" + ( i + 1 ));
         }
 
-        $tr.append($td);
+        tr.append(td);
       }
-      $tbody.append($tr);
+      tbody.append(tr);
     }
   }
 
 // step4) tbody의 tr td를 만든다.
-  function step4() {
-    var $tfoot, $tr, $td;
+  function step4()
+  {
+    var tfoot, tr, td;
     var len = tHeadArr.length - 1;
 
-    $tfoot = $("tfoot");
-    $tr = $("<tr/>");
+    tfoot = $("tfoot");
+    tr = $("<tr/>");
     for(var i = 0 ; i < len ; i++)
     {
-      if(i == 0)
+      if(i==0)
       {
-        $td = $("<td colspan = '2' />");
-        $td.text("평균");
+        td = $("<td colspan = '2'/>");
+        td.text("평균");
       }
       else
       {
-        $td = $("<td />");
-        $td.attr("id", "avg" + i);
-        $td.text("");
+        td = $("<td/>");
+
+        // id를 부여한다.
+        td.attr("id", "avg" + i);
+        
+        td.text("");
       }
-      $tr.append($td);
+      tr.append(td);
     }
-    $tfoot.append($tr);
+    tfoot.append(tr);
   }
-  step1();
+  step1()
   step2();
   step3();
   step4();

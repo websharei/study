@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>for문 실습</title>
+
+    <style>
+		table
+		{
+			width : 100%;
+			border: 1px solid black;
+		}
+
+		td
+		{
+		    border: 1px solid black;
+		    text-align: center;
+		}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="step1.js"></script>
+
+    <script>
+  	// var theadArr = ["번호", "이름", "국어", "영어", "수학", "평균"];
+		// var nameArr = ["Tom", "David", "Grace", "Michael", "Jeorge", "James", "Steve", "Sam", "John", "Sally"];
+		// var korArr = [80, 90, 100, 50, 60 ,40 ,90 ,80 ,80 ,30];
+		// var engArr = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59];
+		// var mathArr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+
+  	$(document).ready(function(){
+
+      var isSubjectAvg = false;
+
+      function getSubjectAvg(arr)
+      {
+         var avg = 0 ;
+         var len = arr.length;
+
+         for(var i = 0 ; i < len ; i++)
+         {
+           avg += arr[i];
+         }
+         avg = Math.round(avg / len);
+         return avg;
+      }
+
+      function getStudentAvg(std)
+      {
+        var avg = 0;
+        var len = nameArr.length;
+
+        for(var i = 0 ; i < len ; i++)
+        {
+          if(nameArr[i] == std)
+          {
+              avg = korArr[i] + engArr[i] + mathArr[i];
+              break;
+          }
+        }
+        avg = Math.round(avg / 3);
+        return avg;
+      }
+
+      function resutlGoodOrBad(num)
+      {
+          var subAvgTD, subTD, subTDList;     
+          var subAvgJumsu, subJumsu;
+          var tmpText;
+
+          subAvgTD = $("#avg" + (num - 2));
+          subAvgJumsu = Number(subAvgTD.text());
+          subTDList = $("tbody tr td:nth-child("+num+")");
+
+          for(var i = 0 ; i < subTDList.length ; i++)
+          {
+            subTD = subTDList.eq(i);
+            subJumsu= Number(subTD.text());
+
+            if(subJumsu > subAvgJumsu)
+            {
+              subTD.css("color", "red");
+            }
+            else if(subJumsu < subAvgJumsu)
+            {
+              subTD.css("color", "blue");
+            }
+          } 
+      }
+
+      // 1) 각 과목 평균을 구한다
+  		$("#btn1").click(function(){
+
+        isSubjectAvg = true;
+
+        var korTD, engTD, mathTD;
+        korTD = $("#avg1");
+        engTD = $("#avg2");
+        mathTD = $("#avg3");
+
+        korTD.text(getSubjectAvg(korArr));
+        engTD.text(getSubjectAvg(engArr));
+        mathTD.text(getSubjectAvg(mathArr));
+
+		});
+
+      // 2) 학생 별 평균 구하기
+  		$("#btn2").click(function(){
+        var len = nameArr.length;
+  			for(var i = 0 ; i < len ; i++ )
+        {
+          $("#std" +(i+1)).text(getStudentAvg(nameArr[i]));
+        }
+  		});
+
+
+      // 3) 전체 학생 총 평균구하기
+		$("#btn3").click(function(){
+        var korTD, engTD, mathTD, totalAvgTD;
+        var korAvgJumsu, engAvgJumsu, mathAvgJumsu;
+
+        if( !isSubjectAvg)
+        {
+          $("#btn1").click();
+          $("#btn2").click();
+        }
+
+        korTD = $("#avg1");
+        engTD = $("#avg2");
+        mathTD = $("#avg3");
+        totalAvgTD = $("#avg4");
+
+        korAvgJumsu = Number(korTD.text());
+        engAvgJumsu = Number(engTD.text());
+        mathAvgJumsu = Number(mathTD.text()); 
+
+        totalAvgJumsu = Math.round( (korAvgJumsu + engAvgJumsu + mathAvgJumsu)/3 );
+        totalAvgTD.text(totalAvgJumsu);
+  		});
+
+      // 4) 평균보다 높으면 빨간색, 낮으면 파랑색
+		$("#btn4").click(function(){
+
+          if( !isSubjectAvg)
+          {
+            $("#btn3").click();
+          }
+
+          resutlGoodOrBad(3);
+          resutlGoodOrBad(4);
+          resutlGoodOrBad(5);
+          resutlGoodOrBad(6);
+  		});
+  	});
+
+    </script>
+
+</head>
+<body>
+   <button id = "btn1">각 과목 평균 구하기</button>
+   <button id = "btn2">학생 별 평균 구하기</button>
+   <button id = "btn3">전체 학생 총 평균구하기 (숙제) </button>
+   <button id = "btn4">평균보다 높으면 빨간색, 낮으면 파랑색 (숙제)</button>
+
+   <p>
+</body>
+</html>

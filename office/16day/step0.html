@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>시험</title>
+<style>
+table {
+	width : 100%;
+	border: 1px solid black;
+}
+
+td {
+	border: 1px solid black;
+	text-align: center;
+}
+
+</style>
+</head>
+<body>
+<button id="btn1">각 과목 평균 구하기</button>
+<button id="btn2">학생 별 평균 구하기</button>
+<button id="btn3">전체 학생 총 평균구하기 (숙제)</button>
+<button id="btn4">평균보다 높으면 빨간색, 낮으면 파랑색 (숙제)</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="step1.js"></script>
+<script>
+var isSubjectAvg = false;
+
+function getSubjectAvg(arr){
+
+	var avg;
+	var len;
+
+	avg = 0;
+	len = arr.length;
+
+	for(var i = 0; i < len; i++) {
+		avg += arr[i]
+	}
+
+	avg = Math.round(avg / len);
+	return avg;
+}
+
+$("#btn1").on("click", function(){
+	var korID = $("#avg1");
+	var engID = $("#avg2");
+	var mathID = $("#avg3");
+
+	korID.text(getSubjectAvg(korArr));
+	engID.text(getSubjectAvg(engArr));
+	mathID.text(getSubjectAvg(mathArr));
+});
+
+function getStudentAvg(std){
+	var avg;
+	avg = 0;
+
+	for (var i = 0; i < nameArr.length; i++) {
+		if(nameArr[i] == std){
+			console.log(nameArr[i], i);
+			avg = korArr[i] + engArr[i] + mathArr[i];
+			avg = Math.round(avg/3);
+
+			return avg;
+			console.log(avg);
+		}
+	}
+}
+
+$("#btn2").on("click", function(){
+	console.log("click2");
+	getStudentAvg("David");
+
+	for(var i = 0; i < nameArr.length; i++) {
+		var name = nameArr[i];
+		var avg = getStudentAvg(name);
+		$("#std" + (i+1)).text(avg);
+
+		console.log(nameArr[i]);
+	}
+});
+
+$("#btn3").on("click", function(){
+	console.log(isSubjectAvg);
+
+	if (!isSubjectAvg){
+		$("#btn1").click();
+		$("#btn2").click();
+	}
+
+	var korTD = $("#avg1");
+	var engTD = $("#avg2");
+	var mathTD = $("#avg3");
+	var totalAvgTD = $("#avg4");
+
+	var korAvgJumsu = Number(korTD.text());
+	var engAvgJumsu = Number(engTD.text());
+	var mathAvgJumsu = Number(mathTD.text());
+
+	totalAvgTD.text(Math.round((korAvgJumsu + engAvgJumsu + mathAvgJumsu) / 3));
+});
+</script>
+</body>
+</html>
