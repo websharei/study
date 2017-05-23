@@ -122,7 +122,7 @@ $(document).ready(function(){
     }
     tfoot.append(tr);
   }
-  step1()
+  step1();
   step2();
   step3();
   step4();
