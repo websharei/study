@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>전역, 지역, 매개변수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 전역변수
+      // var foo = "전역변수 입니다.";
+      // function test()
+      // {
+      //   console.log(foo);
+      // }
+      // test();
+      // console.log(foo);
+
+      // 지역변수
+      // function test()
+      // {
+      //   var foo = "지역변수 입니다.";
+      //   console.log(foo);
+      // }
+      // test();
+      // console.log(foo);
+
+      // 전역변수 + 지역변수
+      // var foo = "전역변수 입니다.";
+      // function test()
+      // {
+      //   var foo = "지역변수 입니다.";
+      //   console.log(foo);
+      // }
+      // test();
+      // console.log(foo);
+
+      // 매개변수
+      // function test(foo)
+      // {
+      //   console.log(foo);
+      // }
+      // test("매개변수 입니다.");
+      // console.log(foo);
+
+      // 젼역변수 + 매개변수
+      // var foo = "전역변수 입니다.";
+      // function test(foo)
+      // {
+      //   console.log(foo);
+      // }
+      // test("매개변수 입니다.");
+      // console.log(foo);
+
+      // 지역변수 + 매개변수
+      // function test(foo)
+      // {
+      //   var foo = "지역변수 입니다"
+      //   console.log(foo);
+      // }
+      // test("매개변수 입니다.");
+      // console.log(foo);
+
+      // 매개변수가 있는 함수만들기
+      // 예제1. 구구단을 document에 출력하자
+      // googoodan(2);
+      // 2 * 1 = 2
+      // 2 * 2 = 4
+      // 예제2. 매개변수로 구구단의 색상을 칠한다.  ex) 2단:빨강, 3단:파랑, 4단:노랑
+      // 예제3. 매개변수로 dan * num 형태를 만들어보자
+
+      // 매개변수는 arguments객체에 담겨진다.
+      // 아래코드를 arguments로 바꾼어 본다.
+      // function foo(num, str, arr)
+      // {
+      //   console.log(num);
+      //   console.log(str);
+      //   console.log(arr);
+      // }
+      // foo(1);
+      // foo("가");
+      // foo([1,2,3,4,5])
+
+      // 예제4  아래함수를 arguements로 바꾸어보자.
+      // function googoodan(dan, num, color)
+      // {
+      //   for(var i = 0 ; i < num ; i++)
+      //   {
+      //     var colorTag1 = "<font color = " + color + ">";
+      //     var colorTag2 = "</font color>";
+      //     var result = dan * ( i + 1 );
+      //     document.write(colorTag1, dan, " * ", i, " = ", result, colorTag2, "<br>");
+      //   }
+      // }
+      // googoodan(2, 9, "red");
+      // googoodan(2, 9, "red");
+
+    </script>
+  </body>
+</html>
