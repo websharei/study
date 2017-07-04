@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+function makeDiv(){
+	var $div = $("<div></div>");
+	$div.prop("id","movieclip");
+	$div.css("width", 100);
+	$div.css("height", 100);
+	$div.css("background-color", "red");
+	$div.css("font-size", "30px");
+	$div.css("text-align", "center");
+	$div.css("position", "absolute");
+	$div.text(1);
+
+	var $body = $("body");
+	$body.append($div);
+
+	var l = Math.round(Math.random() * 600) + "px";
+	var t = Math.round(Math.random() * 600) + "px";
+
+	$div.animate({top: l, left: t});
+
+
+	console.log($div);
+}
+makeDiv();
+</script>
+
+<!-- <script>
+// 다음의 함수를 입력합니다.
+function moveDiv()
+{
+  // 1. div를 생성한 후 id를 입력합니다.
+  var div = $("<div></div>");
+  div.prop("id", "movieclip");
+
+  // 2. 생성된 div에 css를 입력합니다.
+  div.css("width", 100);
+  div.css("height", 100);
+  div.css("background-color", "red");
+  div.css("font-size", "30px");
+  div.css("text-align", "center");
+  div.css("position", "absolute");
+  div.text("1");
+
+  // 3. body에 append합니다.
+  var body = $("body");
+  body.append(div);
+
+  // 4. div를 움직입니다.
+  var l = Math.round( Math.random() * 600 ) +"px";
+  var t = Math.round( Math.random() * 600 ) +"px";
+  div.animate({top:t, left: l});
+}
+moveDiv();
+</script> -->
+</body>
+</html>
