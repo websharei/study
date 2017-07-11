@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <script>
+
+      $(document).ready(function(){
+
+        function createDiv(name)
+        {
+          var div = $("<div></div>");
+          div.prop("id", name);
+          return div;
+        }
+
+        function moveDiv(div)
+        {
+          div.css("width", 100);
+          div.css("height", 100);
+          div.css("background-color", "red");
+          div.css("font-size", "30px");
+          div.css("text-align", "center");
+          div.css("position", "absolute");
+          div.text("1");
+
+          var body = $("body");
+          body.append(div);
+
+          var l = Math.round( Math.random() * 600 ) +"px";
+          var t = Math.round( Math.random() * 600 ) +"px";
+          div.animate({top:t, left: l});
+      }
+
+      var div1 = createDiv("movieclip1");
+      var div2 = createDiv("movieclip2");
+      var div3 = createDiv("movieclip2");
+
+      moveDiv(div1);
+      moveDiv(div2);
+      moveDiv(div3);
+    });
+  </script>
+
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+      <script>
+        $(document).ready(function(){
+
+          function createDiv(name)
+          {
+            var div = $("<div></div>");
+            div.prop("id", name);
+            return div;
+          }
+
+          function applyCSS(div, w, h, c, t)
+          {
+            div.css("width", w);
+            div.css("height", h);
+
+            div.css("background-color", c);
+            div.css("border-radius", "50%");
+            div.css("font-size", "30px");
+            div.css("text-align", "center");
+            div.css("position", "absolute");
+            div.text(t);
+          }
+
+          function moveDiv(div, xpos, ypos, delaytime, speed)
+          {
+            var l = xpos +"px";
+            var t = ypos +"px";
+            div.delay(delaytime)
+            div.animate({top:t, left: l}, speed);
+         }
+
+         function adjustHex(hexStr)
+         {
+           var len = hexStr.length;
+           for(var i = 0 ; i < (6 - len) ; i++)
+           {
+             hexStr = "0" + hexStr;
+           }
+           return hexStr;
+         }
+
+          function getTilePosition(inum)
+          {
+              var size = 50;
+              var xpos = (inum % 10) * size;
+              var ypos = Math.floor (inum / 10) * size;
+              var obj = {x:xpos, y:ypos};
+
+              return obj;
+          }
+
+          function getCirclePostion(inum)
+          {
+              var r = 30;
+              var degree = inum * 3.6
+              var radian = degree * (Math.PI/180);
+              var xpos = Math.cos(radian) * r + r + inum;
+              var ypos = Math.sin(radian) * r + r + inum;
+              var obj = {x:xpos, y:ypos};
+
+              return obj;
+          }
+
+         function make(isTile)
+         {
+            var body = $("body");
+            for(var i = 0 ; i < 1000 ; i++)
+            {
+              var size = 50;
+              var div = createDiv("movieclip"+ i);
+              body.append(div);
+              var color = Math.ceil( Math.random() * 0xFFFFFF );
+              var colorHex = "#" + adjustHex( color.toString(16));
+              applyCSS(div, size, size, colorHex, "");
+
+              var position;
+              if(isTile) position = getTilePosition(i);
+              else position = getCirclePostion(i);
+                       
+              moveDiv(div, position.x, position.y, i * 10, 300);
+            }
+         }
+
+         make(false);
+
+      });
+    </script>
+
+  </body>
+</html>

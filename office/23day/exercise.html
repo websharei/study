@@ -1,0 +1,89 @@
+<!doctype html>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function createDiv(name) {
+	var $div = $("<div></div>");
+	$div.prop("id",name);
+	return $div;
+}
+
+function applyCSS(div, w, h, c, t) {
+	div.css("position","absolute");
+	div.css("width", w);
+	div.css("height", h);
+	div.css("border-radius", "50px");
+	div.css("background-color", c);
+	div.css("font-size", "30px");
+	div.css("line-height", "50px");
+	div.css("color","white");
+	div.css("text-align","center");
+	div.text(t);
+}
+
+function moveDiv(div, x, y, d, s) {
+	var xpos = x + "px";
+	var ypos = y + "px";
+	div.delay(d);
+	div.animate({top: ypos, left: xpos}, s);
+}
+
+function getTilePostion(num) {
+	var size = 50;
+	var xpos = (num %10) * size;
+	var ypos = Math.floor(num / 10) * size;
+	//var pos = {x: xpos, y: ypos};
+	var pos = [xpos, ypos];
+
+	return pos;
+}
+
+function getCirclePosition(num) {
+	var r = 100;
+	var degree = num * 3.6;
+	var radian = degree * (Math.PI/180);
+	var xpos = Math.cos(radian) * r + r;
+	var ypos = Math.sin(radian) * r + r;
+
+	var pos = [xpos, ypos];
+	return pos;
+}
+
+function start(isTile) {
+	var $body = $("body");
+
+	for(var i = 0; i < 100; i++) {
+		var div = createDiv("mc" + (i + 1));
+		var size = 50;
+
+		$body.append(div);
+		applyCSS(div, size, size, "black", (i+1));
+
+		var pos;
+		if(isTile) pos = getTilePostion(i);
+		else pos = getCirclePosition(i);
+
+
+		moveDiv(div, pos[0], pos[1], i *10, 300);
+	}
+}
+
+start(true);
+
+/* var div1 = createDiv("mc1");
+var div2 = createDiv("mc2");
+var div3 = createDiv("mc3");
+
+$body.append(div1);
+$body.append(div2);
+$body.append(div3);
+
+applyCSS(div1, 100, 100, "red", "1");
+applyCSS(div2, 150, 150, "blue", "2");
+applyCSS(div3, 200, 200, "yellow", "3");
+
+moveDiv(div1, 100, 100, 100, 200);
+moveDiv(div2, 150, 150, 200, 200);
+moveDiv(div3, 200, 200, 300, 200); */
+</script>
+</body>
