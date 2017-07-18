@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+// 리터럴과 방식
+// var num = 10;
+// var str = "nts";
+// var boo = true;
+// var arr = [1,2,3];
+// console.log(num, str, boo, arr);
+
+// 객체방식
+// var num = new Number(10);
+// var str = new String('nts');
+// var boo = new Boolean(true);
+// var arr = new Array(1,2,3)
+// console.log(num, str, boo, arr);
+
+// 함수1 : 표현식)
+// function hello()
+// {
+//   console.log("hello");
+// }
+// hello();
+
+// 함수2 : 리터럴)
+// var hello = function()
+// {
+//   console.log("hello");
+// }
+// hello();
+
+//함수3 : 객체방식)
+// var hello = new Function(console.log("hello"));
+// hello();
+
+// 함수표현식과 리터털의 차이
+// hoist (호이스트, 끌어올림)
+// 호출을 함수 선언 전에 해본다.
+
+// 익명함수와 일반함수
+// 익명)
+// $(document).ready(function(){
+//     console.log("익명함수 : start!");
+// });
+
+//일반)
+// function startFunction()
+// {
+//     console.log("일반함수 : start!");
+// }
+// $(document).ready(startFunction);
+
+// test1) 버튼을 클릭할 때 마다 숫자를 증가하시오 (익명함수)
+// <p>1</p>
+// <p>2</p>
+// <p>3</p>
+// $(document).ready(function(){
+//     var info = $("#info");
+//     var count = 0;
+//     $("#btn").click(function(){
+//       count++;
+//       info.append("<p>"+ count +"</p>")
+//     });
+// });
+
+// test2) 버튼을 클릭할 때 마다 숫자를 증가하시오 (일반함수)
+// <p>1</p>
+// <p>2</p>
+// <p>3</p>
+// $(document).ready(function(){
+//     var info = $("#info");
+//     var count = 0;
+//
+//     function doCount()
+//     {
+//       count++;
+//       info.append("<p>"+ count +"</p>")
+//     }
+//
+//     doCount();
+//     doCount();
+//     doCount();
+//
+//     $("#btn").click(doCount);
+// });
+$(document).ready(a);
+function a() {
+		console.log("hello a");
+	}
+</script>
+
+<button id = "btn">버튼</button>
+<div id = "info"></div>
+
+</body>
+</html>

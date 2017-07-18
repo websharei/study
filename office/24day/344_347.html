@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+// 변수에 함수 저장하기 1
+// function hello()
+// {
+//   console.log('hello');
+// }
+// var hello2 = hello;
+// hello2();
+
+/* function hello (){
+	console.log("hello");
+} */
+
+// hello();
+// var hello2 = hello;
+// hello2();
+
+// 매개변수에 함수 저장하기 1
+// function hello()
+// {
+//   console.log('hello');
+// }
+//
+// function callFunction(func)
+// {
+//   func();
+// }
+// hello();
+// callFunction(hello);
+
+function callFunction(func){
+	func();
+}
+//callFunction(hello2);
+
+// 리턴값으로 함수 호출하기
+// function outerFunction()
+// {
+//   function hello()
+//   {
+//     console.log('hello');
+//   }
+//
+//   return hello;
+// }
+//
+// hello();
+// var hello2 = outerFunction();
+// hello2();
+
+/* function outerFunction() {
+	function hello(){
+		console.log("hello hello");
+	}
+	return hello;
+}
+var hello2 = outerFunction();
+hello2(); */
+
+// test1) googoodan을 만드는 함수를 만들고 3단을 만드시오.
+// test2) googooean 함수를 googoodan2 변수가 참조하고 변수를 이용하여 4단을 만드시오
+// function googoodan(num)
+// {
+//   for(var i = 1 ; i <= 9 ; i++)
+//   {
+//     console.log(num + "X" + i + "=" + ( num * i) )
+//   }
+// }
+// googoodan(3);
+// var googoodan2 = googoodan;
+// googoodan2(4);
+
+function googoodan(num){
+	for(var i = 1; i < 10; i++ ){
+		console.log(num + " × " + i + " = " + (num * i));
+	}
+	return googoodan;
+}
+
+//googoodan(3);
+var googoodan2 =  googoodan;
+//googoodan(4);
+
+// test3) function getGooGoodan을 만들어 googoodan 함수를 리턴하여 5단을 작성하시오
+// function getGooGoodan()
+// {
+//   function googoodan(num)
+//   {
+//     for(var i = 1 ; i <= 9 ; i++)
+//     {
+//       console.log(num + "X" + i + "=" + ( num * i) )
+//     }
+//   }
+//   return googoodan;
+// }
+// var googoodan3 = getGooGoodan();
+// googoodan3(5)
+
+//var googoodan3 = getgoodan()
+
+// test4) 사칙연산을 하는 add, sub, mult, div 함수를 만들자. 매개변수는 (num1, num2) 두개로 고정한다.
+// test5) getOperation(opName) 함수를 만든다 opName은 "add", "sub", "mult", "div" 네 개 중에 하나를 매개변수를 받으면
+// 적당한 함수를 리턴한다. 리턴된 함수를 변수로 담아 호출해보자.
+// function getOperation(opName)
+// {
+//   function add(){}
+//   function sub(){}
+//   ...
+//
+//   if opName == "add"  return add;
+// }
+function getOperation (opName) {
+
+	function add(num1, num2) {
+		return num1 + num2;
+	}
+
+	function sub(num1, num2) {
+		return num1 - num2;
+	}
+
+	function mult(num1, num2) {
+		return num1 * num2;
+	}
+
+	function div(num1, num2) {
+		return num1 / num2;
+	}
+
+	if (opName == "add") return add;
+	else if(opName == "sub") return sub;
+	else if(opName == "mult") return mult;
+	else if(opName == "div") return div;
+}
+
+function calculate(func, num1, num2) {
+	console.log( func(num1. num2) );
+}
+
+var fool1 = getOperation("add");
+console.log( fool1(100, 50) );
+
+calculate(fool1, 100, 500);
+
+var fool2 = getOperation("sub");
+console.log( fool2(100, 50) );
+
+console.log(getOperation("div")(100, 50));
+
+// test6) calculate(opFunction) 함수를 만들어서 위의 예제와 결함해보자
+// function calculate(opFunction, num1, num2)
+// {
+//   console.log( opFunction(num1, num2) );
+// }
+//
+// calculate(getOperation("plus"), 100, 50);
+
+//test4 ~ 6 정답
+// function getOperation(opName)
+// {
+//   function add(num1, num2)
+//   {
+//     return num1 + num2;
+//   }
+//
+//   function sub(num1, num2)
+//   {
+//     return num1 - num2;
+//   }
+//
+//   function mult(num1, num2)
+//   {
+//     return num1 * num2;
+//   }
+//
+//   function div(num1, num2)
+//   {
+//     return num1 / num2;
+//   }
+//
+//   if(opName == "add") return add;
+//   else if(opName == "sub") return sub;
+//   else if(opName == "mult") return mult;
+//   else if(opName == "div") return div;
+// }
+//
+// var plusFunction = getOperation("add");
+// console.log( plusFunction(100, 50) );
+// console.log( getOperation("sub")(100, 50));
+//
+// function calculate(opFunction, num1, num2)
+// {
+//   console.log( opFunction(num1, num2) );
+// }
+// calculate(getOperation("add"), 100, 50);
+// calculate(getOperation("sub"), 100, 50);
+
+
+</script>
+
+</body>
+</html>
