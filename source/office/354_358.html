@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+ <script>
+
+ // 익명함수와 즉시실행함수
+  // var hello = function()
+  // {
+  //   console.log("hello");
+  // }
+  // hello();
+
+  //  var hello2 = function hello()
+  // {
+  //    console.log("hello");
+  //  }
+  // hello();
+
+  // 즉시실행함수
+  // (function(){
+  //   console.log("hello");
+  // })();
+
+  // 상황1) hello의 충돌
+  // // 개발자 1)
+  // function hello()
+  // {
+  //   console.log("hello")
+  // }
+  // // 개발자 2)
+  // var hello = function ()
+  // {
+  //   console.log("헬로")
+  // }
+
+  // // 개발자3)
+  // hello();
+
+  // 상황2) 안전하지 않은 getHello 함수
+  // // 개발자 1)
+  // function getHello()
+  // {
+  //   function hello()
+  //   {
+  //     console.log("hello")
+  //   }
+  //   return hello;
+  // }
+  //
+  // // 개발자 2)
+  // var hello = function ()
+  // {
+  //   console.log("헬로")
+  // }
+  //
+  // // // 개발자3
+  // hello();
+  // var hello2 = getHello();
+  // hello2();
+
+  // 상황4) 즉시실행함수는 이름이 없어 안전하다.
+  // function getHello()
+  // {
+  //    console.log("이미 정의된  getHello");
+  // }
+  //
+  // (function()
+  // {
+  //   // 개발자 1)
+  //   function getHello()
+  //   {
+  //     function hello()
+  //     {
+  //       console.log("hello")
+  //     }
+  //     return hello;
+  //   }
+  //
+  //   // 개발자 2)
+  //   var hello = function ()
+  //   {
+  //     console.log("헬로")
+  //   }
+  //
+  //   // 개발자3
+  //   hello();
+  //   var hello2 = getHello();
+  //   hello2();
+  //
+  // })()
+  //
+  // console.log(getHello);
+
+
+
+</script>
+
+    <button id = "btn">버튼</button>
+    <duv id = "info"></div>
+
+    </body>
+</html>
