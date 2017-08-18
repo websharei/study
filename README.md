@@ -5,7 +5,7 @@
   http://book.naver.com/bookdb/book_detail.nhn?bid=1277454
 
 * 예제소스<br>
-  javascript:down_file('100_h_2th_ex.zip')
+  http://www.jeumedia.com/user/download/file_down.php?filename=100_h_2th_ex.zip
 
 * GitHub에 있는 실습 예제를 브라우저에서 보는 방법<br>
   - GitHub & BitBucket HTML Preview: http://htmlpreview.github.io<br>
