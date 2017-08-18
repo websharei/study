@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>tooltip2</TITLE>
+
+<style type="text/css">
+
+#tooltip{position:absolute;
+top:0;
+left:0;
+border:solid 1 black;
+background:#ff77ff;
+color:black;
+font-size:9pt;
+width:150;
+height:50;
+padding:2;
+overflow:hidden;
+z-index:10;
+display:none;
+filter:alpha(opacity=50);}
+-->
+</style>
+
+<SCRIPT language="Javascript">
+function showtip(text) {//툴팁을 보여줍니다.
+tooltip.innerText=text;
+tooltip.style.display="inline";
+}
+
+function hidetip(){//툴팁을 숨깁니다.
+tooltip.style.display="none";
+}
+function movetip(){//툴팁을 해당 텍스트 위치에 맞게 이동합니다.
+
+tooltip.style.pixelTop=event.y+document.body.scrollTop;
+tooltip.style.pixelLeft=event.x+document.body.scrollLeft+10;
+}
+
+document.onMouseMove=movetip;
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<SPAN id=tooltip></SPAN>
+<CENTER>
+<A href="#" onMouseOver="showtip('툴팁효과2');"
+onMouseOut="hidetip();">보여라1</A>
+</CENTER>
+</BODY>
+</HTML>

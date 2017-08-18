@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>버튼으로 선택하는 입력폼</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function selectField(frmName, fldName) 
+{
+	document.forms[frmName].elements[fldName].select();
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onload="selectField('form1', 'strText')">
+<center>
+<br>
+<br>
+<form name="form1">
+<input type="text" name="strText" size=30><BR>
+<input type="text" name="strText2" size=30><BR>
+<input type="button" name="butDoit" value="첫번째 폼에 포커스주기" onClick="selectField('form1', 'strText')"><BR>
+<input type="button" name="butDoit2" value="두번째 폼에 포커스주기" onClick="selectField('form1', 'strText2')">
+</form>
+</center>
+</body>
+</html>

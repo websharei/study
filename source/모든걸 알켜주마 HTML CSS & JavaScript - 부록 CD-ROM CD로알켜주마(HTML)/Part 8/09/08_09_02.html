@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<font size=2 face=arial>
+<script language="JavaScript">
+<!--
+
+take = 0
+document.write(navigator.mimeTypes.length)
+document.write("<table width='600' border=1><tr><td>Type</td><td>description</td><td>enabledPlugin</td><td>fuffixes</td></tr>")
+
+while ( take < navigator.mimeTypes.length ) {
+document.write("<tr>")
+document.write("<td>" + navigator.mimeTypes[take].type + "</td>")
+document.write("<td>" + navigator.mimeTypes[take].description + "</td>")
+document.write("<td>" + navigator.mimeTypes[take].enabledPlugin + "</td>")
+document.write("<td>" + navigator.mimeTypes[take].suffixes + "</td>")
+document.write("</tr>")
+take++
+}
+document.write("</table>")
+
+//-->
+</script>
+</font>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function new_window() {
+take = window.open("","","width=220, height=200")
+take.document.open() // 새로운 창에 내용을 출력하기 시작
+take.document.bgColor = "Orange"
+take.document.write("<center>새창에 내용을 출력합니다.<br>")
+take.document.write("<img src='jeume3.gif'><br>")
+take.document.write("<a href='#' onClick='window.close()'>[닫기]</a></center>")
+take.document.close() // 새로운 창에 내용을 종료
+}
+
+function close_window() {
+take.document.open()
+take.document.clear()
+take.document.close()
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<a href='#' onClick='new_window()'><img src='open_w.gif' border=0></a><br>
+<a href='#' onClick='close_window()'><img src='del_w.gif' border=0></a>
+</body>
+</html>

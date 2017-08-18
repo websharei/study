@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>선택한 이미지를 배경이미지로 바꾸기</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+clear = new Image()
+
+bg_img1 = new Image()
+bg_img1.src = "ex4_01.jpg" // bg_img1에 이미지 파일명 지정
+
+bg_img2 = new Image()
+bg_img2.src = "ex4_02.jpg" // bg_img2에 이미지 파일명 지정
+
+function BG_change(imgName) {
+document.body.background = eval(imgName + ".src");
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<br>
+<br>
+<br>
+<br>
+<center>
+<a onmouseover="BG_change('bg_img1');" onmouseout="BG_change('clear');"><img src="ex4_01.jpg" border="0"></a>
+<a onmouseover="BG_change('bg_img2');" onmouseout="BG_change('clear');"><img src="ex4_02.jpg" border="0"></a>
+</center>
+<p>
+</body>
+</html>

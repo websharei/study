@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+var msg_length = 0
+var msg_1 = "자바스크립트 강좌 ★"
+var msg_2 = "JavaScript Tutorial ☆"
+var msg_3 = "메세지는 추가할 수가 있습니다. ◆"
+var msg_sum = msg_1 + msg_2 + msg_3
+var set_time = 0
+function show_message() {
+if(msg_length < 10 ) { // 아래 수행을 10번 반복을 합니다.
+msg_length++ // 변수 msg_length값을 1증가
+window.status = msg_sum // 위에서 설정한 메세지들을 상태표시줄에 나타냄
+msg_sum = msg_sum.substring(2, msg_sum.length) + msg_sum.substring(0, 2)
+// meg_sum 변수각 갖고있는 문자열들을 2자씩 끊어서 제입력합니다.
+
+var time_action = setTimeout("", 1)
+clearTimeout(time_action)
+set_time = setTimeout("show_message()", 500) // 위 수행을 0.5초에 한번씩 처리합니다.
+}
+
+else window.status = "열번 움직였습니다."
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="show_message()">
+아래 상태 표시줄을 보세요~ 글자가 흘러 간답니다.
+</body>
+</html>

@@ -1,0 +1,27 @@
+Name                : Microangelo
+Version             : 5.0
+Filename            : mike5.ZIP
+FileDate            : 09/12/00
+Status              : Shareware
+Submitted By:       : Distributor
+Installation Type   : Install/Uninstall
+Company/Author      : Impact Software
+E-Mail              : info@impactsoft.com
+Homepage            : http://www.impactsoft.com
+File Location       : ftp://ftp.download.com/pub/win95/desktop-enhancements/mike5.exe
+ScreenShot          : 
+
+Description         :
+A true Swiss Army knife of the very best icon utility software. 
+Microangelo 5.0 introduces a total solution for animated icons on the 
+Windows desktop, providing support for the creation, installation and 
+desktop animation of icons in both the standard 32-pixel and large 
+48-pixel sizes.
+
+Microangelo includes support for True Color (over sixteen million 
+colors) throughout all of its tools. Find the icons you’re looking for 
+with Microangelo Explorer. Organize and view your favorites inside icon 
+libraries and program files using Librarian. Create and edit icons in 
+ICO files, icon libraries, and in all types of program files.
+
+

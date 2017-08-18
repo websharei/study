@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<font size=2 face=arial>
+<script language="JavaScript">
+<!--
+
+take = 0
+document.write("브라우저에서 지원하는 총 플러그인수 : " + navigator.plugins.length)
+document.write("<table width='100%' border=1><tr><td>name</td><td>description</td><td>filename</td></tr>")
+
+while ( take < navigator.plugins.length ) {
+document.write("<tr>")
+document.write("<td>" + navigator.plugins[take].name + "</td>")
+document.write("<td>" + navigator.plugins[take].description + "</td>")
+document.write("<td>" + navigator.plugins[take].filename + "</td>")
+document.write("</tr>")
+take++
+}
+document.write("</table>")
+
+//-->
+</script>
+</font>
+</body>
+</html>

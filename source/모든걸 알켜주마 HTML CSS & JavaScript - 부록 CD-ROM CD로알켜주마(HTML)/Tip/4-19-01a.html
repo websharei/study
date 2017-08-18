@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>페이지 열림과 동시에 새창 띄우기</title>
+<STYLE TYPE="text/css">
+.geston { font-size: 9pt; line-height:140%; color:#000000; font-family : 굴림, Arial}
+</STYLE>
+<SCRIPT language="JavaScript">
+function setCookie( name, value, expiredays )
+    {
+        var todayDate = new Date();
+        todayDate.setDate( todayDate.getDate() + expiredays );
+        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+function closeWin()
+{
+        if ( document.forms[0].Notice.checked )
+          setCookie( "Notice", "done" , 1);
+        self.close();
+}
+</SCRIPT>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<img src="4-18-01a.gif" width="200" height="100">
+<br>
+<div align="center" class="geston">
+<form>
+ <input type=CHECKBOX name="Notice" value="">다시 열지 않음<br><br>
+ <a href="javascript:history.onclick=closeWin()">닫기</a>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>페이지 프리로딩 효과</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language=javascript> 
+ie = document.all 
+function hide() { 
+  if (ie) { 
+    Load.style.visibility = "hidden" 
+  } 
+} 
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="hide()">
+<script language=JavaScript> 
+if(ie) document.write('<div id="Load" style="position:absolute;width:100%;height:100%;top:0;left:0;background-color:#ffffff;z-index:1"><table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%"><tr><td align=center><img src="./loading.gif" width="150" height="30" border="0"></td></tr></table></div>')
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align=center> 샘플이미지는 큰것이어야 효과를 보실수가 있습니다.<br>
+      <img src="img_01.jpg" width="200" height="274"><img src="img_02.jpg" width="200" height="274">
+	</td>
+  </tr>
+</table>
+</body>
+</html>

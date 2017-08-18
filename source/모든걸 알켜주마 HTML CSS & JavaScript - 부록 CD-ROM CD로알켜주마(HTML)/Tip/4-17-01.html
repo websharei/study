@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>주민등록번호 입력 시 다음 칸으로 자동으로 넘기기</title>
+<script language="javascript">
+function check()
+{
+  var str = document.jumin.jumin1.value.length;
+  if(str == 6)
+    document.jumin.jumin2.focus();
+}    
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div align="center"> 
+  <table width="421" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td align="center"><img src="img/4-17-01a.gif" width="421" height="112"></td>
+    </tr>
+    <form method="post" name="jumin">
+      <tr> 
+        <td class="geston" width="421" height="35" background="img/4-16-01b.gif" align="center"> 
+          <font FACE="돋움" SIZE="-1">주민등록 번호 </font>
+          <input name="jumin1" size="6" OnKeyUp="check();" maxlength="6">
+          - 
+          <input name="jumin2" size="7" maxlength="7">
+        </td>
+      </tr>
+    </form>
+    <tr> 
+      <td><img src="img/4-16-01c.gif" width="421" height="4"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

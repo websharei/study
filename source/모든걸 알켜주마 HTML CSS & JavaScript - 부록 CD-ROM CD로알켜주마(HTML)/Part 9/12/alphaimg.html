@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>이미지의 알파효과</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function high(obj_img)
+{
+theobject=obj_img
+highlighting=setInterval("high_ef(theobject)",50)
+}
+
+function low(obj_img_l)
+{
+theobject2=obj_img_l
+darking=setInterval("low_ef(theobject2)",50)
+}
+
+function high_ef(obj_img2)
+{
+if(obj_img2.filters.alpha.opacity < 100) obj_img2.filters.alpha.opacity+=5
+
+else if(window.highlighting) clearInterval(highlighting)
+}
+
+function low_ef(obj_img3)
+{
+if(obj_img3.filters.alpha.opacity > 35) obj_img3.filters.alpha.opacity-=5
+
+else if(window.darking) clearInterval(darking)
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr><td> 
+      <table width="320" border="0" cellspacing="0" cellpadding="0" align="center" background="main_back.jpg" height="330">
+        <tr> 
+          <td> 
+            <div align="center"><img src="set_01.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+          <td> 
+            <div align="center"><img src="set_02.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+          <td> 
+            <div align="center"><img src="set_03.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><img src="set_04.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+          <td> 
+            <div align="center"><img src="set_05.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+          <td> 
+            <div align="center"><img src="set_06.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><img src="set_07.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+          <td> 
+            <div align="center"><img src="set_08.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+          <td> 
+            <div align="center"><img src="set_09.jpg" style='filter: alpha(opacity=35); background-color: #FFFFFF; border: 1 ridge #FFFFFF' onmouseover=high(this) onmouseout=low(this) width="80" height="100"></div>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+</table>
+</body>
+</html>

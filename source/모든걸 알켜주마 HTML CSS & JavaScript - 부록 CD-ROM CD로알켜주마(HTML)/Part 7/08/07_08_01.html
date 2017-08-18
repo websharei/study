@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+function mouse_event() { 
+
+if(window.event.button == 1) { // 마우스의 왼쪽 버튼을 눌렀을 경우
+document.write("x좌표값 : " + window.event.x + "<br>")
+document.write("y좌표값 : " + window.event.y + "<br>")
+}
+else if(window.event.button == 2) { // 마우스의 오른쪽 버튼을 눌렀을 경우
+document.write("x좌표값 : " + window.event.screenX + "<br>")
+document.write("y좌표값 : " + window.event.screenY + "<br>")
+}
+}
+document.onmousedown = mouse_event // 마우스를 눌렀을시 함수를 호출
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+</body>
+</html>

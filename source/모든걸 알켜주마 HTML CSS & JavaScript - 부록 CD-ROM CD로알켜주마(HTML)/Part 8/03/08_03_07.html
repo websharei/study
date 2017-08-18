@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function move_up() {
+window.moveBy(0,-10) // 현위치에서 위로 10픽셀이동
+}
+function move_left() {
+window.moveBy(-10,0) // 현위치에서 좌로 10픽셀이동
+}
+function move_right() {
+window.moveBy(10,0) // 현위치에서 우로 10픽셀이동
+}
+function move_down() {
+window.moveBy(0,10) // 현위치에서 아래로 10픽셀 이동
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<center>
+아래 버튼을 눌르는 방향으로 브라우저가 이동합니다.
+<form>
+<input type="button" value=" 상향이동 " onClick="move_up()"><br>
+<input type="button" value=" 좌향이동 " onClick="move_left()">
+<input type="button" value=" 우향이동 " onClick="move_right()"><br>
+<input type="button" value=" 하향이동 " onClick="move_down()">
+</form>
+<img src='browser_title.gif'>
+</center>
+</body>
+</html>

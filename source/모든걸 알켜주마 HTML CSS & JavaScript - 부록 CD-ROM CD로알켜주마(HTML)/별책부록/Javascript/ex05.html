@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>연도를 입력하면 해당 해의 띠를 표시합니다.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function take_show () {
+
+        var toyear = 2009 // 띠를 구하기위한 수입력(12배수)
+        var birthyear = document.frm.inyear.value;
+        var birthpet="잘못된 연도입니다."
+
+        x = (toyear - birthyear) % 12
+        if ((x == 1) || (x == -11)) {
+            birthpet="쥐띠"      }
+            else  {
+             if (x == 0)             {
+             birthpet="소띠"           }
+             else  {
+              if ((x == 11) || (x == -1)) {
+              birthpet="호랑이띠"          }
+              else  {
+               if ((x == 10) || (x == -2)) {
+               birthpet="토끼띠"         }
+               else  {
+                if ((x == 9) || (x == -3))  {
+                birthpet="용띠"         }
+                else  {
+                 if ((x == 8) || (x == -4))  { 
+                 birthpet="뱀띠"          }
+                 else  {
+                  if ((x == 7) || (x == -5))  { 
+                  birthpet="말띠"          }
+                  else  {
+                   if ((x == 6) || (x == -6))  { 
+                   birthpet="양띠"          }
+                   else  {
+                    if ((x == 5) || (x == -7))  {  
+                    birthpet="원숭이띠"         }
+                    else  {
+                     if ((x == 4) || (x == -8))  {
+                     birthpet="닭띠"        }
+                     else  {
+                      if ((x == 3) || (x == -9))  {
+                      birthpet="개띠"            }
+                      else  {
+                       if ((x == 2) || (x == -10))  {
+                       birthpet="돼지띠"             }  
+                      }}}}}}}}}}}
+        document.frm.birth.value = birthpet;
+
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<center>
+<br>
+<br>
+<br>
+<form NAME="frm">
+<input TYPE="text" SIZE="4" NAME="inyear" value="1975">
+<input TYPE="button" VALUE="띠맞추기" onClick="take_show()"><p>
+<input TYPE="text" SIZE="9" NAME="birth">
+</form>
+</center>
+</body>
+</html>

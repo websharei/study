@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<style>
+<!--
+#tickertape{
+position:relative;
+layer-background-color:black;
+width:400;
+height:12;
+}
+#subtickertape{
+background-color:black;
+position:absolute;
+border: 1px solid black;
+width:400;
+height:12;
+}
+.subtickertapefont{
+font:bold 12px Verdana;
+text-decoration:none;
+color:white;
+}
+.subtickertapefont a{
+color:white;
+text-decoration:none;
+}
+//-->
+</style>
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onload="if (document.all||document.layers) {regenerate2();update()}">
+<div id="tickertape">
+<div id="subtickertape" class="subtickertapefont">Initializing...</div>
+</div>
+<script language="JavaScript">
+/*Fading Ticker Tape Script-by 
+Dynamic Drive (www.dynamicdrive.com)
+Fading background color component by Dave Methvin, Windows Magazine 
+For full source code, installation instructions, 
+100's more DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com */
+
+var speed=4500 // 이곳의 값을 바꾸어 속도를 변화시킬수가 있습니다.
+var news=new Array()
+
+news[0]="<a href='http://rapid00.coco.st'>rapidworks fusionwebtutorial</a>"
+news[1]="<a href='http://www.jeumedia.com/'>Visit Website! Digital Entertainment JeuMedia</a>"
+news[2]="<a href='http://empal.com'>Get your own 30MB free email!!!</a>"
+// 배열을 추가하여 더 많은 문장을 넣을수가 있습니다.
+i=0
+if (document.all) tickerobject=document.all.subtickertape.style
+else tickerobject=document.tickertape.document
+
+function regenerate(){
+window.location.reload()
+}
+
+function regenerate2(){
+if (document.layers) setTimeout("window.onresize=regenerate",450)
+}
+
+function update(){
+BgFade(0xff,0xff,0xff, 0x00,0x00,0x00,10);
+if (document.layers){
+document.tickertape.document.subtickertape.document.write('<span class="subtickertapefont">'+news[i]+'</span>')
+document.tickertape.document.subtickertape.document.close()
+}
+else document.all.subtickertape.innerHTML=news[i]
+if (i<news.length-1) i++
+else i=0
+setTimeout("update()",speed)
+}
+
+function BgFade(red1, grn1, blu1, red2, grn2, blu2, steps) {
+sred = red1; sgrn = grn1; sblu = blu1; 
+ered = red2; egrn = grn2; eblu = blu2; 
+inc = steps; 
+step = 0; 
+RunFader();
+}
+
+function RunFader() {
+var epct = step/inc; 
+var spct = 1 - epct; 
+if (document.layers) tickerobject.bgColor = Math.floor(sred * spct + ered * epct)*256*256 + Math.floor(sgrn * spct + egrn * epct)*256 + Math.floor(sblu * spct + eblu * epct);
+else tickerobject.backgroundColor= Math.floor(sred * spct + ered * epct)*256*256 + Math.floor(sgrn * spct + egrn * epct)*256 + Math.floor(sblu * spct + eblu * epct);
+if ( step < inc ) {
+setTimeout('RunFader()',50); 
+}
+step++;
+}
+</script>
+</body>
+</html>

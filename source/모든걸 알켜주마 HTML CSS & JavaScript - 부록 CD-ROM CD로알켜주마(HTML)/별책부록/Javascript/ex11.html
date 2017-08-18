@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>페이지가 로딩하는데 걸린 시간 표시하기</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+Start = new Date() 
+function load_time() { 
+	Stop = new Date() 
+	l_sec = Stop.getTime() - Start.getTime(); 
+	l_sec = l_sec / 1000
+	alert("이 페이지를 로딩하는데 걸린시간은 \n\n" + l_sec + " 초 입니다.");
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="load_time()">
+<center>
+<img src="ex15_001.jpg" border="0">
+</center>
+</body>
+</html>

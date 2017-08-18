@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function search_word(take) {
+if(window.find(take, true)) alert("찾았따! ^o^/") // 찾았을경우 메세지창 띄움
+else alert("문서내에서 [" + take + "]란 문자열은 없습니다.")
+// 찾는 문자열이 없을경우 해당 문자열과함께 없다는 메세지 출력
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<img src='sony.jpg'><br>
+<blockquote><pre>
+· SpeedStep™기술을 도입한
+Mobile 인텔® Pentium® Ⅲ 850 MHz 프로세서
+· 128 MB SDRAM (최대 256 MB 가능)
+· 20 GB (C:12GB, D:8GB)
+· 12.1" XGA(1024x768) TFT 호환
+· 도킹스테이션
+· Origin : Japan
+
+소니의 PC는 정품 Microsoft ® Windows ® 를 사용합니다. 
+</pre></blockquote>
+<center><form>
+<input type='text' name='search_w1' value='' size='20'>
+<input type='button' name='search_w2'value='찾아주라~' onClick='search_word(search_w1.value)'>
+</form></center>
+</body>
+</html>

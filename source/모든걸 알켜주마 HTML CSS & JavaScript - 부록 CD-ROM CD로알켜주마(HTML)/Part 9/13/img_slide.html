@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>이미지 슬라이드 효과</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+var slidespeed = 2000 // 전환효과의 속도를 입력하며 1/1000 초로 입력합니다.
+var img_file = new Array("slide_1.jpg","slide_2.jpg","slide_3.jpg","slide_4.jpg") 
+// 이미지 파일들을 배열로 선언합니다.
+var img_link = new Array("http://rapid00.com","http://rapid00.coco.st","http://myhome.netsgo.com/rapid00","http://rapid00.com") 
+// 이미지 수에 맞게 링크도 삽입하여 배열을 선언합니다.
+var img_sec = new Array()
+var ie55 = window.createPopup
+/* 익스플로러 5.5에서만 동작시키기위해 변수에 값을 설정합니다.
+익스플로러 5.5라면 true값을 갖게됩니다. */
+
+for (i=0; i<img_file.length; i++) { // 각 이미지 파일을 배열로 정의합니다.
+img_sec[i]=new Image()
+img_sec[i].src=img_file[i]
+}
+
+function link_location() { // 각 링크의 주소로 location 합니다.
+window.location = img_link[Get_URL]
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#000000" text="#FFFFFF"><center><br><br><br>
+<font size=2>:: Flash와 같은 효과를 자바스크립트로도 구현이 가능합니다. ::</font><br><br>
+<a href="javascript:link_location()" onFocus="this.blur()"><img src="slide_1.jpg" name="slide" border=0 style="filter:progid:DXImageTransform.Microsoft.Pixelate(MaxSquare=10,Duration=1)"></a>
+
+<script language="JavaScript">
+<!--
+
+var Get_URL = 0
+var img_array = 0
+var pixeldelay = (ie55)? document.images.slide.filters[0].duration*1000 : 0
+// 익스플로러 5.5 이상일경우 필터효과를 적용하고 그렇지 않으면 적용을 하지 않습니다.
+
+function slide_effect() {
+if (!document.images) return
+if (ie55) document.images.slide.filters[0].apply()
+document.images.slide.src = img_sec[img_array].src
+if (ie55) document.images.slide.filters[0].play()
+Get_URL = img_array
+img_array = (img_array < img_file.length-1)? img_array+1 : 0
+setTimeout("slide_effect()", slidespeed + pixeldelay)
+}
+
+slide_effect()
+
+//-->
+</script>
+</center>
+</body>
+</html>

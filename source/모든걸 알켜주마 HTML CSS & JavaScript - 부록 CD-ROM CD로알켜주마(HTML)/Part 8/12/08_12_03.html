@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function submit_f() {
+document.coffee.submit()
+alert("전송했습니다.")
+}
+
+function reset_f() {
+document.coffee.reset()
+alert("리셋했습니다.")
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<form name="coffee">
+아이디 넣어봐 : <input type="test" name="c_line" size="10" maxlength="10"><p>
+암호도 넣어봐 : <input type="password" name="c_pass" size="10" maxlength="10"><p>
+<input type="button" name="c_submit" value="전송할래!" onClick="submit_f()">
+<input type="button" name="c_reset" value="다시쓸래!" onClick="reset_f()">
+</form>
+</body>
+</html>

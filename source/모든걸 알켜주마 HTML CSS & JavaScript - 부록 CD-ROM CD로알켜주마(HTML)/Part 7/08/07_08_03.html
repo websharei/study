@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function m_position(take){
+document.m_box.left=take.pageX+15
+document.m_box.top=take.pageY+15
+}
+window.captureEvents(Event.MOUSEMOVE)
+window.onmousemove=m_position
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<layer id="m_box" z-index="1" bgcolor="black">
+<font size="2" color="white">마우스를 움직여 보세요.</font>
+</layer>
+</body>
+</html>

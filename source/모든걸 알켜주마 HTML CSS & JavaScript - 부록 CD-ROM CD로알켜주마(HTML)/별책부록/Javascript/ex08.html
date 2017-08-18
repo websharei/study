@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>링크에 마우스를 올리면 사운드가 나옵니다.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function over_sound(str)
+{
+  eval(str);
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<bgsound id="music" loop="1">
+<center>
+<br>
+<a href="#" OnMouseOver="over_sound('music.src=\'ex09_001.wav\'');">사운드 1</a><br><br>
+<a href="#" OnMouseOver="over_sound('music.src=\'ex09_002.wav\'');">사운드 2</a><br><br>
+<a href="#" OnMouseOver="over_sound('music.src=\'ex09_003.wav\'');">사운드 3</a><br><br>
+<a href="#" OnMouseOver="over_sound('music.src=\'ex09_004.wav\'');">사운드 4</a><br>
+<br>
+
+</center>
+
+</body>
+</html>

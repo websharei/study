@@ -1,0 +1,281 @@
+<html>
+<head>
+	<title>우측에 따라다니는 아나로그 시계</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"></head>
+
+<body style='tab-interval:40.0pt'>
+<script language="JavaScript">
+<!--
+fCol='green'; //시간 색상 지정하기.
+sCol='FF0000'; //초 바늘 색상 지정하기.
+mCol='000000'; //분 바늘 색상 지정하기.
+hCol='6600FF'; //시 바늘 색상 지정하기.
+
+Ybase=40; //시계의 높이값(크기)
+Xbase=40; //시계의 넓이값(크기)
+
+H='...'; // 시간 모양 지정
+H=H.split('');
+M='....'; // 분 모양 지정
+M=M.split('');
+S='.....'; // 초 모양 지정
+S=S.split('');
+NS4=(document.layers);
+NS6=(document.getElementById&&!document.all);
+IE4=(document.all);
+Ypos=0;
+Xpos=0;
+dots=12;
+Split=360/dots;
+if (NS6){
+for (i=1; i < dots+1; i++){
+document.write('<div id="n6Digits'+i+'" style="position:absolute;top:0px;left:0px;width:30px;height:30px;font-family:Arial;font-size:10px;color:#'+fCol+';text-align:center;padding-top:10px">'+i+'</div>');
+}
+for (i=0; i < M.length; i++){
+document.write('<div id="Ny'+i+'" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#'+mCol+'"></div>');
+}
+for (i=0; i < H.length; i++){
+document.write('<div id="Nz'+i+'" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#'+hCol+'"></div>');
+}
+for (i=0; i < S.length; i++){
+document.write('<div id="Nx'+i+'" style="position:absolute;top:0px;left:0px;width:2px;height:2px;font-size:2px;background:#'+sCol+'"></div>');
+}
+}
+if (NS4){
+dgts='1 2 3 4 5 6 7 8 9 10 11 12';
+dgts=dgts.split(' ')
+for (i=0; i < dots; i++){
+document.write('<layer name=nsDigits'+i+' top=0 left=0 height=30 width=30><center><font face=Arial size=1 color='+fCol+'>'+dgts[i]+'</font></center></layer>');
+}
+for (i=0; i < M.length; i++){
+document.write('<layer name=ny'+i+' top=0 left=0 bgcolor='+mCol+' clip="0,0,2,2"></layer>');
+}
+for (i=0; i < H.length; i++){
+document.write('<layer name=nz'+i+' top=0 left=0 bgcolor='+hCol+' clip="0,0,2,2"></layer>');
+}
+for (i=0; i < S.length; i++){
+document.write('<layer name=nx'+i+' top=0 left=0 bgcolor='+sCol+' clip="0,0,2,2"></layer>');
+}
+}
+if (IE4){
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=1; i < dots+1; i++){
+document.write('<div id="ieDigits" style="position:absolute;top:0px;left:0px;width:30px;height:30px;font-family:Arial;font-size:10px;color:'+fCol+';text-align:center;padding-top:10px">'+i+'</div>');
+}
+document.write('</div></div>')
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < M.length; i++){
+document.write('<div id=y style="position:absolute;width:2px;height:2px;font-size:2px;background:'+mCol+'"></div>');
+}
+document.write('</div></div>')
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < H.length; i++){
+document.write('<div id=z style="position:absolute;width:2px;height:2px;font-size:2px;background:'+hCol+'"></div>');
+}
+document.write('</div></div>')
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < S.length; i++){
+document.write('<div id=x style="position:absolute;width:2px;height:2px;font-size:2px;background:'+sCol+'"></div>');
+}
+document.write('</div></div>')
+}
+
+
+
+function clock(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.57 + Math.PI * hr/6 + Math.PI*parseInt(time.getMinutes())/360;
+
+if (NS6){
+Ypos=window.pageYOffset+window.innerHeight-Ybase-25;
+Xpos=window.pageXOffset+window.innerWidth-Xbase-30;
+for (i=1; i < dots+1; i++){
+ document.getElementById("n6Digits"+i).style.top=Ypos-15+Ybase*Math.sin(-1.56 +i *Split*Math.PI/180)
+ document.getElementById("n6Digits"+i).style.left=Xpos-15+Xbase*Math.cos(-1.56 +i*Split*Math.PI/180)
+ }
+for (i=0; i < S.length; i++){
+ document.getElementById("Nx"+i).style.top=Ypos+i*Ybase/4.1*Math.sin(sec);
+ document.getElementById("Nx"+i).style.left=Xpos+i*Xbase/4.1*Math.cos(sec);
+ }
+for (i=0; i < M.length; i++){
+ document.getElementById("Ny"+i).style.top=Ypos+i*Ybase/4.1*Math.sin(min);
+ document.getElementById("Ny"+i).style.left=Xpos+i*Xbase/4.1*Math.cos(min);
+ }
+for (i=0; i < H.length; i++){
+ document.getElementById("Nz"+i).style.top=Ypos+i*Ybase/4.1*Math.sin(hrs);
+ document.getElementById("Nz"+i).style.left=Xpos+i*Xbase/4.1*Math.cos(hrs);
+ }
+}
+if (NS4){
+Ypos=window.pageYOffset+window.innerHeight-Ybase-20;
+Xpos=window.pageXOffset+window.innerWidth-Xbase-30;
+for (i=0; i < dots; ++i){
+ document.layers["nsDigits"+i].top=Ypos-5+Ybase*Math.sin(-1.045 +i*Split*Math.PI/180)
+ document.layers["nsDigits"+i].left=Xpos-15+Xbase*Math.cos(-1.045 +i*Split*Math.PI/180)
+ }
+for (i=0; i < S.length; i++){
+ document.layers["nx"+i].top=Ypos+i*Ybase/4.1*Math.sin(sec);
+ document.layers["nx"+i].left=Xpos+i*Xbase/4.1*Math.cos(sec);
+ }
+for (i=0; i < M.length; i++){
+ document.layers["ny"+i].top=Ypos+i*Ybase/4.1*Math.sin(min);
+ document.layers["ny"+i].left=Xpos+i*Xbase/4.1*Math.cos(min);
+ }
+for (i=0; i < H.length; i++){
+ document.layers["nz"+i].top=Ypos+i*Ybase/4.1*Math.sin(hrs);
+ document.layers["nz"+i].left=Xpos+i*Xbase/4.1*Math.cos(hrs);
+ }
+}
+
+if (IE4){
+Ypos=document.body.scrollTop+window.document.body.clientHeight-Ybase-20;
+Xpos=document.body.scrollLeft+window.document.body.clientWidth-Xbase-20;
+for (i=0; i < dots; ++i){
+ ieDigits[i].style.pixelTop=Ypos-15+Ybase*Math.sin(-1.045 +i *Split*Math.PI/180)
+ ieDigits[i].style.pixelLeft=Xpos-15+Xbase*Math.cos(-1.045 +i *Split*Math.PI/180)
+ }
+for (i=0; i < S.length; i++){
+ x[i].style.pixelTop =Ypos+i*Ybase/4.1*Math.sin(sec);
+ x[i].style.pixelLeft=Xpos+i*Xbase/4.1*Math.cos(sec);
+ }
+for (i=0; i < M.length; i++){
+ y[i].style.pixelTop =Ypos+i*Ybase/4.1*Math.sin(min);
+ y[i].style.pixelLeft=Xpos+i*Xbase/4.1*Math.cos(min);
+ }
+for (i=0; i < H.length; i++){
+ z[i].style.pixelTop =Ypos+i*Ybase/4.1*Math.sin(hrs);
+ z[i].style.pixelLeft=Xpos+i*Xbase/4.1*Math.cos(hrs);
+ }
+}
+setTimeout('clock()',100);
+}
+clock();
+//-->
+</script>
+
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:바탕;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:굴림;
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-alt:Gulim;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"\@바탕";
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"\@굴림";
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	text-autospace:none;
+	word-break:break-hangul;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:바탕;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 3.0cm 3.0cm 3.0cm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:18.0pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+<div class=Section1 style='layout-grid:18.0pt'> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td><div align="center"> 
+          <table width="350" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td> <div align="center"></div>
+                <div align="center"><font size="+1" face="바탕"><strong>Stargirl 
+                  내사랑을 받아다오</strong></font> </div>
+                <div align="center"></div>
+                <p class=MsoNormal align=center style='text-align:center'><font size="+1" face="바탕"></font></p>
+                <p align="right"><font color="#000000" size="2" face="돋움">- Bulldogmansion</font></p>
+                <p><font size="2" face="돋움">처음엔 미처 몰랐어 눈부신 사랑에 빠질 줄은<br>
+                  멀리서 전학온 이상한 아이가 너란걸 <br>
+                  누군가 얘기했을 뿐</font></p>
+                <p><font size="2" face="돋움">그러던 어느날인가 조금씩 내 눈에 띄더라구<br>
+                  픽픽한 모습과 촉촉한 너의 마음까지 <br>
+                  난 네가 좋아졌어</font></p>
+                <p><font size="2" face="돋움">*내 맘을 받아라 놓치지 마라 착한 너 변하지 않도록<br>
+                  그런 네 마음 지켜줄 테니</font></p>
+                <p><font size="2" face="돋움">내 맘을 받아라 놓치지 마라 너도 날 좋아한다면은<br>
+                  깊이 간직한 나의 사랑을 받아다오*</font></p>
+                <p><font size="2" face="돋움">이제 넌 나만의 stargirl 도무지 헤어날 수 없어<br>
+                  모두 괴롭히다 시집간 나의 누이보다 난 네가 좋아졌어<br>
+                  날 좀 보소 날 좀 봐 </font></p>
+                <p><font size="2" face="돋움">*이제는 모두가 너를 좋아해 착한 너 지금은 어디에<br>
+                  그런 네 마음 지켜줄 테니</font></p>
+                <p><font size="2" face="돋움">내 맘을 받아라 놓치지 마라 너도 날 좋아한다면은<br>
+                  깊이 간직한 나의 사랑을 받아다오<br>
+                  </font></p>
+                </td>
+            </tr>
+          </table>
+        </div></td>
+    </tr>
+  </table>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p></o:p></span></p>
+  </div>
+
+</body>
+</html>

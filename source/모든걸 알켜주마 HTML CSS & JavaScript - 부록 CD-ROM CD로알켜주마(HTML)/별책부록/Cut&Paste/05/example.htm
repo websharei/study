@@ -1,0 +1,40 @@
+
+<html>
+<head>
+<title>ByKlein&acute;s Chromeless Windows</title>
+</head>
+<script type="text/javascript" src="ByKlein_Chromeless/ByKlein_chromeless.js"></script>
+<script>
+var myChromeless = new ChromelessWindow();
+/////////////////////////////////////////////
+//This are the attributes you can customize//
+/////////////////////////////////////////////
+myChromeless.URL = "ByKlein_Chromeless/chromelessContent.htm";
+myChromeless.title = "ByKlein's Chromeless Windows";
+myChromeless.titlebarImage="ByKlein_Chromeless/titlebar.gif";
+myChromeless.titlebarHeight = 29;
+myChromeless.titleFont = "Arial";
+myChromeless.titleSize = 14;
+myChromeless.titleColor = "#F0F0F0";
+myChromeless.scrollbars = "no"; 
+myChromeless.w = 568; //width
+myChromeless.h = 460; //height
+myChromeless.centered = "yes";
+myChromeless.xPos = 10;
+myChromeless.yPos = 10;
+myChromeless.borderColor = "#000000";
+myChromeless.borderSize = 5;
+myChromeless.minimizeBottom = "ByKlein_Chromeless/minimizar.gif";
+myChromeless.closeBottom = "ByKlein_Chromeless/cerrar.gif";
+</script>
+<body>
+<p><font color="#990000" size="2" face="Arial, Helvetica, sans-serif"><strong><font size="1">Open 
+  <a href="javascript:myChromeless.openChromeless()">openChromeless() </a></font></strong></font></p>
+<p><font color="#990000" size="2" face="Arial, Helvetica, sans-serif"><strong><font size="1">Close 
+  <a href="javascript:myChromeless.closeChromeless()">closeChromeless()</a></font></strong></font></p>
+<p><font color="#990000" size="2" face="Arial, Helvetica, sans-serif"><strong><font size="1">New 
+  URL <a href="javascript:myChromeless.setURL('http://www.dmstk.com')">setURL(&quot;http://www.dmstk.com&quot;)</a></font></strong></font></p>
+<p><font color="#990000" size="2" face="Arial, Helvetica, sans-serif"><strong><font size="1">Resize <a href="javascript:myChromeless.resizeTo(800,600)">resizeTo(800,600)</a></font></strong></font></p>
+<p><font color="#990000" size="2" face="Arial, Helvetica, sans-serif"><strong><font size="1">Move <a href="javascript:myChromeless.moveTo(400,400)">moveTo(400,400)</a></font></strong></font></p>
+</body>
+</html>

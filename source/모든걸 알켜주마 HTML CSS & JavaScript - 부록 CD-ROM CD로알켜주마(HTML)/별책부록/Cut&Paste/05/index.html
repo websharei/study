@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<script type="text/javascript" src="ByKlein_Chromeless/ByKlein_chromeless.js"></script>
+<script>
+var myChromeless = new ChromelessWindow();
+myChromeless.URL = "rapidworks.html"; // 문서내에서 보여줄 페이지 혹은 URL
+myChromeless.title = "rapidworks™ 2003Edition!"; // 타이틀명
+myChromeless.titlebarImage="ByKlein_Chromeless/titlebar.gif"; // 타이틀바 이미지
+// 타이틀바 이미지를 삽입하지 않으면 타이틀명이 출력됩니다.
+myChromeless.titlebarHeight = 20; // 타이틀바 높이
+myChromeless.titleFont = "굴림"; // 타이틀바에 사용될 폰트
+myChromeless.titleSize = 12; // 타이틀바에 사용될 폰트사이즈
+myChromeless.titleColor = "#FFFFFF"; // 타이틀바에 사용될 폰트 색상
+myChromeless.scrollbars = "yes"; // 새창의 스크롤 사용여부
+myChromeless.w = 810; // 새창의 넓이값
+myChromeless.h = 480; // 새창의 높이값
+myChromeless.centered = "yes"; // 새창을 화면 중앙에 띄움
+myChromeless.xPos = 10; // 화면을 새창 중앙에 띄우지 않을시 x좌표값
+myChromeless.yPos = 10; // 화면을 새창 중앙에 띄우지 않을시 y좌표값
+myChromeless.borderColor = "#000000"; // 새창의 보더 색상
+myChromeless.borderSize = 1; // 새창의 보더 두께
+myChromeless.minimizeBottom = "ByKlein_Chromeless/minimizar.gif"; // 화면숨김 버튼 이미지
+myChromeless.closeBottom = "ByKlein_Chromeless/cerrar.gif"; // 화면 닫음 버튼 이미지
+</script>
+<body>
+<table width="100%" height="99%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align='center'><font color="#990000" size="2" face="Arial, Helvetica, sans-serif"><strong><font size="1">Open : <a href="javascript:myChromeless.openChromeless()">openChromeless() </a></font></strong></font></td>
+  </tr>
+</table>
+</body>
+</html>

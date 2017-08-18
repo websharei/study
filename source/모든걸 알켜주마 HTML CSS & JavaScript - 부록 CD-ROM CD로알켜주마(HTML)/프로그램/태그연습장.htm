@@ -1,0 +1,67 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<HTML>
+<HEAD>
+<TITLE>
+HTML, JavaScript 연습장
+</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+function AppendText(str) {
+        document.forms[0].editor.value += str;
+        return;
+}
+
+
+function EditAppendText(form, type) {
+        strin =  "form." + type + ".options[(form." + type + ".selectedIndex)].value";
+        form.editor.value += eval(strin);
+        return;
+}
+
+
+function ViewPage(form) {
+     var source = form.editor.value;
+        document.write(source);
+        document.close();
+        return true;
+}
+
+
+function openwin(url) {
+	window.open(url,'new_window','width=300,height=300')
+}
+
+
+function ClearText(form) {
+        form.editor.value="";
+        return;
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<center>
+<FORM NAME="htmlopie">
+<INPUT TYPE="button" NAME="View" VALUE="확인하기" onClick='ViewPage(this.form)'>
+<INPUT TYPE="button" NAME="Clear" VALUE="다시작성" onClick='ClearText(this.form)'>
+<INPUT TYPE="Reset" NAME="Restart" VALUE="기본형" >
+<br><br>
+<TEXTAREA NAME="editor" ROWS=20 COLS=80>
+<html>
+
+<head>
+<title>타이틀명</title>
+</head>
+
+<body>
+
+원하시는 코드를 작성하세요!
+
+</body>
+
+</html> 
+</TEXTAREA>
+</FORM>
+</BODY>
+</HTML>

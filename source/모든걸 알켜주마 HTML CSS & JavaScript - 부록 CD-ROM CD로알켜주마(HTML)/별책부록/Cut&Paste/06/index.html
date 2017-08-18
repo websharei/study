@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>rapidworks - http://rapid00.coco.st</title>
+
+<script language="JavaScript">
+<!--
+
+function drop(n) { 
+if(self.moveBy){ 
+self.moveBy (0,-900) // y축값을 해상도에따라 적정수준으로 맞춰줍니다.
+for(i = n; i > 0; i--){ 
+self.moveBy(0,3)
+} 
+for(j = 8; j > 0; j--){ // 브라우저가 내려오고나서 흔들림을 줍니다.
+self.moveBy(0,j) 
+self.moveBy(j,0) 
+self.moveBy(0,-j) 
+self.moveBy(-j,0) 
+}}} 
+
+//-->
+</script>
+
+
+</head>
+<body bgcolor="#000000" onload=drop(300)>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="99%">
+  <tr>
+    <td align=center><img src="rabbit.jpg" width="480" height="404"></td>
+  </tr>
+</table>
+</body>
+</html>

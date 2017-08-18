@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<table width="100%" height="99%" border="0"><tr><td align=center>
+<img src='script_title.jpg'><br>
+<script language="JavaScript">
+<!--
+
+function take(x) {
+if( x > 1 ) {
+/* 1의 계승은 1이 됨으로 1보다 큰수가
+매개변수로 넘어왔을시에 다음 공식을
+사용하여 계산을 처리합니다. */
+
+y = x * take( x - 1 ) // 계승을 구하는 공식
+return y // 계승값을 리턴
+}
+
+else return x
+}
+
+document.write(take(10))
+
+//-->
+</script>
+</td></tr></table>
+</body>
+</html>

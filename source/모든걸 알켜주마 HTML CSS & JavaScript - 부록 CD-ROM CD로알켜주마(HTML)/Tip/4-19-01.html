@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>새창 다시 열지 않기</title>
+<STYLE TYPE="text/css">
+.geston { font-size: 9pt; line-height:140%; color:#000000; font-family : 굴림, Arial}
+</STYLE>
+<script language="javascript">
+function change(form)
+{
+if (form.url.selectedIndex !=0)
+parent.location = form.url.options[form.url.selectedIndex].value
+}
+function setCookie( name, value, expiredays )
+{
+        var todayDate = new Date();
+        todayDate.setDate( todayDate.getDate() + expiredays );
+        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+function getCookie( name )
+{
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while ( x <= document.cookie.length )
+        {
+                var y = (x+nameOfCookie.length);
+                if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+                        if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+                                endOfCookie = document.cookie.length;
+                        return unescape( document.cookie.substring( y, endOfCookie ) );
+                }
+                x = document.cookie.indexOf( " ", x ) + 1;
+                if ( x == 0 )
+                        break;
+        }
+        return "";
+}
+if ( getCookie( "Notice" ) != "done" )
+{
+        noticeWindow  =  window.open('4-19-01a.html','notice','width=200,height=180');
+        noticeWindow.opener = self;
+}
+</SCRIPT>
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div align="center">
+  <table width="400" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center"><img src="title.gif" width="331" height="95"></td>
+    </tr>
+    <tr>
+      <td class="geston"><font color="#006699"><b>- 새창 다시 열지 않기 예제입니다.</b></font>
+        <p> ++ 다시 열지않음을 체크한 후 닫기 버튼을 클릭하세요.<br>
+          ++ 이제 새로고침을 하여도 새창은 뜨지 않습니다.<br>
+        </p>
+        </td>
+    </tr>
+  </table>
+
+</div>
+</body>
+</html>

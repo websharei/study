@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+
+<script language="JavaScript">
+<!--
+
+theater = "슈퍼" // 상영관 입력
+document.write("JavaScript극장 ")
+document.write(theater)
+document.write("관에서는 ")
+switch(theater)
+{
+case "슈퍼" : document.write("\"슈렉\"이 상영중입니다.") //상영관이 슈퍼일경우출력
+break // 상영관이 슈퍼이였을경우 위 문장을 출력하고 switch문을 빠져나옴
+
+case "울트라" : document.write("\"신라의 달밤\"이 상영중입니다.") //상영관이 "울트라"일경우출력
+break // 상영관이 "울트라"이였을경우 위 문장을 출력하고 switch문을 빠져나옴
+
+case "초슈퍼" : document.write("\"툼레이더\"가 상영중입니다.") //상영관이 "초슈퍼"일경우출력
+break // 상영관이 "초슈퍼"이였을경우 위 문장을 출력하고 switch문을 빠져나옴
+
+case "초울트라" : document.write("\"아틀란티스\"가 상영중입니다.") //상영관이 "초울트라"일경우출력
+break // 상영관이 "초울트라"이였을경우 위 문장을 출력하고 switch문을 빠져나옴
+
+case "초슈퍼울트라캡숑" : document.write("\"노랑머리2\"가 상영중입니다.") //상영관이 "초슈퍼울트라캡숑"일경우출력
+break // 상영관이 "초슈퍼울트라캡숑"이였을경우 위 문장을 출력하고 switch문을 빠져나옴
+
+default : document.write("지정된 상영관만 입력하시기 바랍니다.")
+// 위 조건 외의 값이 입력이 되었다면 default값 출력
+}
+
+//-->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+</body>
+</html>

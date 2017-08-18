@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>배경이미지 스크롤효과</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" background="goddes.jpg">
+<script language="JavaScript">
+<!--
+
+var bgSet = 0
+var bgImg = eval('document.body')
+function bg_scroll(maxSize) {
+bgSet = bgSet + 1
+if (bgSet > maxSize) bgSet = 0
+// bgSet값이 maxSize값보다 크게될시 0으로 셋팅하게 됩니다.
+bgImg.style.backgroundPosition = "0 " + bgSet
+}
+var ScrollTimer = window.setInterval("bg_scroll(90000)", 30)
+
+//-->
+</script>
+<br><br><br><center>
+<img src="skuld.gif" border=0>
+</center>
+</body>
+</html>

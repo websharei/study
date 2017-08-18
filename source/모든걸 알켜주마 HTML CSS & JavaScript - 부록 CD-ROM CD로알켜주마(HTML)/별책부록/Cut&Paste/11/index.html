@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Flash와 같은 슬라이드 쇼</title>
+<style type='text/css'> 
+body { background-color: white ; 
+background-image : url(bg_img.jpg) ; 
+background-repeat : no-repeat ; 
+background-attachment : fixed ; 
+background-position : right bottom;
+}
+</style>
+
+</head>
+<body>
+<img src="title.gif">
+<script language="JavaScript">
+<!--
+
+// CREDITS: 
+// Flashlike slideshow combining zoom-effect and fade-effect 
+// by Urs Dudli and Peter Gehrig 
+
+var zoomimages=new Array("kenshin_001.jpg", "kenshin_002.jpg", "kenshin_003.jpg", "kenshin_004.jpg", "kenshin_005.jpg") 
+// 이곳에 보여줄 이미지를 배열로 저장시킵니다. 물론 추가도 가능합니다.
+var imgpreload=new Array() 
+for (i=0;i<=zoomimages.length;i++) { 
+        imgpreload[i]=new Image() 
+        imgpreload[i].src=zoomimages[i] 
+} 
+
+var zoomfactor=8 
+var positionleft=0 
+var positiontop=0 
+var timer 
+var marginright=0 
+var i_fadestrength=5 
+var i_images=0 
+var step=1
+var content 
+var imageboxwidth=0 
+var imageboxheight=0 
+var bodywidth=0 
+var bodyheight=0 
+
+
+function setimage() { 
+        bodywidth=document.body.clientWidth 
+        bodyheight=document.body.clientHeight 
+        if (i_images>=zoomimages.length) {i_images=0} 
+        content="<img name='newpic' src='"+zoomimages[i_images]+"'>" 
+        imagebox.innerHTML=content 
+        timer=setTimeout("resizeimage()",50) 
+} 
+
+
+function resizeimage() { 
+if (i_fadestrength<120) { 
+        imageboxwidth+=zoomfactor 
+        content="<img name='newpic' src='"+zoomimages[i_images]+"' width='"+imageboxwidth+"'>" 
+        imagebox.innerHTML=content 
+        imageboxwidth=document.newpic.width 
+        imageboxheight=document.newpic.height 
+        imagebox.filters.alpha.opacity=Math.floor(100-i_fadestrength) 
+        document.all.imagebox.style.posLeft=bodywidth/2-imageboxwidth/2 
+        document.all.imagebox.style.posTop=bodyheight/2-imageboxheight/2 
+        document.all.imagebox.style.overflowX="hidden" 
+        document.all.imagebox.style.visibility="visible" 
+        step+=1.5 
+        i_fadestrength+=step 
+        timer=setTimeout("resizeimage()",50) // 이곳에 수치를 늘려주면 효과의 속도를 늦출수가 있습니다.
+} 
+else { 
+        clearTimeout(timer) 
+        i_fadestrength=0; 
+        step=1; 
+        i_images++ 
+        imageboxwidth=0 
+        setimage() 
+        } 
+} 
+if (document.all) { 
+        document.write("<DIV id='imagebox' style='position:absolute;filter:alpha(opacity=0);'></DIV>") 
+} 
+
+if (document.all) { 
+        onload=setimage 
+} 
+
+
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function take_plus(take_sum) {
+sony1 = isNaN(take_sum.x.value) // 입력된 x값이 문자인이 숫자인지 판별
+sony2 = isNaN(take_sum.y.value) // 입력된 y값이 문자인이 숫자인지 판별
+
+if (( sony1 == false ) && ( sony2 == false ))
+/* x와 y가 isNaN()함수에 의해 판별이된 값,
+즉 문자이면 true 숫자이면 false값인 sony1과 sony2값이
+양쪽모두 숫자인경우(false) 다음 공식을 수행합니다. */
+
+{
+take_sum.z.value = eval(take_sum.x.value) + eval(take_sum.y.value)
+/* form으로부터 입력받은 x와 y의 값을 eval()함수를 이용하여 수치를
+받아서 변경한후 합한값을 take_form의 z에 값을 전달합니다. */
+}
+else alert("문자를 입력하면 아니되옵니다 -_-;;")
+/* false가 아닌 true, 즉 값이 문자라면 메세지 창이 떠서
+문자를 입력하면 안된다는 메세지를 출력 합니다. */
+
+}
+
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<table width="100%" height="99%" border=0>
+<tr><td align=center><img src='cal_title.jpg'><br>
+<form name="take_form">
+<input type="text" name="x" value="" size=5> + 
+<input type="text" name="y" value="" size=5> = 
+<input type="text" name="z" value="0" size=10><br><br>
+<input type="button" value="계산해라!" onClick="take_plus(this.form)">
+<!-- 입력받은 x,y값을 take_plus함수를 이용하여 계산처리합니다. //-->
+<input type="reset" value="다시 입력하기">
+</form>
+</td><tr>
+</table>
+</body>
+</html>

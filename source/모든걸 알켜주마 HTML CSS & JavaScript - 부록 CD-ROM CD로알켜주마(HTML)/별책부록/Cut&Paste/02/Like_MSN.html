@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>Javascript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript1.2">
+var description=new Array()
+// 출력할 문자열 입력
+description[0]='<br><br><br>첫번째 메세지'
+description[1]='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;두번째 메세지'
+description[2]='<br><br><br>세번째 메세지'
+
+iens6=document.all||document.getElementById
+ns4=document.layers
+
+<!--GLOBAL VARIABLES-->
+var thename
+var theobj
+var thetext
+var winHeight
+var winPositionFromTop
+var winWidth
+var startH=2
+var openTimer
+<!--END GLOBAL VARIABLES-->
+
+<!--GLOBAL FUNCTIONS-->
+function setObj(text,theswitch,inwidth,inheight) {
+thetext=text
+if(iens6){
+thename = "viewer"
+theobj=document.getElementById? document.getElementById(thename):document.all.thename
+winHeight=100
+if(iens6&&document.all) {
+winPositionFromTop=document.body.clientHeight
+winWidth=(document.body.clientWidth-document.body.leftMargin)
+}
+if(iens6&&!document.all) {
+winPositionFromTop=window.innerHeight
+winWidth=(window.innerWidth-(document.body.offsetLeft+30))
+}
+if(theswitch=="override") {
+winWidth=inwidth
+winHeight=inheight
+}
+theobj.style.width=winWidth
+theobj.style.height=startH
+if(iens6&&document.all) {
+theobj.style.top=document.body.scrollTop+winPositionFromTop
+theobj.innerHTML = ""
+theobj.insertAdjacentHTML("BeforeEnd","<table cellspacing=0 width="+winWidth+" height="+winHeight+" border=0 background=msn.gif><tr><td width=100% valign=top><font type='times' size='2' style='color:black;font-weight:normal'>"+thetext+"</font></td></tr></table>")
+}
+if(iens6&&!document.all) {
+theobj.style.top=window.pageYOffset+winPositionFromTop
+theobj.innerHTML = ""
+theobj.innerHTML="<table cellspacing=0 width="+winWidth+" height="+winHeight+" border=1><tr><td width=100% valign=top><font type='times' size='2' style='color:black;font-weight:normal'>"+thetext+"</font></td></tr></table>"
+}
+}
+if(ns4){
+thename = "nsviewer"
+theobj = eval("document."+thename)
+winPositionFromTop=window.innerHeight
+winWidth=window.innerWidth
+winHeight=100
+if(theswitch=="override") {
+winWidth=inwidth
+winHeight=inheight
+}
+theobj.moveTo(0,eval(window.pageYOffset+winPositionFromTop))
+theobj.width=winWidth
+theobj.clip.width=winWidth
+theobj.document.write("<table cellspacing=0 width="+winWidth+" height="+winHeight+" border=1><tr><td width=100% valign=middle><font type='times' size='2' style='color:black;font-weight:normal'>"+thetext+"</font></td></tr></table>")
+theobj.document.close()
+}
+viewIt()
+}
+
+function viewIt() {
+if(startH<=winHeight) {
+if(iens6) {
+theobj.style.visibility="visible"
+if(iens6&&document.all) {
+theobj.style.top=(document.body.scrollTop+winPositionFromTop)-startH
+}
+if(iens6&&!document.all) {
+theobj.style.top=(window.pageYOffset+winPositionFromTop)-startH
+}
+theobj.style.height=startH
+startH+=2
+openTimer=setTimeout("viewIt()",10)
+}
+if(ns4) {
+theobj.visibility = "visible"
+theobj.moveTo(0,(eval(window.pageYOffset+winPositionFromTop)-startH))
+theobj.height=startH
+theobj.clip.height=(startH)
+startH+=2
+openTimer=setTimeout("viewIt()",10)
+}
+}else{
+clearTimeout(openTimer)
+}
+}
+
+function stopIt() {
+if(iens6) {
+theobj.innerHTML = ""
+theobj.style.visibility="hidden"
+startH=2
+}
+if(ns4) {
+theobj.document.write("")
+theobj.document.close()
+theobj.visibility="hidden"
+theobj.width=0
+theobj.height=0
+theobj.clip.width=0
+theobj.clip.height=0
+startH=2
+}
+}
+<!--END GLOBAL FUNCTIONS-->
+</script>
+
+</head>
+
+<body>
+<layer name="nsviewer" bgcolor="#FFFFCC" style="border-width:thin;z-index:1"></layer>
+<script language="JavaScript1.2">
+if (iens6){
+document.write("<div id='viewer' style='background-color:#FFFFCC;visibility:hidden;position:absolute;left:0;width:0;height:0;z-index:1;overflow:hidden;border:1px ridge white'></div>")
+}
+if (ns4){
+hideobj = eval("document.nsviewer")
+hideobj.visibility="hidden"
+}
+</script>
+<center>
+<font size=2>
+<a href="http://www.jeumedia.com" onmouseover="setObj(description[0])" onmouseout="clearTimeout(openTimer);stopIt()"><img src="ball.gif" border="0"> 첫번째 모양</a><br><br>
+<a href="http://www.jeumedia.com" onmouseover="setObj(description[1],'override',550,30)" onmouseout="clearTimeout(openTimer);stopIt()"><img src="ball.gif" border="0"> 두번째 모양</a><br><br>
+<a href="http://www.rapidworks.com" onmouseover="setObj(description[2],'override',200,100)" onmouseout="clearTimeout(openTimer);stopIt()"><img src="ball.gif" border="0"> 세번째 모양</a>
+</font>
+</center>
+</body>
+</html>

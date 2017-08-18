@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Javascript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<script language="JavaScript1.2">
+<!--
+/*---------------[IE 5.5 Scrollbars colorer]--------------------*/
+function scrollBar(line,face,theme)
+{
+if (!line||!face)
+{
+line=null;
+face=null;
+switch(theme) // 색상 테마 정의
+{
+case "blue":
+var line="#78AAFF";
+var face="#EBF5FF";
+break;
+case "orange":
+var line="#FBBB37";
+var face="#FFF9DF";
+break;
+case "red":
+var line="#FF7979";
+var face="#FFE3DD";
+break;
+case "green":
+var line="#00C600";
+var face="#D1EED0";
+break;
+case "neo":
+var line="#BC7E41";
+var face="#EFE0D1";
+break;
+}
+}
+
+with(document.body.style)
+{
+scrollbarDarkShadowColor=line;
+scrollbar3dLightColor=line;
+scrollbarArrowColor="black";
+scrollbarBaseColor=face;
+scrollbarFaceColor=face;
+scrollbarHighlightColor=face;
+scrollbarShadowColor=face;
+scrollbarTrackColor="#F3F3F3";
+}
+}
+
+function colorBar(){
+var w = document.body.clientWidth;
+var h = document.body.clientHeight;
+var x = event.clientX;
+var y = event.clientY;
+if(x>w) scrollBar('#000080','#BFDFFF'); // scrollbar 색상을 지정합니다.
+else scrollBar(null,null,"neo"); // blue,orange,red,green 변수명을 사용할 수가 있습니다.
+}
+
+if (document.all){
+scrollBar(null,null,"neo"); // blue,orange,red,green 변수명을 사용할 수가 있습니다.
+document.onmousemove=colorBar;
+}
+//-->
+</script>
+<table width="800" height="600" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center"><img src="bg.jpg"></td>
+  </tr>
+</table>
+</body>
+</html>

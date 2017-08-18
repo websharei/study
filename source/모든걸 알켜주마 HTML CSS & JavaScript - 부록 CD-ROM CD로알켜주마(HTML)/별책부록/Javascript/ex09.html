@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>접속할때마다 다른 배경음악이 나옵니다.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+var sound1="ex12_001.wma"
+var sound2="ex12_002.wma"
+var sound3="ex12_003.wma"
+var sound4="ex12_004.wma"
+var sound5="ex12_005.wma"
+var x=Math.round(Math.random()*4)
+if (x==0) x=sound1
+else if (x==1) x=sound2
+else if (x==2) x=sound3
+else if (x==3) x=sound4
+else x=sound5
+if (navigator.appName=="Microsoft Internet Explorer")
+document.write('<bgsound src='+'"'+x+'"'+' loop="infinite">')
+else 
+document.write('<embed src='+'"'+x+'"'+'hidden="true" border="0" width="20" height="20" autostart="true" loop="true">')
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<style type='text/css'> 
+body { background-color: white ; 
+background-image : url(ex12_001.jpg) ; 
+background-repeat : no-repeat ; 
+background-attachment : fixed ; 
+background-position : left bottom;
+}
+</style>
+<center>
+페이지를 로딩할때마다 다른 음악이 배경 나옵니다.<p>
+페이지를 리로드 해보시면 바뀌는 음악을 경험할 수가 있습니다.
+</center>
+</body>
+</html>

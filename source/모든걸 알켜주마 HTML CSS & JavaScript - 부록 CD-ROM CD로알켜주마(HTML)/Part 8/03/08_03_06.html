@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function show_time()
+{
+today = new Date()
+timestr = today.getYear() + "년 "
+timestr += today.getMonth()+1 + "월 "
+timestr += today.getDate() + "일 "
+timestr += today.getHours() + "시 "
+timestr += today.getMinutes() + "분 "
+timestr += today.getSeconds() + "초"
+window.status = timestr // 현제의 시간을 구한값을 상태 표시줄에 출력
+setTimeout("show_time()", 1000) // 1초에 한번 수행
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="show_time()">
+아래 상태 표시줄을 보세요~ 시계가 생겼어요 ^^v
+</body>
+</html>

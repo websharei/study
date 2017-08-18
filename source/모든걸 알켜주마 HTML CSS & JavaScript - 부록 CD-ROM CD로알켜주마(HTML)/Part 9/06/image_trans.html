@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>이미지 전환효과</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript" >
+<!--
+
+var img1 = new Image()
+img1.src = "image_01.jpg"
+// Image생성자 함수를정의하고 해당 변수에 image_01.jpg 파일을 대입합니다.
+var img2 = new Image()
+img2.src = "image_02.jpg"
+// Image생성자 함수를정의하고 해당 변수에 image_02.jpg 파일을 대입합니다.
+var maxLoops = 2
+var count = 2
+function trans_effect() {
+blend_img.filters.blendTrans.apply()
+document.images.blend_img.src = eval("img"+count+".src")
+blend_img.filters.blendTrans.play()
+if (count < maxLoops) { // 이미지파일을 변경하기위해 1과 2를 반복하며 교차가 됩니다.
+count++
+} 
+else { 
+count = 1
+}
+setTimeout("trans_effect()", 4000)
+// 함수의 재귀적 호출을 사용하여 4초를 주기로 반복작업을합니다.
+} 
+
+//--> 
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onLoad="trans_effect()">
+<center>
+<img src="image_01.jpg" name="blend_img" border="0" style="filter: blendTrans(duration=3)">
+</center>
+</body>
+</html>

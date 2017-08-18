@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function src_01() {
+document.layers['take'].src="rapid_01.html"
+}
+function src_02() {
+document.layers['take'].src="rapid_02.html"
+}
+function src_03() {
+document.layers['take'].src="rapid_03.html"
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<a href='#' onClick='src_01()' onFocus='this.blur()'><img src='click_1.gif' border=0></a><br>
+<a href='#' onClick='src_02()' onFocus='this.blur()'><img src='click_2.gif' border=0></a><br>
+<a href='#' onClick='src_03()' onFocus='this.blur()'><img src='click_3.gif' border=0></a>
+<layer id='take' left='300' top='50' width='300' height='450' z-index='1' bgcolor='#FFCC33'>
+
+</layer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+function move_right() {
+take1 = parseInt(document.all['layer1'].style.left) // 레이어의 좌측좌표값을 정수로변환
+document.all['layer1'].style.left = take1 + 2 // 좌측좌표값에 2를 더함
+if( parseInt(document.all['layer1'].style.left) > 400 ) { // 좌측좌표값이 400보다크면 중지
+clearTimeout('move_right()')
+}
+else {
+setTimeout('move_right()', 30) // 좌측 좌표값이 400보다 작다면 0.3초에 한번씩 함수 실행
+}}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<form>
+<input type='button' value='걸어가!!' onClick='move_right()'>
+</form>
+<div id='layer1' style="position:absolute; left=0; top=100; width=100; height=75;">
+<img src='working.gif'>
+</div>
+</body>
+</html>

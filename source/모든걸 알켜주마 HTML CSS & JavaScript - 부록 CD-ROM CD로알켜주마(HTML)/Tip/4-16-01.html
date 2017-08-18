@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>페이지 내부에 주소입력창 만들기</title>
+<script language="javascript"> 
+function go() {
+window.open(document.form.URL.value);
+}
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div align="center"> 
+  <table width="421" border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+      <td align="center"><img src="img/4-16-01a.gif" width="421" height="95"></td>
+    </tr>
+<form name="form">
+    <tr> 
+      <td class="geston" width="421" height="35" background="img/4-16-01b.gif" align="center">
+          <input type="text" name="URL" size="25" value="http://">
+          <input type="button" value="이동" onclick="go();">
+</td>
+    </tr>
+        </form>
+<tr>
+<td><img src="img/4-16-01c.gif" width="421" height="4"></td>
+</tr>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+var take = 0
+t_browser=window.open("newwindow.html", "", "width=100,height=100")
+function autobrowser() {
+  if(take < 75) {
+    t_browser.resizeBy(5, 3)
+	// 새로뜬 창을 넓이와 가로를 각가 5,3픽셀씩 늘림
+    setTimeout('autobrowser()', 50)
+	// 다시 함수의 재귀적호출을 해서 0.05초 후에 autobrowser()함수를 실행
+    take++ // 변수 take값 1증가
+  }
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onload="autobrowser()">
+<center>
+새로뜨는 브라우저가 자동으로 커집니다.<br>
+<img src='browser_title.gif'>
+</center>
+</body>
+</html>

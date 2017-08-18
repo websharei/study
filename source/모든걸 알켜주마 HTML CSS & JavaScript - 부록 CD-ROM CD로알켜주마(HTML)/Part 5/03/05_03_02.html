@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+take = prompt("ASCII코드로 변환할 문자열을 입력하세요.","")
+// prompt() 내장 함수를 이용하여 문자열을 입력받아 take변수에 대입합니다.
+
+take_return = escape(take)
+/* 변수 take값을 escape()함수를 이용해
+ASCII코드로 변환후 변수 take_return에 전달합니다. */
+
+document.write("입력하신 문자열은 <font color=blue>")
+document.write(take)
+document.write("</font> 이며,<br><br>")
+document.write("이를 ASCII코드로 변환하면 <font color=red>")
+document.write(take_return)
+document.write("</font> 입니다.")
+
+//-->
+</script>
+
+</head>
+<body bgcolor="#ffffff" text="#000000">
+</body>
+</html>

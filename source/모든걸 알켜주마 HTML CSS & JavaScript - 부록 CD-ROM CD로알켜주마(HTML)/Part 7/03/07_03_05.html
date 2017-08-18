@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>자바스크립트 강좌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+<!--
+
+to_day = new Date() // 오늘의 날짜와 시간을 구함
+meet_day = new Date(1995, 6, 28, 0, 0, 0)
+/* 첫 만난날을 1995년 7월 28일 19시라고 했을때
+여기서 주의점은 월을 수치1을 뺀값을 입력해주어야합니다.
+자바스크립트에서는 1월을 0으로 표시하기 때문입니다. */
+
+take1 = meet_day.getTime()
+// 1970년부터 만날날 까지의 시간을 1/1000초로 환산합니다.
+take2 = to_day.getTime()
+// 1970년부터 오늘까지의 시간을 1/1000초로 환산합니다.
+
+how_day = Math.ceil((take2-take1)/24/60/60/1000)
+/* 환산한 초를 가지고 지금까지의 초를 구한다음
+이를 가지고 날짜로 환산을 해줍니다. */
+
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" height="99%" border="0"><tr><td align=center>
+<table width="350" height="330" border="0" background='couple_ring.jpg'><tr><td align=center valign=bottom>
+오늘은 그녀와 만난지<font color='red'>
+<script language="JavaScript">
+<!--
+document.write(how_day)
+//-->
+</script>
+</font>일째 되는 날입니다.
+</td></tr></table>
+</td></tr></table>
+</body>
+</html>

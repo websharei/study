@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>이미지 슬라이드</title>
+
+<script language="JavaScript">
+<!--
+
+var sliderwidth=600 // 슬라이드의 너비를 지정합니다.
+var sliderheight=85 // 슬라이드의 높이를 지정합니다.
+var slidespeed=5  // 스크롤 속도를 지정합니다.
+
+var leftrightslide=new Array() 
+var finalslide='' 
+leftrightslide[0]='<a href="#"><img src="slideimg_01.jpg" border=0></a>'
+leftrightslide[1]='<a href="#"><img src="slideimg_02.jpg" border=0></a>'
+leftrightslide[2]='<a href="#"><img src="slideimg_03.jpg" border=0></a>'
+leftrightslide[3]='<a href="#"><img src="slideimg_04.jpg" border=0></a>'
+leftrightslide[4]='<a href="#"><img src="slideimg_05.jpg" border=0></a>'
+leftrightslide[5]='<a href="#"><img src="slideimg_06.jpg" border=0></a>'
+leftrightslide[6]='<a href="#"><img src="slideimg_07.jpg" border=0></a>'
+leftrightslide[7]='<a href="#"><img src="slideimg_08.jpg" border=0></a>'
+leftrightslide[8]='<a href="#"><img src="slideimg_09.jpg" border=0></a>'
+leftrightslide[9]='<a href="#"><img src="slideimg_10.jpg" border=0></a>'
+// 배열을 늘려 더많은 이미지를 추가할 수가 있으며 아래 소스는 수정하지 마시기 바랍니다.
+
+var copyspeed=slidespeed 
+//copy contents of leftrightslide into one variable 
+for (i=0;i<leftrightslide.length;i++) 
+finalslide=finalslide+leftrightslide[i]+"  " 
+
+
+if (document.all){ 
+//dynamically write out the marquee tag 
+document.write('<marquee id="ieslider" scrollAmount=0 style="width:'+sliderwidth+'">'+finalslide+'</marquee>') 
+//stop marquee when mouse is over it 
+ieslider.onmouseover=new Function("ieslider.scrollAmount=0") 
+//re-enable marquee when mouse is out 
+ieslider.onmouseout=new Function("if (document.readyState=='complete') ieslider.scrollAmount=slidespeed") 
+} 
+
+function regenerate(){ 
+window.location.reload() 
+} 
+function regenerate2(){ 
+if (document.layers){ 
+document.ns_slider01.visibility="show" 
+setTimeout("window.onresize=regenerate",450) 
+intializeleftrightslide() 
+} 
+if (document.all) 
+ieslider.scrollAmount=slidespeed 
+} 
+
+//NS specific function for initializing slider upon page load 
+function intializeleftrightslide(){ 
+document.ns_slider01.document.ns_slider02.document.write('<nobr>'+finalslide+'</nobr>') 
+document. ns_slider01.document.ns_slider02.document.close() 
+thelength=document.ns_slider01.document.ns_slider02.document.width 
+scrollslide() 
+} 
+
+//NS specific function for sliding slideshow 
+function scrollslide(){ 
+if (document.ns_slider01.document.ns_slider02.left>=thelength*(-1)){ 
+document.ns_slider01.document.ns_slider02.left-=slidespeed 
+setTimeout("scrollslide()",100) 
+} 
+else{ 
+document.ns_slider01.document.ns_slider02.left=sliderwidth 
+scrollslide() 
+} 
+} 
+window.onload=regenerate2
+
+//-->
+</script>
+
+
+</head>
+<body bgcolor="#FFFFFF">
+<ilayer width=&{sliderwidth}; height=&{sliderheight}; name="ns_slider01" visibility=hide> 
+<layer name="ns_slider02" onMouseover="slidespeed=0;" onMouseout="slidespeed=copyspeed"></layer> 
+</ilayer>
+</body>
+</html>
