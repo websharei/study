@@ -1,4 +1,4 @@
-##"바로바로 할 수 있는 jQuery 입문" 책 리뷰
+## "바로바로 할 수 있는 jQuery 입문" 책 리뷰
 ![image](https://cloud.githubusercontent.com/assets/10431663/22020086/bdc84a7a-dcf9-11e6-8634-e788d17a1689.png)
 * 책정보(유광열 저, 제우미디어 출판, 2012.10.15, 352p)<br>
  http://book.naver.com/bookdb/book_detail.nhn?bid=7030993
