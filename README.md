@@ -1,5 +1,5 @@
-##"누구나 쉽게 배우는 자바스크립트" 책 리뷰
-![image](https://cloud.githubusercontent.com/assets/10431663/22188700/07ff2d42-e15b-11e6-9d4b-afe0001cf982.png)
+## "누구나 쉽게 배우는 자바스크립트" 책 리뷰  
+![image](https://cloud.githubusercontent.com/assets/10431663/22188700/07ff2d42-e15b-11e6-9d4b-afe0001cf982.png)  
 * 책정보(닉 모건 저, 비제이퍼블릭, 2015.09.16, 320p)<br>
   http://book.naver.com/bookdb/book_detail.nhn?bid=9530957
 
