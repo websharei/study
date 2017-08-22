@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <script>
+		// this는 자기를 감싸고 있는 객체
+
+       // this의 scope0
+        // (function(){
+
+        //     console.log("A", this);
+
+        //     var obj = {
+        //         f1:function()
+        //         {
+        //             console.log("B", this);
+
+        //             function f2()
+        //             {
+        //                 console.log("C", this);
+        //             }
+        //             f2();
+
+        //             var f3 = function()
+        //             {
+        //                 console.log("D", this);
+        //             }
+        //             f3();
+        //         }
+        //     }
+        //     obj.f1();
+        // })();
+
+
+        // this의 scope1
+        // (function(){
+        //     console.log(this);
+        //     var nts =
+        //     {
+        //         name:"nts",
+        //         introduce : function()
+        //         {
+        //             console.log(this.name);
+        //         }
+        //     }
+
+        //     var naver =
+        //     {
+        //         name:"naver",
+        //         introduce : nts.introduce
+        //     }
+        //     nts.introduce();
+        //     naver.introduce();
+        // })();
+
+
+        // this의 scope2
+        // (function(){
+
+        //     this.name = "global"
+        //     function introduceFunction()
+        //     {
+        //         console.log(this.name);
+        //     }
+
+        //     var nts =
+        //     {
+        //         name:"nts",
+        //     }
+
+        //     var naver =
+        //     {
+        //         name:"naver",
+        //     }
+
+        //     introduceFunction();
+        //     nts.introduce = introduceFunction;
+        //     naver.introduce = introduceFunction;
+
+        //     nts.introduce();
+        //     naver.introduce();
+
+        // })();
+
+
+
+
+      </script>
+      <button id = "btn">버튼</button>
+    </body>
+</html>

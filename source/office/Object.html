@@ -1,0 +1,115 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <script>
+
+        // (function(){
+        //     var nameArr = ["Tom", "David", "James"]
+        //     var korArr = [90, 80, 40];
+        //     var laughArr = 
+        //     [
+        //         function(){ return 'haha'}, 
+        //         function(){ return 'hoho'},  
+        //         function(){ return 'hihi'}, 
+        //     ]       
+
+        //     // 국어 평균은?, 우리반 학생 이름은? 알아내기 쉬우나
+        //     function getKorAvg()
+        //     {
+        //         var hap = 0;
+        //         for(var i = 0 ; i < korArr.length ; i++)
+        //         {
+        //             hap += korArr[i];
+        //         }
+        //         return (hap/korArr.length);
+        //     }
+        //     console.log( getKorAvg() );
+
+        //     // Tom의 국어 점수와 웃음소리는? 가능은 하나 직관적이지 않다.
+        //     // 과목이 늘어날 수록 관리해야할 배열의 개수가 많아진다. 
+        //     function gotPerson(name)
+        //     {
+        //         for(var i = 0 ; i < nameArr.length ; i++)
+        //         {
+        //             if(nameArr[i] == name)
+        //             {
+        //                 return [ korArr[i], laughArr[i] ];
+        //             }
+        //         }              
+        //     }
+        //     var person = gotPerson("Tom");
+        //     console.log(person[0]);  // 직관적이지 않다.   --> perosn.kor;
+        //     console.log(person[1]());  // 직관적이지 않다. --> person.laugh();
+        // })();
+
+        // (function(){
+        //     var Tom = new Object();
+        //     Tom.kor = 90;
+        //     Tom.laugh = function(){return 'haha'};
+
+        //     var David = new Object();
+        //     Tom.kor = 80;
+        //     Tom.laugh = function(){return 'hoho'};
+
+        //     var Tom = new Object();
+        //     Tom.kor = 40;
+        //     Tom.laugh = function(){return 'hihi'};     
+
+        //     function gotPerson(name)
+        //     {
+        //         var obj = eval(name);
+        //         return obj;        
+        //     }
+        //     var person = gotPerson("Tom");
+        //     console.log(person.kor);  
+        //     console.log(person.laugh());    
+
+        //     // 과목이 늘어나도 복잡하지 않다.
+
+        // })();
+
+
+        // (function(){
+        //     // 객체만들기
+        //     var nts = new Object();
+        //     nts.name = "nts";
+        //     nts.address = "서현동";
+        //     nts.emplpoyeNum = 500;
+        //     nts.introduce = function()
+        //     {
+        //         console.log(this.name + " : " + this.address + "에 위치 하며 " + "직원 수는 "+this.emplpoyeNum+"입니다");
+        //     }
+        //     nts.introduce(); 
+        //     console.log(nts.name);
+        //     console.log(nts.address);
+        //     console.log(nts.employNum);
+
+
+        //     var naver = 
+        //     {
+        //         name:"naver",
+        //         address:"정자동",
+        //         emplpoyeNum:3000,
+        //         introduce : function()
+        //         {
+        //             console.log(this.name + " : " + this.address + "에 위치 하며 " + "직원 수는 "+this.emplpoyeNum+"입니다");
+        //         } 
+        //     }      
+        //     naver.introduce();      
+        //     console.log(naver["name"]);
+        //     console.log(naver["address"]);
+        //     console.log(naver["emplpoyeNum"]);
+        // })();   
+
+      </script>
+      <button id = "btn">버튼</button>
+    </body>
+</html>
