@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGE,MAAG;EACC,UAAU,EAAC,IAAI;EACf,SAAE;IACC,OAAO,EAAE,YAAY;IACrB,WAAE;MACE,OAAO,EAAE,KAAK;MACd,OAAO,EAAE,OAAO;MAChB,MAAM,EAAC,SAAS;MAChB,eAAe,EAAE,IAAI;MACrB,KAAK,EAZH,IAAI;MAaN,iBAAQ;QACH,aAAa,EAAC,kBAA0B;QACxC,KAAK,EAdP,OAAO",
+"sources": ["2.nesting-sample1.scss"],
+"names": [],
+"file": "2.nesting-sample1.css"
+}
