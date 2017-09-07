@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+  <button id = "btn">버튼</button>
+      <script>
+       // this의 scope0
+        /* (function(){
+            console.log("A", this);
+            var obj = {
+                f1:function()
+                {
+                    console.log("B", this);
+                    function f2()
+                    {
+                        console.log("C", this);
+                    }
+                    f2();
+                    var f3 = function()
+                    {
+                        console.log("D", this);
+                    }
+                    f3();
+                }
+            }
+            obj.f1();
+            f2();
+            f3();
+        })(); */
+
+
+        // this의 scope1
+        // (function(){
+        //     console.log(this);
+        //     var nts =
+        //     {
+        //         name:"nts",
+        //         introduce : function()
+        //         {
+        //             console.log(this.name);
+        //         }
+        //     }
+        //     var naver =
+        //     {
+        //         name:"naver",
+        //         introduce : nts.introduce
+        //     }
+        //     nts.introduce();
+        //     naver.introduce();
+        // })();
+
+
+        // this의 scope2
+         /* (function(){
+             this.name = "global"
+             function introduceFunction()
+             {
+                 console.log(this.name);
+             }
+             var nts =
+             {
+                 name:"nts",
+             }
+
+             var naver =
+             {
+                 name:"naver",
+             }
+
+             introduceFunction();
+             nts.introduce = introduceFunction;
+             naver.introduce = introduceFunction;
+             nts.introduce();
+             naver.introduce();
+         })(); */
+
+        /* (function(){
+            var nts = (function(){
+                var name = "local variable in nts"
+                var returnObj ={
+                    name:"nts",
+                    introduce:function(){
+                        console.log(this.name, " / ", name)
+                    }
+                }
+                return returnObj;
+            })();
+
+            var naver = (function(){
+                var name = "local variable in naver"
+                var returnObj ={
+                    name:"naver"
+                }
+                return returnObj;
+            })();
+
+            naver.introduce = nts.introduce;
+            nts.introduce();
+            naver.introduce();
+        })(); */
+
+        // (function(){
+        //     var nts = (function(){
+        //         var name = "local variable in nts"
+        //         var returnObj ={
+        //             name:"nts",
+        //             introduce:function(){
+        //                 console.log(this.name, "---", name)
+        //             }
+        //         }
+        //         return returnObj;
+        //     })();
+
+        //     var naver = (function(){
+        //         var name = "local variable in naver"
+        //         var returnObj ={
+        //             name:"naver"
+        //         }
+        //         return returnObj;
+        //     })();
+
+        //     naver.introduce = nts.introduce;
+        //     nts.introduce();
+        //     naver.introduce();
+
+        //     // naver.introduce = nts.introduce.bind(nts);
+        //     // nts.introduce();
+        //     // naver.introduce();
+
+        //     // nts.introduce.call(nts);
+        //     // nts.introduce();
+
+        //     // nts.introduce.apply(nts);
+        //     // nts.introduce();
+        // })();
+
+        (function(){
+            var obj = {
+                id:"my buttion"
+            }
+            function clickEventHandler(){
+                    console.log(this.id);
+            }
+            var btn = document.getElementById('btn');
+            btn.onclick = clickEventHandler.bind(obj);
+        })()
+
+
+      </script>
+
+    </body>
+</html>
