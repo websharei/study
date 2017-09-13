@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script src = "vending_start.js"></script>
+<script>
+(function(){
+	console.log( vending.getVendingInfo());
+	vending.buy("coke", 1000);
+	console.log( vending.getVendingInfo());
+})();
+</script>
+</body>
+</html>
