@@ -5,40 +5,55 @@ var vending = (function(){
 	var beverageList = [coke, cider];
 	var saveMoney = 10000;
 	var salesMoney = 0;
+	var changeMoney = 0;
+	var inputMoney = 0;
+	var buyedBeverageName = null;
 
 	function buy(beverageName, inputMoney) {
-		var beverage
-		if(inputMoney > 1000){
-			console.log("1000원 이상은 투입이 안됨");
-			return;
-		}
+		var beverage;
+
+		changeMoney = inputMoney;
+		buyedBeverageName = null;
+
 		beverage = getBeverageFromName(beverageName);
-		if(! beverage){
-			displayMsg("원하는 음료가 없어요");
-			return;
+
+		if(inputMoney > 1000){
+			/* displayMsg(false, "1000원 이상은 투입이 안됨");
+			return; */
+
+			return getVendingInfo("OVER_MONEY");
 		}
 
-		var checkStatus = checkBeforeBuying(beverage, inputMoney);
-		if(! checkStatus.result){
-			displayMsg(false, checkStatus.msg);
-			return;
+		if(beverage.count <=0 ){
+			return getVendingInfo("UNDER_STOCK");
 		}
 
+		if(inputMoney < beverage.price ){
+			return getVendingInfo("UNDER_MONEY");
+		}
+
+		if(inputMoney - beverage.price > saveMoney ){
+			return getVendingInfo("UNDER_CHANGE");
+		}
+		
+		buyedBeverangeName = beverageName;
 		changeMoney = workVendingMachine(beverage, inputMoney);
-		displayMsg(true, beverage.name + "을 구매했고 잔돈은 " + changeMoney +" 입니다.");
+		return getVendingInfo("NO_ERROR");
+	
 	}
 
-	function getVendingInfo(){
-		var msg = "";
-		var beverage;
-		for(var i = 0; i < beverageList.length; i++) {
-			beverage = beverageList[i];
-			msg += beverage.name + "가 " + beverage.count + "개 존재합니다. \n";
-		}
-		msg += "저장된 금액은 " + saveMoney + " 입니다. \n";
-		msg += "수입은 " + salesMoney + " 입니다.";
-		
-		 return msg;
+	function getVendingInfo(errorType){
+		var vendingStatus = {};
+		vendingStatus.errorType = errorType;
+		vendingStatus.cakeCount = coke.count;
+		vendingStatus.ciderCount = cider.count;
+		vendingStatus.saveMoney =  saveMoney;
+		vendingStatus.salesMoney = salesMoney;
+		vendingStatus.changeMoney = changeMoney;
+		vendingStatus.inputMoney = 0;
+		vendingStatus.buyedBeverageName = buyedBeverageName;
+
+		return vendingStatus;
 	}
 
 	function workVendingMachine(beverage, inputMoney) {
@@ -49,29 +64,6 @@ var vending = (function(){
 		saveMoney -=  changeMoney;
 
 		return changeMoney;
-	}
-
-	function checkBeforeBuying(beverage, inputMoney){
-		var checkStatus = {result: false, msg:""};
-		if(beverage.count <=0 ){
-			checkStatus.msg = beverage.name + " 은 품절 됐습니다.";
-			checkStatus.result = false;
-			return checkStatus;
-		}
-
-		if(inputMoney < beverage.price ){
-			checkStatus.msg = "금액이 모자릅니다"
-			checkStatus.result = false;
-			return checkStatus;
-		}
-
-		if(inputMoney - beverage.price > saveMoney ){
-			checkStatus.msg = "거스름돈이 없어요.."
-			checkStatus.result = false;
-			return checkStatus;
-		}	
-		checkStatus.result = true;
-		return checkStatus;
 	}
 
 	function getBeverageFromName(beverageName){
@@ -88,21 +80,8 @@ var vending = (function(){
 		return beverage;
 	}
 
-	function displayMsg(isSuccess, msg){
-		if(isSuccess){
-			console.log("-----------success----------");
-			console.log(msg);
-			console.log("------------------------------");
-		} else {
-			console.log("-----------fail----------");
-			console.log(msg);
-			console.log("------------------------------");
-		}
-	}
-
 	var vending = {
-		buy: buy,
-		getVendingInfo: getVendingInfo
+		buy: buy
 	};
 	return vending;
 

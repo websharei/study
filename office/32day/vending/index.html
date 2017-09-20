@@ -30,19 +30,16 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src = "vending_start.js"></script>
-    <!-- <script src = "controller.js"></script>
+    <script src = "controller_start.js"></script>
     <script>
-        $(function(){
-          controller.init(vending);
-        });
-    </script> -->
-	<script>
-	(function(){
-		console.log( vending.getVendingInfo());
-		vending.buy("coke", 1000);
-		console.log( vending.getVendingInfo());
-	})();
-	</script>
+	$(function(){
+		controller.init(vending);
+	});
+
+	/*
+	vending.buy("coke", 1000);
+	*/
+    </script>
 
     <div>
          <br>
