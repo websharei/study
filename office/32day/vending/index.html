@@ -1,0 +1,77 @@
+​<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        .area{
+            border: dashed gray 1px; padding: 20px;
+            width : 600px; height: 60px; text-align: center; margin: auto auto 10px;
+        }
+        .rect_button{
+            width : 100px; height : 60px;
+        }
+        .active_button{
+              background-color : cyan;
+        }
+        .admin_input{
+            width:80px; margin : 5px;
+        }
+        .alert_view{
+          display: inline-block;
+          padding: 10px; margin: 10px;
+          border: solid gray 1px; border-radius: 50%;
+        }
+        .alert{
+          background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src = "vending_start.js"></script>
+    <!-- <script src = "controller.js"></script>
+    <script>
+        $(function(){
+          controller.init(vending);
+        });
+    </script> -->
+	<script>
+	(function(){
+		console.log( vending.getVendingInfo());
+		vending.buy("coke", 1000);
+		console.log( vending.getVendingInfo());
+	})();
+	</script>
+
+    <div>
+         <br>
+         <div id = "vending">
+            <div class = "area">
+                콜라 <input type = "text" id="coke_count"  class='admin_input'disabled/>
+                사이다<input type = "text" id="cider_count"  class='admin_input' disabled/>
+                잔돈액<input type = "text"  id="save_money"  class='admin_input' disabled/>
+                매출액<input type = "text"  id="sales_money"  class='admin_input' disabled/><p>
+            </div>
+            <div class = "area">
+                <button id="coke_button" class = "rect_button">콜라</button>
+                <button id="cider_button" class = "rect_button">사이다</button>
+            </div>
+            <div class = "area">
+                <div id = "over_money" class = "alert_view">금액초과</div>
+                <div id = "under_money"  class = "alert_view">금액부족</div>
+                <div id = "under_stock"  class = "alert_view">재고부족</div>
+                <div id = "under_change"  class = "alert_view">잔액부족</div>
+            </div>
+            <div class = "area">
+                투입 <input type = "text" id="input_money"></input><p>
+                잔돈 <input type = "text" id="change_money" disabled></input>
+            </div>
+            <div class = "area">
+                <img id = "beverage">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+​
