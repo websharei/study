@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>[개인 - 로그인(Tablet/PC)] 제공할 권한 수정 : 네아로에서 제공되는 정보 동의</title>
+	<link rel="stylesheet" type="text/css" href="css/oauth.css">
+	<style>
+	@charset "utf-8";
+/* NHN Technology Services UIT 170306 */
+
+/* Common */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:'돋움',Dotum,Helvetica,sans-serif;font-size:12px}
+img,fieldset{border:0}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none}
+a:hover,a:active,a:focus{text-decoration:underline}
+.blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+
+body{background:#f6f6f6;font-size:12px;line-height:16px;color:#666}
+.oauth_sprites{background:url("https://nid.naver.com/login/image/oauth/sprite.png") no-repeat}
+.oauth_header{height:55px;background:#21b64f;border-bottom:1px solid #13ae43}
+.oauth_logo{position:absolute;margin:21px 0 20px 20px;width:80px;height:15px;background-position:-2px -2px}
+.oauth_user{position:absolute;right:0;height:27px;margin:15px 20px 14px 0;cursor:pointer}
+.oauth_user:active{text-decoration:none}
+.oauth_user:hover{text-decoration:none}
+.oauth_user:focus{text-decoration:none}
+.oauth_user:visited{text-decoration:none}
+.oauth_user_mask{position:absolute;width:26px;height:26px;background-position:-85px -2px;z-index:99}
+.oauth_user img{position:absolute}
+.oauth_user_id{padding:1px 10px 0 31px;color:#fff;line-height:26px}
+.oauth_user_arrow{position:absolute;right:0;top:0;width:5px;height:26px;background-position:-114px -2px}
+.oauth_user_pop{position:absolute;top:41px;right:19px;width:140px;height:53px;background-position:-2px -30px}
+.oauth_user_pop a{display:block;margin:7px auto 3px;width:134px;height:43px;background:#fff;text-align:center;color:#21b64f;line-height:46px;text-decoration:underline;cursor:pointer}
+.oauth_user_pop.closed{display:none}
+.oauth_container{text-align:center}
+.oauth_wrap{max-width:560px;margin:0 auto 0 auto;padding:40px 40px 15px 40px}
+.oauth_app_desc1{margin:15px auto 21px;line-height:22px/*;width:385px*/}
+.oauth_app_desc1 span{font-weight:bold;color:#21b64f}
+.oauth_app_desc2{margin:0 auto}
+.oauth_right_mod{display:block;margin:5px auto 38px;color:#06c;text-decoration:underline}
+.oauth_btn{display:inline-block;width:76px;height:31px;font-weight:bold;line-height:33px}
+.oauth_accept_btn{background:#21b64f;border:1px solid #13ae43;color:#fff}
+.oauth_accept_btn:active{text-decoration:none}
+.oauth_accept_btn:hover{text-decoration:none}
+.oauth_accept_btn:focus{text-decoration:none}
+.oauth_accept_btn:visited{text-decoration:none}
+.oauth_cancel_btn{background:#fff;border:1px solid #ccc;color:#333}
+.oauth_cancel_btn:active{text-decoration:none}
+.oauth_cancel_btn:hover{text-decoration:none}
+.oauth_cancel_btn:focus{text-decoration:none}
+.oauth_cancel_btn:visited{text-decoration:none}
+.oauth_info{margin:60px 0 0;font-size:11px;color:#999}
+.oauth_info a{color:#999;text-decoration:underline}
+.oauth_container h2{font-size:18px;color:#333;line-height:18px;text-align:left}
+.oauth_container h3{margin:20px 0 15px;font-size:12px;font-weight:bold;color:#333;line-height:12px;text-align:left}
+
+.oauth_right_list{margin:0 auto 40px;border:1px solid #dadada;background:#fff;text-align:left}
+.oauth_right_item{padding:14px 15px 10px 15px;border-top:1px solid #f0f0f0}
+.oauth_right_item.first{border-top:0}
+.oauth_right_item label{display:block;padding:0 36px 0 0;text-decoration:none;height:34px;line-height:34px;}
+.oauth_right_item.accept label{background:url("https://nid.naver.com/login/image/oauth/right_accept.png") no-repeat 100% 50%}
+.oauth_right_item.reject label{background:url("https://nid.naver.com/login/image/oauth/right_reject.png") no-repeat 100% 50%}
+.oauth_right_name{display:block;margin:0 0 4px 0;font-size:14px;color:#333;line-height:14px}
+.oauth_right_desc{display:block;font-size:12px;color:#999;line-height:16px}
+.oauth_right_item label input + span.v_algn{line-height:34px;}
+
+.oauth_right2_list { margin: 0 auto 40px; border: 1px solid #dadada; background: #fff; text-align: left }
+.oauth_right2_item { padding: 0 15px; border-top: 1px solid #f0f0f0; font-size: 0; line-height: 58px; }
+.oauth_right2_item:before { display: inline-block; overflow: hidden; width: 1px; margin-left: -1px; vertical-align: middle; content: ''; }
+.oauth_right2_item:first-child { border-top: 0 }
+.oauth_right2_item label { display: inline-block; width: 100%; min-height: 24px; padding-right: 38px;  background: url(https://nid.naver.com/login/image/oauth/right_reject.png) no-repeat 100% 50%;vertical-align: middle; text-decoration: none; box-sizing: border-box; }
+.oauth_right2_item .is_checked { background-image: url(https://nid.naver.com/login/image/oauth/right_accept.png);}
+.oauth_right2_name { display: block; font-size: 14px; color: #333; line-height: 24px }
+.oauth_right2_desc { display: block; margin-bottom: 2px; font-size: 12px; color: #999; line-height: 15px }
+.oauth_right2_item label input + .oauth_right2_desc { line-height: 24px; }
+
+.oauth_footer{margin: 0 auto 0 auto;padding:9px 0 25px;max-width:560px;border-top:1px solid #e8e8e8;font-size:11px;text-align:center;color:#999}
+.oauth_footer address{margin:0 auto 0 auto;padding:0 40px}
+.oauth_footer a{font-weight:bold;font-size:11px;color:#999;text-decoration:none}
+	</style>
+	<script type="text/javascript" src="https://static.nid.naver.com/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		var serviceScope = {"default":["blog\/writePost","blog\/addCategory","calendar\/createSchedule","cafe\/articlePost","cafe\/cafeApply","cafe\/articlePostV1","cafe\/cafeApplyV1","cafe\/educationCafeCreate","glink\/API-RESTFUL","glink\/**","glink_open\/**","krdict\/romanization","nid\/groupLogin"]};
+		var logout_url = "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=jyvqXeaVOVmV&state=eojGYp1VoiseZnav&redirect_uri=http%3A%2F%2Fstatic.nid.naver.com%2Foauth%2FnaverOAuthExp.nhn&auth_type=reauthenticate";
+		var cancel_url = "http://static.nid.naver.com/oauth/naverOAuthExp.nhn?error=access_denied&error_description=Canceled+By+User&state=eojGYp1VoiseZnav";
+		var profile_url = "https://phinf.pstatic.net/contactthumb/20170207_261/1486431466594hFGop_PNG/avatar_profile.png?type=s80";
+		var isNeedRealNameCheck =  false;
+		var isNeedParentsAgreeCheck =  false;
+		var nickname = "lhyunk50";
+	</script>
+</head>
+<body>
+<!-- header -->
+<div class="oauth_header">
+	<a href="http://www.naver.com" target="_blank" class="oauth_logo oauth_sprites"><h1 class="blind">Naver</h1></a>
+	<a class="oauth_user" >
+		<span class="oauth_user_mask oauth_sprites"></span>
+		<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" id="oauth_user_img" alt="사용자 이미지">
+		<div class="oauth_user_id" id="oauth_user_id"></div>
+		<div class="oauth_user_arrow oauth_sprites"><span class="blind">화살표</span></div>
+	</a>
+	<div class="oauth_user_pop oauth_sprites" id="oauth_user_pop" style="display:none"><a id="change_account">다른 아이디로 로그인</a></div>
+</div>
+<!-- // header -->
+<!-- container -->
+<div class="oauth_container">
+	<div class="oauth_wrap" id="confirm_terms">
+		<img src="https://static.nid.naver.com/images/login/oauth_new/noimage.png" width="70" height="70" alt="네이버 아이디로 로그인하기"/>
+		<p class="oauth_app_desc1"><strong>네이버 아이디로 로그인하기</strong>에서 <span>lhyunk50</span>님의 이메일, 별명, 프로필사진, 성별, 연령대, 생년월일, 이름, 실명여부, 암호화된 동일인 식별정보[CI]을(를) 받습니다.</p>
+		<p class="oauth_app_desc2">제공된 정보는 이용자 식별, 통계, 계정연동 및 CS 등을 위해 서비스 이용 중 보관 됩니다.</p>
+
+
+		<a href="#" class="oauth_right_mod">제공할 권한 수정</a>
+		<a href="#" class="oauth_btn oauth_accept_btn">동의하기</a>
+		<a href="#" class="oauth_btn oauth_cancel_btn">취소</a>
+		<p class="oauth_info">동의 후에는, 해당 서비스의 이용약관 및<br>개인정보처리방침에 따라 정보가 관리됩니다.</p>
+	</div>
+	<div class="oauth_wrap" id="confirm_scope">
+		<h2>제공할 권한 수정</h2>
+		<h3>요청권한</h3>
+		<ul class="oauth_right2_list">
+			<li class="oauth_right2_item">
+				<label class="is_checked">
+					<input type="checkbox" class="blind">
+					<span class="oauth_right2_name">블로그 글쓰기</span>
+					<!-- <span class="oauth_right2_desc">네이버 블로그를 통해 내 활동을 공유할 수 있습니다.</span> -->
+				</label>
+			</li>
+			<li class="oauth_right2_item">
+				<label>
+					<input type="checkbox" class="blind">
+					<span class="oauth_right2_name">카페가입, 글쓰기</span>
+					<span class="oauth_right2_desc">네이버 카페에 가입, 글쓰기 등을 할 수 있습니다.</span>
+				</label>
+			</li>
+			<li class="oauth_right2_item">
+				<label>
+					<input type="checkbox" class="blind">
+					<!-- <span class="oauth_right2_name">캘린더 일정담기</span> -->
+					<span class="oauth_right2_desc">네이버 캘린더를 통해 중요한 약속, 이벤트 등을 등록할 수 있습니다.</span>
+				</label>
+			</li>
+
+		</ul>
+
+		<a class="oauth_btn oauth_accept_btn" href="#">확인</a>
+		<a class="oauth_btn oauth_cancel_btn" href="#">뒤로가기</a>
+	</div>
+	<form id="oauthagreeFrm" name="oauthagreeFrm" action="https://nid.naver.com/login/noauth/allow_oauth.nhn" method="post" class="accept_form" >
+		<input type="hidden" id="oauth_token" name="oauth_token" value="uyeFbJfE2zfo2yC2"/>
+		<input type="hidden" id="with_pin" name="with_pin" value=""/>
+		<input type="hidden" id="step" name="step" value="agree_term"/>
+		<input type="hidden" name="service_scope" value=""/>
+	</form>
+</div>
+<!-- //container -->
+<!-- footer -->
+<div class="oauth_footer">
+	<address>
+		<em>Copyright &copy;</em>
+		<a href="http://www.nhncorp.com/" target="_blank">NAVER Corp.</a>
+		<span>All Rights Reserved.</span>
+	</address>
+</div>
+<script type="text/javascript" src="https://nid.naver.com/login/js/oauth_gnb.js"></script>
+<script type="text/javascript" src="https://nid.naver.com/login/js/oauth_common.js?20150507"></script>
+<!-- //footer -->
+</body>
+</html>
