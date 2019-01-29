@@ -6,7 +6,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <MyComponent name="React" />
+                <MyComponent name="React" age={4} />
             </div>
         );
     }
