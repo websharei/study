@@ -6,6 +6,10 @@ class MyComponent extends Component {
 		name: '기본 이름'
 	}
 
+	static propTypes = {
+		name: PropTypes.string // name props 타입을 문자열로 설정합니다/
+	}
+	
 	render() {
 		return (
 			<div>
@@ -13,10 +17,6 @@ class MyComponent extends Component {
 			</div>
 		)
 	}
-}
-
-MyComponent.propTypes = {
-	name: PropTypes.string // name props 타입을 문자열로 설정합니다.
 }
 
 export default MyComponent; //이 코드는 다른 파일에서 이 파일을 import할 때, 위쪽에서 선언한 MyComponet 클래스를 블러오도록 설정합니다.
