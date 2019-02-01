@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import MyComponent from './MyComponent'; // MyComponent 파일을 불러옵니다.
+import EventPractice from './EventPractice'; // EventPractice 파일을 불러옵니다.
 
 
 class App extends Component {
-    render() {
-        return (
-            <div>
-                <MyComponent name="React" age={4} />
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div>
+				<EventPractice />
+			</div>
+		);
+	}
 }
 
 export default App;
