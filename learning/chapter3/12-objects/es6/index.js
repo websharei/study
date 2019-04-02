@@ -40,4 +40,7 @@ console.log(sam3.classification["family"]);		// "Felidae"
 console.log(sam3["classification"]["family"]);	// "Felidae"
 
 sam3.speak = function() { return "Meow!"; };
-console.log(sam3.speak());  // "Meow!"
+console.log(sam3.speak());		// "Meow!"
+
+delete sam3.classification;		// classification 트리 전체가 삭제됐습니다.
+delete sam3.speak;				// speak 함수가 삭제됐습니다.
