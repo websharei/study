@@ -10,7 +10,7 @@ console.log(halloweenParty);
 console.log(halloweenParty.getFullYear());		// 2016
 console.log(halloweenParty.getMonth());			// 9
 console.log(halloweenParty.getDate());			// 31
-console.log(halloweenParty.getDay());			// 1
+console.log(halloweenParty.getDay());			// 1 (월요일 입니다. 0은 일요일입니다)
 console.log(halloweenParty.getHours());			// 19
 console.log(halloweenParty.getMinutes());		// 0
 console.log(halloweenParty.getSeconds());		// 0
