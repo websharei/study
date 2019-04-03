@@ -25,3 +25,12 @@ console.log(s);			// "33.5" - 문자열
 
 const arr = [1, true, "hello"];
 console.log(arr.toString());	// "1,true,hello"
+
+const o = 0;
+console.log(o);			// 거짓 같은 값
+
+const b1 = !!o;
+console.log(b1);		// false
+
+const b2 = Boolean(o);
+console.log(b2);		// false
