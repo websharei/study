@@ -16,3 +16,12 @@ console.log(ts);
 const e = true;
 const n = e ? 1 : 0;
 console.log(n);
+
+const m = 33.5;
+console.log(m);			// 33.5 - 숫자
+
+const s = m.toString();
+console.log(s);			// "33.5" - 문자열
+
+const arr = [1, true, "hello"];
+console.log(arr.toString());	// "1,true,hello"
