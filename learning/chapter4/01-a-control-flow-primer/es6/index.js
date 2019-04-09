@@ -61,3 +61,9 @@ do {
 	
 	console.log("remaining: " + remaining);
 } while(remaining > 0);
+
+const hand = [];
+for(let roll = 0; roll < 3; roll++) {
+	hand.push(randFace());
+}
+console.log("hand: " + hand);
