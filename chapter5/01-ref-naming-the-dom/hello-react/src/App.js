@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import ScrollBox from './ScrollBox'; // ScrollBox 파일을 불러옵니다.
 
-
 class App extends Component {
 	render() {
 		return (
 			<div>
-				<ScrollBox />
+				<ScrollBox ref={(ref) => this.scrollBox=ref} />
+				<button onClick={() => this.scrollBox.scrollToBottom()}>
+					맨 밑으로
+				</button>
 			</div>
 		);
 	}
