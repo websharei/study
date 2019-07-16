@@ -19,7 +19,7 @@ while(funds > 1 && funds < 100) {
 	// 돈을 겁니다.
 	const bets = {
 		crown: 0,
-		achor: 0,
+		anchor: 0,
 		heart: 0,
 		spade: 0,
 		club: 0,
@@ -37,8 +37,6 @@ while(funds > 1 && funds < 100) {
 			let face = randFace();
 			bets[face] = bets[face] + bet;
 			remaining = remaining - bet;
-			
-			console.log("remaining: " + remaining);
 		} while(remaining > 0);
 	}
 	fund = funds - totalBet;
@@ -59,9 +57,5 @@ while(funds > 1 && funds < 100) {
 	}
 	funds = funds + winnings;
 	console.log(`\twinnings: ${winnings}`);
-
-	funds = funds + 2; // 2보 전진
-	funds = funds - 1; // 1보 후퇴
-	console.log("funds: " + funds);
 }
 console.log(`\tending funds: ${funds}`);
