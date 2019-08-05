@@ -29,18 +29,16 @@ const player = {
 for(; !player.isBroke;) //조건에 객체 프로퍼티를 썼습니다.
 	console.log("Still playing!");
 
-totalBet = 11;
+totalBet = 13;
 
 switch(totalBet) {
 	case 7:
 		totalBet = funds;
 		console.log("swithch = " + totalBet);
 		break;
-	case 11:
-		totalBet = 0;
-		console.log("swithch = " + totalBet);
-		break;
 	case 13:
+		funds = funds - 1; // 1펜스를 기부합니다!
+	case 11:
 		totalBet = 0;
 		console.log("swithch = " + totalBet);
 		break;
