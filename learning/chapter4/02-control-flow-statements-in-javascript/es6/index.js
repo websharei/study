@@ -29,7 +29,7 @@ const player = {
 for(; !player.isBroke;) //조건에 객체 프로퍼티를 썼습니다.
 	console.log("Still playing!");
 
-totalBet = 13;
+totalBet = 0;
 
 switch(totalBet) {
 	case 7:
@@ -45,5 +45,8 @@ switch(totalBet) {
 	case 21:
 		totalBet = 21;
 		console.log("swithch = " + totalBet);
+		break;
+	default:
+		console.log("No superstition here!");
 		break;
 }
