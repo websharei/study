@@ -55,8 +55,28 @@ function adjustBet(totalBet, funds) {
 
 adjustBet(7, 1);
 
+// 4.2.7 for...in 루트
 const player2 = { name: 'Thomas', rank: 'Midshipman', age: 25 };
 for(let prop in player2) {
 	if(!player2.hasOwnProperty(prop)) continue;
 	console.log(prop + ': ' + player2[prop]);
 }
+
+// 4.2.7 for...of 루트
+function rand(m, n) {
+	return m + Math.floor((n - m + 1) * Math.random());
+}
+
+function randFace() {
+	return ["crown", "anchor", "heart", "spade", "club", "diamond"]
+		[rand(0, 5)];
+}
+
+const hand = [randFace(), randFace(), randFace()];
+for(let face of hand)
+	console.log(`You rolled...${face}!`);
+
+const hand2 = [randFace(), randFace(), randFace()];
+for(let i=0; i<hand2.length; i++)
+	console.log(`Roll ${i+1}: ${hand2[i]}`);
+	
