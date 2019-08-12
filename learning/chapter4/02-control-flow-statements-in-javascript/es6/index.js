@@ -33,7 +33,7 @@ totalBet = 0;
 
 switch(totalBet) {
 	case 7: totalBet = funds; console.log("swithch = " + totalBet); break;
-	case 13: funds = funds - 1; // 1펜스를 기부합니다!
+	case 13: funds = funds - 1;  break; // 1펜스를 기부합니다!
 	case 11: totalBet = 0; console.log("swithch = " + totalBet); break;
 	case 21: totalBet = 21; console.log("swithch = " + totalBet); break;
 	default: console.log("No superstition here!"); break;
