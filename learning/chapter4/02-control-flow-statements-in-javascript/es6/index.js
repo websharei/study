@@ -54,3 +54,9 @@ function adjustBet(totalBet, funds) {
 }
 
 adjustBet(7, 1);
+
+const player2 = { name: 'Thomas', rank: 'Midshipman', age: 25 };
+for(let prop in player2) {
+	if(!player2.hasOwnProperty(prop)) continue;
+	console.log(prop + ': ' + player2[prop]);
+}
