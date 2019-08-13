@@ -32,3 +32,11 @@ for(let n of bigArrayOfNumbers) {
 		break;
 	}
 }
+
+//4.3.3 루프를 완료한 뒤 인덱스 값 사용하기, 4.3 유용한 제어문 패턴, 4장 제어문
+let i = 0;
+for(; i < bigArrayOfNumbers.length; i++) {
+	if(isPrime(bigArrayOfNumber[i])) break;
+}
+if(i === bigArrayOfNumber.length) console.log('No prime numbers!');
+else console.log(`First prime number found at position ${i}`);
