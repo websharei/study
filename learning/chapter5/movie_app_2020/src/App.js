@@ -1,6 +1,11 @@
 import React, { Fragment } from 'react';
 
 class App extends React.Component {
+	constructor(props) {
+		super(props);
+		console.log('hello');
+	}
+
 	state = {
 		count: 0,
 	};
@@ -19,7 +24,20 @@ class App extends React.Component {
 		}));
 	};
 
+	componentDidMount() {
+		console.log('component rendered');
+	}
+
+	componentDidUpdate() {
+		console.log('I just updated');
+	}
+
+	componentWillUnmount() {
+		console.log('Goodbye, cruel world');
+	}
+
 	render() {
+		console.log('I\'m rendering');
 		return (
 			<Fragment>
 				<h1>The number is: {this.state.count}</h1>
